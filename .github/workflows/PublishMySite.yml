@@ -17,8 +17,6 @@ jobs: # 工作流的具体内容
       - run: pip install mkdocs-material # 使用pip包管理工具安装mkdocs-material
       - run: mkdocs gh-deploy --force # 使用mkdocs-material部署gh-pages分支
 theme:
-  palette:
-theme:
   palette: 
 
     # Palette toggle for light mode
@@ -32,6 +30,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-        
+
     primary: red
     accent: pink
