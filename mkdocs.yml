@@ -1,18 +1,25 @@
-site_name: My Docs
-theme:
-  palette: 
+site_name: Lumi's Blog
+site_url: https://bhaaa-zlm.github.io/
+site_author: Lumi
+site_description: Lumi's Blog
 
+theme:
+  name: material
+  palette: 
     # Palette toggle for light mode
     - scheme: default
+      primary: red
+      ccent: pink
       toggle:
         icon: material/brightness-7 
         name: Switch to dark mode
 
     # Palette toggle for dark mode
     - scheme: slate
+      primary: red
+      accent: pink
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
 
-    primary: red
-    accent: pink
+    
