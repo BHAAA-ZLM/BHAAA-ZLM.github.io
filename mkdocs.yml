@@ -3,6 +3,9 @@ site_url: https://bhaaa-zlm.github.io/
 site_author: Lumi
 site_description: Lumi's Blog
 
+repo_url: https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io
+repo_name: BHAAA-ZLM.github.io
+
 theme:
 
   font: 
@@ -21,6 +24,14 @@ theme:
   features: 
     - navigation.tabs
     - navigation.expand
+    - navigation.top
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+
+  icon:
+    repo: 
+      - fontawesome/brands/github-alt
 
   palette: 
     # Palette toggle for light mode
@@ -38,5 +49,18 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  
+nav:
+  - Life:
+    - Life/index.md
+  - Biology:
+    - Biology/index.md
+  - CS:
+    - CS/index.md
+    - Projects: CS/Projects/Projects.md
+  - Learning:
+    - Learning/index.md
+    - Chemistry:
+      - Chemistry Experiments: Learning/Chemistry/Experiments.md
 
   
