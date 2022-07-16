@@ -1,10 +1,4 @@
-.md-header,
-.md-footer,
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3,
-.md-tabs,
-.md-header-nav__topic,
-.md-sidebar {
-  font-family: 'Bangers', cursive;
+@import url();
+p {
+  font-family:'Times New Roman', Times, serif;
 }
