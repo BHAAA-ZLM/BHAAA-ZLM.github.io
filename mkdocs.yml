@@ -4,11 +4,22 @@ site_author: Lumi
 site_description: Lumi's Blog
 
 theme:
+
   font: 
     text: Lobster
-  logo: assets/fatLogo.png
-  favicon: assets/fatLogo.png
+
+  extra_css: assets/css/extra.css
+
+  logo: assets/image/fatLogo.png
+
+  favicon: assets/image/fatLogo.png
+
   name: material
+
+  features: 
+    - navigation.tabs
+    - navigation.expand
+
   palette: 
     # Palette toggle for light mode
     - scheme: default
