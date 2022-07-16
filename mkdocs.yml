@@ -6,7 +6,7 @@ site_description: Lumi's Blog
 theme:
 
   font: 
-    text: Monteserrat
+    text: Lobster
 
   extra_css:
     - stylesheets/extra.css
