@@ -37,10 +37,6 @@ theme:
     - search.suggest
     - search.highlight
 
-  icon:
-    repo: 
-      - :dna:
-
   palette: 
     # Palette toggle for light mode
     - scheme: default
