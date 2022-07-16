@@ -4,7 +4,7 @@ site_author: Lumi
 site_description: Lumi's Blog
 
 theme:
-  logo: assets/logo.png
+  logo: assets/fatLogo.png
   name: material
   palette: 
     # Palette toggle for light mode
