@@ -6,9 +6,11 @@ site_description: Lumi's Blog
 theme:
 
   font: 
-    text: Lobster
+    text: Monteserrat
 
-  extra_css: assets/css/extra.css
+  extra_css:
+    - assets/css/extra.css
+    # - https://fonts.googleapis.com/css2?family=Bangers&display=swap
 
   logo: assets/image/fatLogo.png
 
