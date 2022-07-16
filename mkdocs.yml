@@ -31,7 +31,7 @@ theme:
 
   icon:
     repo: 
-      - fontawesome/brands/github-alt
+      - fontawesome/brands/github
 
   palette: 
     # Palette toggle for light mode
