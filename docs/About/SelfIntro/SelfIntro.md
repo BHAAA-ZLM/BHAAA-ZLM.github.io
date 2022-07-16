@@ -2,8 +2,7 @@
 
 <span style="font-family:Arno Pro"> My name is Lumi, which comes from my Chinese name Zhang Luming. I am from Guangzhou, China. 
 
-<!-- <img src="../Life/image/Me.jpg" width="500" alt="yep, that's me"> -->
-
+<img src="../Me.jpg" width="300" alt="yep, that's me">
 
 ## <span style="font-family:Arno Pro">Studying Experiences
 
