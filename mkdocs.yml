@@ -6,6 +6,13 @@ site_description: Lumi's Blog
 repo_url: https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io
 repo_name: BHAAA-ZLM.github.io
 
+copyright: Copyright &copy; 2022 Lumi
+
+extra: 
+  social:
+    - icon: fontawesome/brands/bilibili
+    - icon: fontawesome/brands/github
+
 theme:
 
   font: 
@@ -29,9 +36,9 @@ theme:
     - search.suggest
     - search.highlight
 
-  icon:
-    repo: 
-      - fontawesome/brands/github
+  # icon:
+  #   repo: 
+  #     - fontawesome/brands/github
 
   palette: 
     # Palette toggle for light mode
