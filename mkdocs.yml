@@ -9,7 +9,7 @@ theme:
     text: Monteserrat
 
   extra_css:
-    - assets/css/extra.css
+    - stylesheets/extra.css
     - https://fonts.googleapis.com/css2?family=Bangers&display=swap
 
   logo: assets/image/fatLogo.png
