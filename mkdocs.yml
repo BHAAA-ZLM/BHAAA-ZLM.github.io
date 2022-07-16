@@ -66,5 +66,9 @@ nav:
     - Learning/index.md
     - Chemistry:
       - Chemistry Experiments: Learning/Chemistry/Experiments.md
+  - About:
+    - About/index.md
+    - About Me: SelfIntro.md
+    # - Support Me: SupportMe.md
 
   
