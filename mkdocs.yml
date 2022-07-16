@@ -33,12 +33,13 @@ theme:
     - navigation.expand
     - navigation.top
     - navigation.expand
+    - navigation.indexes
     - search.suggest
     - search.highlight
 
-  # icon:
-  #   repo: 
-  #     - fontawesome/brands/github
+  icon:
+    repo: 
+      - :dna:
 
   palette: 
     # Palette toggle for light mode
