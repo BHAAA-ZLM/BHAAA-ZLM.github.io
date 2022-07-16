@@ -10,7 +10,7 @@ theme:
 
   extra_css:
     - assets/css/extra.css
-    # - https://fonts.googleapis.com/css2?family=Bangers&display=swap
+    - https://fonts.googleapis.com/css2?family=Bangers&display=swap
 
   logo: assets/image/fatLogo.png
 
