@@ -11,7 +11,12 @@ copyright: Copyright &copy; 2022 Lumi
 extra: 
   social:
     - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/85744189
+      name: Bilibili | MrBHAAA
+
     - icon: fontawesome/brands/github
+      link: https://github.com/BHAAA-ZLM
+      name: GitHub | Lumi
 
 theme:
 
