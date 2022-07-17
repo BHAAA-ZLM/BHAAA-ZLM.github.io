@@ -1,3 +1,9 @@
+---
+tags:
+    - Me
+    - Life
+---
+
 # <span style="font-family:Arno Pro"> About Me
 
 <span style="font-family:Arno Pro"> My name is Lumi, which comes from my Chinese name Zhang Luming. I am from Guangzhou, China. 
