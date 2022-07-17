@@ -80,6 +80,8 @@ nav:
 plugins:
   - tags:
       tags_file: tags.md
+  - search:
+    lang: en
 
 markdown_extensions:
   - meta    
