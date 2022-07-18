@@ -23,7 +23,13 @@ theme:
   custom_dir: overrides
 
   font: 
-    text: Lobster
+    # text: Lobster
+    # text: Pacifico
+    # text: Mitr
+    # text: Luckiest Guy
+    # text: Merienda One
+    # text: Bubblegum Sans
+    text: Megrim
 
   extra_css:
     - stylesheets/extra.css
