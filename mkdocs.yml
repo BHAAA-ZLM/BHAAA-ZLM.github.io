@@ -20,7 +20,7 @@ extra:
 
 theme:
 
-  custom_dir: overrides
+  # custom_dir: overrides
 
   font: 
     text: Lobster
