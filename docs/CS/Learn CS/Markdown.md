@@ -3,11 +3,14 @@ tags:
     - Markdown
 
 author: Lumi
-author_gh_user: <Your GitHub User>
-read_time: <Reading Time>
-publish_date: <Date of Publishing>
+author_gh_user: BHAAA-ZLM
+read_time: 25min
+publish_date: 2022.7.18
+
+
 ---
-# <span style="font-family: Courier">Learning Markdown
+
+<!-- # <span style="font-family: Courier">Learning Markdown -->
 
 <span style="font-family: Courier"> 
 Markdown is a kind of text file which can be converted to HTML with Markdown applications and Markdown. I find it very interesting and kinda cool to write things in this way.
@@ -501,10 +504,10 @@ HTML
 <span style="font-family: Courier">
 No surprise that the markdown syntax still doesn't work. Consider this as a great opportunity to learn HTML (LOL).
 
-### <span style="font-family: Courier">**~~Strikethrough~~**
+### <span style="font-family: Courier">**Srikethrough**
 
 <span style="font-family: Courier">
-Strike through the words by adding two tilde symbols (~~) on both sides of the words.
+~~Strike through~~ the words by adding two tilde symbols (~~) on both sides of the words. But it seems that the strikethrough don't work with mkdocs.
 
 ### <span style="font-family: Courier">**Task Lists**
 

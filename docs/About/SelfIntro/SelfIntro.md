@@ -2,9 +2,14 @@
 tags:
     - Me
     - Life
+
+author: Lumi
+author_gh_user: BHAAA-ZLM
+read_time: 5min
+publish_date: Constantly Updating
+
 ---
 
-# <span style="font-family: Courier"> About Me
 
 <span style="font-family: Courier"> My name is Lumi, which comes from my Chinese name Zhang Luming. I am from Guangzhou, China. 
 

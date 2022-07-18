@@ -2,10 +2,14 @@
 tags:
     - Java
     - Games
+
+author: Lumi
+author_gh_user: BHAAA-ZLM
+read_time: 7min
+publish_date: 2022.7.17
+
 ---
 <span style="font-family: Courier">
-
-# <span style="font-family: Courier"> My First Project - ChessKing
 
 <img src="https://raw.githubusercontent.com/LittleEtx/ChessKing/main/pre/Gameshot.png" width = 600 alt="ChessKing Ad">
 
@@ -94,5 +98,3 @@ It was at this time, that I learned how to write Markdown files. I wrote a READM
 <span style="font-family: Courier">
 I'm so happy to see all the interested and astonished faces of my classmates when we did our presentation. After the class, they are all chatting in the chat group for our game. We feel so happy that our work is admitted by others. It's a wonderful learning experience!
 
-<span style="font-family: Courier">
-Lumi 2022.07.17

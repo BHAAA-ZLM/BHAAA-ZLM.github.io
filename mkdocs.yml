@@ -20,7 +20,7 @@ extra:
 
 theme:
 
-  # custom_dir: overrides
+  custom_dir: overrides
 
   font: 
     text: Lobster
@@ -69,9 +69,9 @@ nav:
   - CS:
     - CS/index.md
     - LearnCS:
-      - Mardown: CS/Learn CS/Markdown.md
+      - Learning Markdown: CS/Learn CS/Markdown.md
     - Projects:
-      - ChessKing: CS/Projects/ChessKing.md
+      - My First Project - ChessKing: CS/Projects/ChessKing.md
   - Learning:
     - Learning/index.md
     - Chemistry:
@@ -90,3 +90,5 @@ plugins:
 markdown_extensions:
   - meta    
       
+extra_css:
+  - stylesheets/custom.css
