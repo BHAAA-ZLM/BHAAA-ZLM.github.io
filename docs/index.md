@@ -1,4 +1,13 @@
-# <span style="font-family: Courier">Welcome to Lumi's Blog!!!</span>
+---
+title: Welcome to Lumi's Blog!!!
+author: Lumi
+author_gh_user: BHAAA-ZLM
+read_time: 2min
+publish_date: 2022.7.16
+---
+
+
+<!-- # <span style="font-family: Megrim">Welcome to Lumi's Blog!!!</span> -->
 
 
 

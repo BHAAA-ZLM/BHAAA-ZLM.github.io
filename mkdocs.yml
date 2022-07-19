@@ -56,7 +56,7 @@ theme:
       primary: red
       ccent: pink
       toggle:
-        icon: material/brightness-7 
+        icon: material/weather-sunny
         name: Switch to dark mode
 
     # Palette toggle for dark mode
@@ -64,26 +64,28 @@ theme:
       primary: red
       accent: pink
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to light mode
   
 nav:
   - Life:
-    - Life/index.md
+    - Life: Life/index.md
   - Biology:
-    - Biology/index.md
+    - Biology!!!: Biology/index.md
+    - Experiments:
+      - Genome-Why are we different: Biology/Experiments/BIOS201.md
   - CS:
-    - CS/index.md
-    - LearnCS:
+    - Computer Science: CS/index.md
+    - Learning CS:
       - Learning Markdown: CS/Learn CS/Markdown.md
     - Projects:
       - My First Project - ChessKing: CS/Projects/ChessKing.md
   - Learning:
-    - Learning/index.md
+    - Learning: Learning/index.md
     - Chemistry:
       - Chemistry Experiments: Learning/Chemistry/Experiments.md
   - About:
-    - About/index.md
+    - Welcome to Lumi's Blog!: About/index.md
     - About Me: About/SelfIntro/SelfIntro.md
     # - Support Me: SupportMe.md
 
