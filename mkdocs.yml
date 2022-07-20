@@ -72,6 +72,8 @@ nav:
     - Life: Life/index.md
   - Biology:
     - Biology!!!: Biology/index.md
+    - Bioinformatics:
+      - Learning RNA-seq: Biology/Bioinformatics/RNA-seq.md
     - Experiments:
       - Genome-Why are we different: Biology/Experiments/BIOS201.md
   - CS:
