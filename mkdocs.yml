@@ -74,6 +74,7 @@ nav:
     - Biology!!!: Biology/index.md
     - Bioinformatics:
       - Learning RNA-seq: Biology/Bioinformatics/RNA-seq.md
+      - Different Files in Bioinformatics: Biology/Bioinformatics/Files.md
     - Experiments:
       - Genome-Why are we different: Biology/Experiments/BIOS201.md
   - CS:
