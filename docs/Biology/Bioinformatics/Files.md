@@ -7,13 +7,21 @@ publish_date: 2022.7.20
 
 ---
 
-## <span style="font-family: Courier">FASTQ and FASTA
+<span style="font-family: Courier">Here, I learnt about all the different files that may come up during a NGS analysis. All the knowledge comes from:
 
-<span style="font-family: Courier">The first section is about FASTQ and FASTA files. Knowledge comes from:
+<span style="font-family: Courier">General:
+
+- <span style="font-family: Courier"> <https://learn.gencore.bio.nyu.edu> A very 
+useful website teaching about NGS analysis.
+
+<span style="font-family: Courier">FASTA & FASTQ:
 
 - <span style="font-family: Courier"> <https://support.illumina.com/bulletins/2016/04/fastq-files-explained.html>
 - <span style="font-family: Courier"> <http://www.biotrainee.com/thread-2703-1-2.html>
-- <span style="font-family: Courier"> <https://learn.gencore.bio.nyu.edu> A very useful website teaching about NGS analysis.
+
+## <span style="font-family: Courier">FASTQ and FASTA
+
+<span style="font-family: Courier">The first section is about FASTQ and FASTA files.
 
 ### <span style="font-family: Courier">FASTQ
 
