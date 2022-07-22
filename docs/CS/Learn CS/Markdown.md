@@ -1,14 +1,11 @@
 ---
-tags:
-    - Markdown
 
 author: Lumi
 author_gh_user: BHAAA-ZLM
 read_time: 25min
 publish_date: 2022.7.18
-
-
 ---
+
 
 <!-- # <span style="font-family: Courier">Learning Markdown -->
 

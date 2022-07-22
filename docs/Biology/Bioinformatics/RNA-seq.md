@@ -1,4 +1,6 @@
 ---
+tags:
+    - RNA-Seq
 
 author: Lumi
 author_gh_user: BHAAA-ZLM
