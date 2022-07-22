@@ -70,11 +70,13 @@ theme:
 nav:
   - Life:
     - Life: Life/index.md
+  - Bioinformatics:
+    - Bioinformatics is not quantum mechanics: Bioinformatics/index.md
+    - RNA-Seq:
+      - The Basic Workflow of RNA-seq: Bioinformatics/RNA-seq.md
+      - Files involved in RNA-seq: Bioinformatics/Files.md
   - Biology:
     - Biology!!!: Biology/index.md
-    - Bioinformatics:
-      - Learning RNA-seq: Biology/Bioinformatics/RNA-seq.md
-      - Different Files in Bioinformatics: Biology/Bioinformatics/Files.md
     - Experiments:
       - Genome-Why are we different: Biology/Experiments/BIOS201.md
   - CS:
