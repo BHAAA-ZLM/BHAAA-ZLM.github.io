@@ -73,8 +73,9 @@ nav:
   - Bioinformatics:
     - Bioinformatics is not quantum mechanics: Bioinformatics/index.md
     - RNA-Seq:
-      - The Basic Workflow of RNA-seq: Bioinformatics/RNA-seq.md
-      - Files involved in RNA-seq: Bioinformatics/Files.md
+      - The Basic Workflow of RNA-seq: Bioinformatics/RNA-seq/RNA-seq.md
+      - Files involved in RNA-seq: Bioinformatics/RNA-seq/Files.md
+      - The Tools of RNA-seq: Bioinformatics/RNA-seq/Tools.md
   - Biology:
     - Biology!!!: Biology/index.md
     - Experiments:
@@ -95,8 +96,8 @@ nav:
     # - Support Me: SupportMe.md
 
 plugins:
-  - tags:
-      tags_file: tags.md
+  # - tags:
+  #     tags_file: tags.md
   - search:
       lang: en
 

@@ -111,7 +111,7 @@ By matching the ASCII table characters to their Q code under certain protocals, 
 <span style="font-family: Courier">
 **CIGAR String** is a special string that can tell you the alignment information of the whole sequence.
 
-<img src="../RNA-seq/CIGAR_String.png" width=600 title="CIGAR" alt="CIGAR">
+<img src="../CIGAR_String.png" width=600 title="CIGAR" alt="CIGAR">
 
 <img src="https://learn.gencore.bio.nyu.edu/wp-content/uploads/2018/01/Screen-Shot-2018-01-07-at-5.02.26-PM.png" title="CIGAR example" alt="CIGAR example" width=600>
 

@@ -139,7 +139,13 @@ Differential splicing of mRNA leads to different protein products from a single 
 <span style="font-family: Courier">RNA-seq has revolutionized the transcriptomics field and new computational tools continue to help tackle the bottlenecks in data analysis and downstream modeling. Single-cell analysis and long-read RNA sequencing are two areas that are quickly evolving, with future developments expected to address limitations with low-abundance starting RNA and constructing long transcripts.
 
 
-## <span style="font-family: Courier">Extra: Single-Cell RNA-Seq
+## <span style="font-family: Courier">Extra
+
+### <span style="font-family: Courier">  Single-Cell RNA-Seq
 
 <span style="font-family: Courier">
 Single-cell RNA-seq (scRNA-seq) is an emerging technology that reveals the unique gene expression signature of individual cells, which is otherwise lost in bulk studies. These experiments are inherently different from bulk RNA-seq and employ unique workflows and analysis strategies. A common practice in scRNA-seq is the use of spike-in molecules, like the External RNA Control Consortium (ERCC), as an internal control. The number of molecules corresponding to the spike-in is then used to normalize RNA abundance across all single cells. Unique molecular identifiers (UMIs) may also be included to barcode the molecules of interest as a way to control for PCR bias. One of the main challenges with scRNA-seq continues to be the limits on sequencing depth. Some computational tools for scRNA-seq are single-cell normalization (Brennecke 2014), Monocle (Trapnell 2014), and scLVM (Buettner 2015).
+
+### <span style="font-family: Courier">A Workflow Map
+
+<img src="https://github.com/nf-core/rnaseq/blob/master/docs/images/nf-core-rnaseq_metro_map_grey.png?raw=true" title="RNA-seq workflow" alt="RNA-seq workflow" width=600>
