@@ -29,7 +29,7 @@ FastQC is for the quality control of the raw data from sequencing. It's best to 
 You can use the user interface friendly FastQC java swing application. But when you are processing multiple files, you can use the terminal command `fastqc` in such a way that you cna process multiple files at the same time.
 
 ```
-ls *gz |xargs -I [] echo 'nohup fastqc [] &' > fastqc.sh
+ fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam] [-c contaminant file] seqfile1 .. seqfileN
 ```
 
 <span style="font-family: Courier"> Remember to switch your shell to bash when you execute this command. I don't actually know the alternative command for zsh, but there must be some kind of command.
@@ -70,6 +70,7 @@ fastp -i Spm_R1.fastq.gz -I Spm_R2.fastq.gz -o Spm_R1.fastp.fastq.gz -O Spm_R2.f
 - <span style="font-family: Courier"> -w, --thread means the thread number, default thread # is 2
 - <span style="font-family: Courier"> -q, --qualified_quality_phred the quality phred value that a base is qualified. Default is 15, meaning that >=Q15 is qualified.
 - <span style="font-family: Courier"> -u, --unqualified_percent_limit how many percents of bases are allowed to be unqualified (0~100). Default 40 means 40%.
+- <span style="font-family: Courier"> -g force polyG tail trimmingmby default trimming is automatically enabled for Illumina data.
 
 <span style="font-family: Courier"> And their are the commands that controls the outputs.
 
@@ -87,7 +88,7 @@ fastp -i Spm_R1.fastq.gz -I Spm_R2.fastq.gz -o Spm_R1.fastp.fastq.gz -O Spm_R2.f
 <span style="font-family: Courier"> The HISAT2 official website can be found [here](http://daehwankimlab.github.io/hisat2/manual/). It is a fast and sensitive alignment program for mapping next-generation sequencing reads.
 
 ```
-hisat2 -p 8 -x tair10_index --summary-file Spm.summary --dta-cufflinks -1 Spm_R1.fastp.cutadapt.fastq.gz -2 Spm_R2.fastp.cutadapt.fastq.gz
+hisat2 -p 8 -x tair10_index --summary-file Spm.summary --dta-cufflinks -1 Spm_R1.fastp.cutadapt.fastq.gz -2 Spm_R2.fastp.cutadapt.fastq.gz -S output.sam
 ```
 
 <span style="font-family: Courier"> The basic usage of HISAT2 is:
@@ -113,3 +114,38 @@ hisat2 [options]* -x <ht2-idx> {-1 <m1> -2 <m2> | -U <r> | --sra-acc <SRA access
 - <span style="font-family: Courier"> -p, --threads (int) means the number of threads you launch. Default is 1.
 - <span style="font-family: Courier"> --summary-file print the alignment summary to this file.
 - <span style="font-family: Courier"> --dta-cufflinks reprots alignments tailored specifically for [cufflinks](http://cole-trapnell-lab.github.io/cufflinks/).
+
+## <span style="font-family: Courier"> samtools
+
+<span style="font-family: Courier"> Samtools is a tool to handle sam, bam and cram files.
+
+```
+samtools view -ShuF 4 -q 30 -f 2 -@ 2 file.name.sam | samtools sort -@ 2 -u 
+
+samtools view [options] <in.bam>|<in.sam>|<in.cram> [region ...]
+```
+
+<span style="font-family: Courier"> `samtools view `is for viewing the bam/sam/cram file in bam/sam/cram type.
+
+- <span style="font-family: Courier"> -S Ignored (the input format is auto-detected).
+- <span style="font-family: Courier"> -h,--with-header Include header in the SAM output.
+- <span style="font-family: Courier"> -u,--uncompressed Uncompressed BAM output (and default to --bam).
+- <span style="font-family: Courier"> -F FLAG Have none of the [FLAGs](https://www.samformat.info/sam-format-flag).
+- <span style="font-family: Courier"> -q int Have mapping quality >= int.
+- <span style="font-family: Courier"> -f FLAG Have all of the flags present.
+- <span style="font-family: Courier"> -@ int The number of threads. 
+
+<span style="font-family: Courier"> `samtools sort` is sorting the data by your need.
+
+-<span style="font-family: Courier"> -u Set the compression level to 0 (uncompressed).
+
+## <span style="font-family: Courier"> bedtools
+
+```
+genomeCoverageBed -ibam Spm.sorted.bam -bg -split > Spm.bdg
+```
+- <span style="font-family: Courier"> -ibam input bam files for coverage. Use `stdin` or `-` for a Unix pipe.
+
+## <span style="font-family: Courier"> Others
+
+<span style="font-family: Courier"> To communicate with the server using `scp` command, see [here](https://stackoverflow.com/questions/16886179/scp-or-sftp-copy-multiple-files-with-single-command) for more info.

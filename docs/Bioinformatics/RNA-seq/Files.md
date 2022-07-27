@@ -174,3 +174,5 @@ For example vcf files, look at your own files during the class BIOS201, Genome, 
 Gene transfer format (GTF) and General feaure format (GFF) are kinds of file format used to hold information about gene structure.
 
 <span style="font-family: Courier"> <https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md>
+
+## <span style="font-family: Courier">BED
