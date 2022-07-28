@@ -176,3 +176,15 @@ Gene transfer format (GTF) and General feaure format (GFF) are kinds of file for
 <span style="font-family: Courier"> <https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md>
 
 ## <span style="font-family: Courier">BED
+
+<span style="font-family: Courier"> The formal bed format description can be found [here](https://genome.ucsc.edu/FAQ/FAQformat.html#format1).
+
+<span style="font-family: Courier"> In shorter words, BED files allows an easy way to define the things you want to show in your track annotation (like a reference genome).
+
+## <span style="font-family: Courier"> Bed Graph
+
+<span style="font-family: Courier"> The detailed discription for bed graph is [here](http://genome.ucsc.edu/goldenPath/help/bedgraph.html), I think this file can be used to store the reads for each small sets of nucleotide on your chromosome after your sequencing.
+
+## <span style="font-family: Courier"> BigWig
+
+<span style="font-family: Courier"> The BigWig files indicates the reads on a certain position. You can view it with igv, but also other applications and can turn it into a very beautiful graph. Requires further inquiry. The official BigWig file explaination can be found [here](http://genome.ucsc.edu/goldenPath/help/bigWig.html).

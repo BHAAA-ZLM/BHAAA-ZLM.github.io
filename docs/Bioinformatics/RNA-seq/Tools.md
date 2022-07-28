@@ -120,7 +120,7 @@ hisat2 [options]* -x <ht2-idx> {-1 <m1> -2 <m2> | -U <r> | --sra-acc <SRA access
 <span style="font-family: Courier"> Samtools is a tool to handle sam, bam and cram files.
 
 ```
-samtools view -ShuF 4 -q 30 -f 2 -@ 2 file.name.sam | samtools sort -@ 2 -u 
+samtools view -ShuF 4 -q 30 -f 2 -@ 2 file.name.sam | samtools sort -@ 2 -o output/file.bam 
 
 samtools view [options] <in.bam>|<in.sam>|<in.cram> [region ...]
 ```
@@ -139,12 +139,19 @@ samtools view [options] <in.bam>|<in.sam>|<in.cram> [region ...]
 
 -<span style="font-family: Courier"> -u Set the compression level to 0 (uncompressed).
 
+<span style="font-family: Courier"> When you want to see your gene inside for insatance igv, you will also need to index your bam files.
+
 ## <span style="font-family: Courier"> bedtools
 
 ```
 genomeCoverageBed -ibam Spm.sorted.bam -bg -split > Spm.bdg
 ```
 - <span style="font-family: Courier"> -ibam input bam files for coverage. Use `stdin` or `-` for a Unix pipe.
+
+## <span style="font-family: Courier"> cuffdiff
+
+<span style="font-family: Courier">  Cuffdiff is a program included in cufflinks. You can use this program to find significant changes in transcript expression. Use `cuffdiff -h` to look for the manual.
+
 
 ## <span style="font-family: Courier"> Others
 
