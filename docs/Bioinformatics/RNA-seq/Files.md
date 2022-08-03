@@ -30,6 +30,10 @@ useful website teaching about NGS analysis.
 - <span style="font-family: Courier"> <https://en.wikipedia.org/wiki/Gene_transfer_format>
 
 
+<span style="font-family: Courier"> Unix
+
+- <span style="font-family: Courier"> <http://korflab.ucdavis.edu/Unix_and_Perl/current.html>
+
 
 ## <span style="font-family: Courier">FASTQ and FASTA
 

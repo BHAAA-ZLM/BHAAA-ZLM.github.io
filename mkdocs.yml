@@ -76,6 +76,8 @@ nav:
       - The Basic Workflow of RNA-seq: Bioinformatics/RNA-seq/RNA-seq.md
       - Files involved in RNA-seq: Bioinformatics/RNA-seq/Files.md
       - The Tools of RNA-seq: Bioinformatics/RNA-seq/Tools.md
+    - R the Programming Language:
+      - R and DESeq2: Bioinformatics/R/DESeq.md
   - Biology:
     - Biology!!!: Biology/index.md
     - Experiments:

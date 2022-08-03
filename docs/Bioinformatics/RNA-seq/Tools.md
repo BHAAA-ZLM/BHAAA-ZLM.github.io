@@ -141,6 +141,19 @@ samtools view [options] <in.bam>|<in.sam>|<in.cram> [region ...]
 
 <span style="font-family: Courier"> When you want to see your gene inside for insatance igv, you will also need to index your bam files.
 
+## <span style="font-family: Courier"> featureCounts
+<span style="font-family: Courier"> FeatureCounts is a tool to quantify the counts on genes based on the bam file. A link to a desctiption of featureCounts is [here](https://rnnh.github.io/bioinfo-notebook/docs/featureCounts.html).
+```
+featureCounts [options] -a <annotation_file> -o <output_file> input_file1 [input_file2] ... 
+```
+
+<span style="font-family: Courier"> After using featureCounts, you can use your command line tools:
+```
+cut -f1,7,...
+```
+<span style="font-family: Courier"> To cut the columns you need.
+
+
 ## <span style="font-family: Courier"> bedtools
 
 ```
@@ -152,6 +165,11 @@ genomeCoverageBed -ibam Spm.sorted.bam -bg -split > Spm.bdg
 
 <span style="font-family: Courier">  Cuffdiff is a program included in cufflinks. You can use this program to find significant changes in transcript expression. Use `cuffdiff -h` to look for the manual.
 
+> <span style="font-family: Courier"> When cuffdiff give you all 0 counts, there might be something wierd with your sam file. The name of the chromosome might be named wrong. Instead of naming them 'chrN' they are just named with 'N'.
+
+## <span style="font-family: Courier"> At Last ... DEseq2
+
+<span style="font-family: Courier"> I think DEseq2 might need a seperate article.
 
 ## <span style="font-family: Courier"> Others
 
