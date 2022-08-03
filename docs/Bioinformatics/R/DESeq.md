@@ -20,7 +20,7 @@ publish_date: 2022.8.3
 
 - <span style="font-family: Courier"> The DESeq2 [tutorial](https://genviz.org/module-04-expression/0004/02/01/DifferentialExpression/) made by Griffith lab of Washington University. Which is surprisingly detailed when it comes to plotting.
 
-## <span style="font-family: Courier"> The Basic Workflow of DESeq2
+## <span style="font-family: Courier"> Getting Ready for DESeq2
 
 <span style="font-family: Courier">  In our RNA-seq workflow, we used cuffdiff to get a general differential expression result, from it, you can easily see which genes are expressed more, which are suppressed, in other words, which genes have a significant count difference from the other genes.
 
@@ -75,3 +75,17 @@ dds <- dds[rowSums(counts(dds)) > 5,]
 <span style="font-family: Courier"> Then, we use the function `DESeqDataSetFromMatrix()` from DESeq2 package to input our raw data. `colData` is the matrix we made earlier containing the data for row names and types and all those stuff. `design = ~condtion` means that the data is designed by the factor `condition` in the `colData` variable. In designed, I mean that the DESeq process will perform the differential expression analysis based on the different conditions of the experiments. The conditions are also set manually. You can add another column in the `colData` matrix called `time`, and set the design to `design = ~condition + time`, DESeq will restrain the effects of condition and focus on the time factor. For more information, see [this blog](https://www.biostars.org/p/278684/) on BioStars.
 
 <span style="font-family: Courier">  We can check the dimensions of dds using `dim(dds)`. We could remove the results when the gene's counts are less than 5 in total, by reassigning the value of dds to `dds[rowSums(counts(dds)) > 5,]`. Thus we got our DESeq Dataset, named `dds`, and we can happily perform differential expression analysis on it!~
+
+### <span style="font-family: Courier"> Finally, the DESeq analysis
+
+<span style="font-family: Courier"> The actual analysis part is really easy to understand, and doesn't require a lot of code of brain.
+
+```R
+# perform the differential expression analysis
+dds <- DESeq(dds)
+res <- results(dds)
+```
+
+<span style="font-family: Courier"> Just type these words and everything will be done in the background thanks to our lovely DESeq2 developers. The deeper truth behind all the analysis is much more complex, and I don't think I fully understand it. I will leave a link here to the [lovely Indian girl's video](https://www.youtube.com/watch?v=0b24mpzM_5M), and I might make another whole chapter just talking about how it works. But for us who are just using it and only cares about the final output data, these two lines of code is enough.
+
+## <span style="font-family: Courier"> Plot Your Data
