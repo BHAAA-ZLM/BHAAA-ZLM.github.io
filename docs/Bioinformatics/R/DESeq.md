@@ -103,7 +103,7 @@ res <- results(dds)
 plotMA(res, ylim = c(-3,3))
 ```
 
-<img src="./plotMA.png" width=600 tab="MAplot from DESeq2" title="MAplot from DESeq2">
+<img src="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io/blob/main/docs/Bioinformatics/R/DEseq/plotMA.png?raw=true" width=600 tab="MAplot from DESeq2" title="MAplot from DESeq2">
 
 <span style="font-family: Courier"> But this MA plot only have two colours, and is rather lame. With ggplot's function geom_point, we could make a similar MA plot.
 
@@ -120,7 +120,7 @@ ggplot(deseq2ResDF, aes(baseMean, log2FoldChange, colour = padj)) +
   scale_colour_gradient( high = "#f8ff2b", low = "#ff2b2b", space = "Lab", na.value = "grey50", guide = "colourbar", aesthetics = "colour")
 ```
 
-<img src="./ggplotMA2.png" width=600 tab="MAplot from ggplot" title="MAplot from ggplot">
+<img src="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io/blob/main/docs/Bioinformatics/R/DEseq/ggplotMA2.png?raw=true" width=600 tab="MAplot from ggplot" title="MAplot from ggplot">
 
 <span style="font-family: Courier">  By adding a series of constraints, we can make the geom_point look just like our MAplot. But first, we need to input our DESeq Data as a dataframe, and than add a new column called significant to the end of the dataframe. Remember to add `scale_x_log10` or else it will display the original counts, which are massive.
 
@@ -128,7 +128,7 @@ ggplot(deseq2ResDF, aes(baseMean, log2FoldChange, colour = padj)) +
 
 <span style="font-family: Courier"> Heatmaps are often used to show the difference between two groups of data, for example the experiment and the control. We can use the data we got from DESeq to plot a wonderful heatmap.
 
-<img src="./ComplexHeatMap.png" width=600 tab="a complex heatmap" title="a complex heatmap">
+<img src="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io/blob/main/docs/Bioinformatics/R/DEseq/ComplexHeatMap.png?raw=true" width=600 tab="a complex heatmap" title="a complex heatmap">
 
 <span style="font-family: Courier"> A fantastic heatmap tutorial can be found [here](https://www.youtube.com/watch?v=ht1r34-ifVI&list=PLi1VnGoeDGjvHvl83QySD2oAQYFHPRYso&index=8). 
 
