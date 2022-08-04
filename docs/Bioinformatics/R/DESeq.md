@@ -2,7 +2,7 @@
 
 author: Lumi
 author_gh_user: BHAAA-ZLM
-read_time: 30min
+read_time: 1hour
 publish_date: 2022.8.3
 
 ---
@@ -89,3 +89,122 @@ res <- results(dds)
 <span style="font-family: Courier"> Just type these words and everything will be done in the background thanks to our lovely DESeq2 developers. The deeper truth behind all the analysis is much more complex, and I don't think I fully understand it. I will leave a link here to the [lovely Indian girl's video](https://www.youtube.com/watch?v=0b24mpzM_5M), and I might make another whole chapter just talking about how it works. But for us who are just using it and only cares about the final output data, these two lines of code is enough.
 
 ## <span style="font-family: Courier"> Plot Your Data
+
+<span style="font-family: Courier"> After we obtained our data from DESeq, we need to know how to show everyone else in a clear and fasionable way, what is happening in our experiments. That's where our beautiful plots come. A wide variaty of plots can be used to express our data, and it's best if we know how to draw each one of them, and more importantly, the essence behind every plot.
+
+<span style="font-family: Courier"> The knowledge of the plotting part mainly comes from the Griffith lab website, which is [here](https://genviz.org/module-04-expression/0004/02/01/DifferentialExpression/). There might be some websites helpful for individual plotting, I will list each of the websites in their own part.
+
+### <span style="font-family: Courier"> The MA plot
+
+<span style="font-family: Courier"> [MAplots](https://en.wikipedia.org/wiki/MA_plot) are plots that can display the difference of measurements between two sets of data.
+
+<span style="font-family: Courier"> DESeq2 have it's own MAplotting function. Which is simply:
+```R
+plotMA(res, ylim = c(-3,3))
+```
+
+<img src="./plotMA.png" width=600 tab="MAplot from DESeq2" title="MAplot from DESeq2">
+
+<span style="font-family: Courier"> But this MA plot only have two colours, and is rather lame. With ggplot's function geom_point, we could make a similar MA plot.
+
+```R
+library(ggplot2)
+deseq2ResDF <- as.data.frame(res) ## convert the result file into a data frame
+deseq2ResDF$significant <- ifelse(deseq2ResDF$padj < .1, "Significant", NA) ## a new column for significance
+
+ggplot(deseq2ResDF, aes(baseMean, log2FoldChange, colour = padj)) + 
+  geom_point(size=0.5) + scale_y_continuous(limits=c(-3, 3)) + 
+  scale_x_log10() + geom_hline(yintercept = 0, colour="darkorchid4", size=1, linetype="longdash") + 
+  labs(x="mean of normalized counts", y="log fold change") + 
+  theme_bw() + geom_density_2d(colour="black", size=0.25) +
+  scale_colour_gradient( high = "#f8ff2b", low = "#ff2b2b", space = "Lab", na.value = "grey50", guide = "colourbar", aesthetics = "colour")
+```
+
+<img src="./ggplotMA2.png" width=600 tab="MAplot from ggplot" title="MAplot from ggplot">
+
+<span style="font-family: Courier">  By adding a series of constraints, we can make the geom_point look just like our MAplot. But first, we need to input our DESeq Data as a dataframe, and than add a new column called significant to the end of the dataframe. Remember to add `scale_x_log10` or else it will display the original counts, which are massive.
+
+### <span style="font-family: Courier"> Heatmap
+
+<span style="font-family: Courier"> Heatmaps are often used to show the difference between two groups of data, for example the experiment and the control. We can use the data we got from DESeq to plot a wonderful heatmap.
+
+<img src="./ComplexHeatMap.png" width=600 tab="a complex heatmap" title="a complex heatmap">
+
+<span style="font-family: Courier"> A fantastic heatmap tutorial can be found [here](https://www.youtube.com/watch?v=ht1r34-ifVI&list=PLi1VnGoeDGjvHvl83QySD2oAQYFHPRYso&index=8). 
+
+```R
+library(DESeq2)
+library(ComplexHeatmap)
+library(RColorBrewer)
+library(circlize)
+```
+
+<span style="font-family: Courier"> Four libraries are used to draw this kind of heatmap. 
+
+```R
+dds_sig <- subset(deseq2ResDF, significant == "Significant")
+dds_sig <- dds_sig[(dds_sig$baseMean > 50) & (abs(dds_sig$log2FoldChange) > 2),]
+dds_sig <- dds_sig[order(dds_sig$log2FoldChange, decreasing = T),]  
+```
+
+<span style="font-family: Courier"> We first make a subset of our result matrix based on the significance (which comes from the padj number, usually padj <.1 can be considered significant). Then we filter this data by deleting the rows that have very small baseMean number (which means it's probably background noise), and choose those genes that have the largest foldchange (which are the most significant genes). Then we order our data so that the genes that have the largest change are at the first and last rows of the matrix.
+
+```R
+rlog_out <- rlog(dds, blind = F)
+mat <- assay(rlog_out)[rownames(dds_sig),rownames(coldata)]
+colnames(mat) <- rownames(coldata)
+base_mean <- rowMeans(mat)
+```
+
+<span style="font-family: Courier"> Then we perform the rlog function on the DESeq Dataset to calculate the [Z-score](https://en.wikipedia.org/wiki/Standard_score) for the genes. Because the rlog_out is another dataset, we transform it into another matrix and set the column and row name of the matrix.
+
+```R
+mat_scaled <- t(apply(mat, 1, scale))
+colnames(mat_scaled) <- colnames(mat)
+```
+
+<span style="font-family: Courier">  Then we [scale](https://en.wikipedia.org/wiki/Scaling_(geometry)) the matrix, which I guess is similar to the SVD decomposition, to get their influence factors on the difference. In our case, the scaling is more like normalizing the data of each row of mat, thus setting a global standard to express the difference between each group. Then set the names of our new matrix, and then we are done. 
+
+```R
+rows_keep <- c(seq(1:25), seq((nrow(mat_scaled) - 25), nrow(mat_scaled)))
+
+l2_val <- as.matrix(dds_sig[rows_keep,]$log2FoldChange)
+colnames(l2_val) <- "logFC"
+
+mean_val <- as.matrix(dds_sig[rows_keep,]$baseMean)
+colnames(mean_val) <- "AveExpr"
+```
+
+<span style="font-family: Courier"> Then we chose the 50 genes that have the largest and smallest foldchange to plot. We also want to plot their log2FoldChange value and baseMean value, so we extract them from the original sorted data (not from the normalized matrix).
+
+```R
+col_logFC <- colorRamp2(c(min(l2_val),0,max(l2_val)),c("blue","white","red"))
+col_AveExpr <- colorRamp2(c(quantile(mean_val)[1], quantile(mean_val)[4]), c("white","red"))
+```
+
+<span style="font-family: Courier"> We set the colour for our log(FoldChange) and baseMean sub-heatmap so that it matches our main matrix.
+
+```R
+h1 <- Heatmap(mat_scaled[rows_keep,], cluster_columns = T, cluster_rows = F,
+              column_labels = colnames(mat_scaled), name = "Z-score")
+
+ha <- HeatmapAnnotation(summary = anno_summary(gp = gpar(fill = 2), height = unit(2, "cm")))
+h2 <- Heatmap(l2_val, row_labels = rownames(dds_sig[rows_keep,]),
+              cluster_rows = F, name = "LogFC", top_annotation = ha,
+              col = col_logFC, 
+              cell_fun = function(j, i, x, y, w, h, col){
+                grid.text(round(l2_val[ i, j], 2), x, y)
+              })
+
+h3 <- ComplexHeatmap::Heatmap(mean_val, row_labels = rownames(dds_sig[rows_keep,]),
+              cluster_rows = F, name = "AveExpr", 
+              col = col_AveExpr, 
+              cell_fun = function(j,i,x,y,w,h,col){
+                grid.text(round(mean_val[ i, j], 2), x, y)
+              })
+
+h <- h1 + h2 + h3
+h
+```
+
+<span style="font-family: Courier"> Then we finally plot the heatmap. `h1` is the main heatmap which demonstrates the expression difference of each gene in different group. `h2` and `ha` are bound together, `h2` shows the fold change of each individual gene, and `ha` is a small heatmap annotation showing the range of log(foldChange). At last `h3` is the baseMean value heatmap. We then combine all three graphs together, and get our final complex heatmap.
