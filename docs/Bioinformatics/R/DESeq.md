@@ -208,3 +208,37 @@ h
 ```
 
 <span style="font-family: Courier"> Then we finally plot the heatmap. `h1` is the main heatmap which demonstrates the expression difference of each gene in different group. `h2` and `ha` are bound together, `h2` shows the fold change of each individual gene, and `ha` is a small heatmap annotation showing the range of log(foldChange). At last `h3` is the baseMean value heatmap. We then combine all three graphs together, and get our final complex heatmap.
+
+### <span style="font-family: Courier"> Gene Ontology
+
+```R
+# BiocManager::install("AnnotationDbi")
+# BiocManager::install
+library(clusterProfiler)
+library(AnnotationDbi)
+library(org.Hs.eg.db)
+```
+
+<span style="font-family: Courier"> The three R packages we need to plot a gene ontology mapping.
+
+```R
+gene_up <- rownames(dds_sig[dds_sig$log2FoldChange > 1.5,])
+```
+
+<span style="font-family: Courier"> Filter out the genes that have the log2FoldChange bigger than 1.5. Which are the most effected pathways.
+
+```R
+GO_up <- enrichGO(gene = gene_up, OrgDb = "org.Hs.eg.db", keyType = "SYMBOL", ont = "BP")
+```
+
+<span style="font-family: Courier"> We then perform the gene ontology analysis on our genes, the gene ontology package can match each gene to their relating pathway. Our gene is a human gene, so we use the human reference, thus the `org.Hs.eg.db` (if we need the mouse reference, we can use `org.Mm.eg.db`). `keyType` might be ENSEMBL or SYMBOL, depending on the type of your gene's name. For `ont` we usually choose BP.
+
+<img src="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io/blob/main/docs/Bioinformatics/R/DEseq/GOtypes.png?raw=true" width=600 title="3 GO type" alt="3 GO type">
+
+```R
+up_plot <- plot(barplot(GO_up, showCategory = 20))
+up_plot
+```
+<span style="font-family: Courier"> Then we plot the first 20 pathways, and thus show what pathways our experiment influence most. The graph looks something like this. We can make it look more beautiful by adjusting different variables.
+
+<img src="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io/blob/main/docs/Bioinformatics/R/DEseq/GO.png?raw=true" width=600 title="GO plot" alt="GO plot">
