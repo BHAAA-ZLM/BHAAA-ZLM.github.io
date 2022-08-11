@@ -86,6 +86,7 @@ nav:
     - Computer Science: CS/index.md
     - Learning CS:
       - Learning Markdown: CS/Learn CS/Markdown.md
+      - Learning R: CS/Learn CS/R.md
     - Projects:
       - My First Project - ChessKing: CS/Projects/ChessKing.md
   - Learning:

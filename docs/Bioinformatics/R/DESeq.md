@@ -14,6 +14,8 @@ publish_date: 2022.8.3
 
 - <span style="font-family: Courier"> A [wonderful girl](https://www.youtube.com/watch?v=OzNzO8qwwp0&t=226s) teaching DESeq2. Her channel is so rich in knowledge, everyone, subscribe now!!!
 
+- <span style="font-family: Courier"> Another [youtuber](https://www.youtube.com/channel/UCuf90yPD_Yx53xZyVLtvRmA/videos) who teaches all the different plots in both R and python.
+
 - <span style="font-family: Courier"> The original [manual](http://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#countmat) for DESeq2.
 
 - <span style="font-family: Courier"> Another DESeq2 [tutorial](https://lashlock.github.io/compbio/R_presentation.html) made very thoroughly and clear, I love it!
@@ -126,6 +128,8 @@ ggplot(deseq2ResDF, aes(baseMean, log2FoldChange, colour = padj)) +
 
 ### <span style="font-family: Courier"> Heatmap
 
+<span style="font-family: Courier"> The heatmap knowledge comes from this [video](https://www.youtube.com/watch?v=ht1r34-ifVI).
+
 <span style="font-family: Courier"> Heatmaps are often used to show the difference between two groups of data, for example the experiment and the control. We can use the data we got from DESeq to plot a wonderful heatmap.
 
 <img src="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io/blob/main/docs/Bioinformatics/R/DEseq/ComplexHeatMap.png?raw=true" width=600 tab="a complex heatmap" title="a complex heatmap">
@@ -211,6 +215,8 @@ h
 
 ### <span style="font-family: Courier"> Gene Ontology
 
+<span style="font-family: Courier"> The gene ontology knowledge comes from this [video](https://www.youtube.com/watch?v=JPwdqdo_tRg).
+
 ```R
 # BiocManager::install("AnnotationDbi")
 # BiocManager::install
@@ -242,3 +248,24 @@ up_plot
 <span style="font-family: Courier"> Then we plot the first 20 pathways, and thus show what pathways our experiment influence most. The graph looks something like this. We can make it look more beautiful by adjusting different variables.
 
 <img src="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io/blob/main/docs/Bioinformatics/R/DEseq/GO.png?raw=true" width=600 title="GO plot" alt="GO plot">
+
+### <span style="font-family: Courier"> Volcano Plot
+
+<span style="font-family: Courier"> The volcano plot knowledge comes from this [video](https://www.youtube.com/watch?v=vRr78s37CI4).
+
+<span style="font-family: Courier"> Volcano Plots can show you the differentially expressed genes, using the EnhancedVolcano library, we can easily plot amazing volcano plots easily.
+
+```R
+res_vol <- as.data.frame(res0.01[res0.01$baseMean > 200, ])
+
+library(EnhancedVolcano)
+
+sel_tab <- c("DDX6","IFI27","HPGD","GPI","PRF1")
+
+EnhancedVolcano(res_vol, x = "log2FoldChange", y = "padj", lab = rownames(res_vol),
+                selectLab = sel_tab, title = "DDX6KO", subtitle = "")
+```
+
+<span style="font-family: Courier"> First we filter the low count data, and pass it into a dataframe. We could plot out the selected gene tabs using the variable `sel_tab`.
+
+<img src="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io/blob/main/docs/Bioinformatics/R/DEseq/DDX6volPlot.png?raw=true" title="volcano plot" tab="volcano plot" width=600>
