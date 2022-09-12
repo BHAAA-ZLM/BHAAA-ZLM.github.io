@@ -70,6 +70,8 @@ theme:
 nav:
   - Life:
     - Life: Life/index.md
+    - Books I Read: 
+      - The Art of Statistics: Life/Books/TAOS.md
   - Bioinformatics:
     - Bioinformatics is not quantum mechanics: Bioinformatics/index.md
     - RNA-Seq:
