@@ -10,7 +10,7 @@ Hi! My name is Lumi. The name came from my Chinese name Luming. I am currently a
 
 * ✉️ Email: 12112618@mail.sustech.edu.cn
 * 😍 Hobbies: Watch Bilibili during spare times, Learn new stuff, and Exercises
-* 🤔 Dreams: Study aboard for a Master degree
+* 🤔 Dreams: Study aboard for a Doctor degree
 
 ## About the Blog
 Current thoughts are about sharing my life experiences in SUSTech, recording the experiments I did in the school, and some new knowledge I found very interesting. I might add new things to the blog, but I will try my best to keep these three blogs up-to-date.
