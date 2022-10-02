@@ -134,6 +134,7 @@ samtools view [options] <in.bam>|<in.sam>|<in.cram> [region ...]
 - <span style="font-family: Courier"> -q int Have mapping quality >= int.
 - <span style="font-family: Courier"> -f FLAG Have all of the flags present.
 - <span style="font-family: Courier"> -@ int The number of threads. 
+- <span style="font-family: Courier"> -b output bam file
 
 <span style="font-family: Courier"> `samtools sort` is sorting the data by your need.
 
