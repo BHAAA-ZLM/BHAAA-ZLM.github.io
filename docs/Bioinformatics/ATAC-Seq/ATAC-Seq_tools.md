@@ -134,16 +134,16 @@ bamCoverage -b mapping/$sampleid.dup.sort.bam -p 12 --normalizeUsing CPM --binSi
 
 <span style="font-family: Courier"> ComputeMatrix tool compares different peaks with the bigwig file to get where the location of the peaks.
 
-<span style="font-family: Courier">  **Referece Point**
+<span style="font-family: Courier">  **Reference Point**
 <span style="font-family: Courier"> Because of my spupidity, I actually stuck the summit bed file (with sequence length 1) into computeMatrix, and sadly the other method of scale-region didn't work. So we switched to reference point (because in principle, a summit can also used to draw a heatmap). It did finish calculating the matrix, but I don't think the result is correct since instead of using the middle of the peak sequence, we only used the summit as the middle, which is not the case in every peak.
 <span style="font-family: Courier"> **However, after careful consideration, this is actually what we need to use during ATAC-seq**
+<span style="font-family: Courier"> Yeah, I'm back on the right track. We actually need to use the summits bed file and reference point to draw our ATAC-Seq heatmap. What we cared is the amount of reads in proximity to our peak (i.e. our summit), so using the summit as the middle point is completely right.
+
 ```bash
 computeMatrix reference-point -S /data/bio-zhanglm/xenopus/09_Bigwig/st9-ATAC-${i}.bw \
         -R /data/bio-zhanglm/xenopus/08_Peak/st9-${i}_summits.bed \
         -o /data/bio-zhanglm/xenopus/10_Graph/st9-${i}-matrix.gz -a 1500 -b 1500;
 ```
-
-> <span style="font-family: Courier">  The input file `st9-${i}_summits.bed` is not the correct file to input in this case. But we can still plot a heatmap. Because using the summits.bed in reference-point mode does not violate the rules. 
 
 #### <span style="font-family: Courier"> plotHeatmap
 <span style="font-family: Courier"> With the data you got from computeMatrix, you can plot a heatmap showing the amount of reads on either end of your peak.
