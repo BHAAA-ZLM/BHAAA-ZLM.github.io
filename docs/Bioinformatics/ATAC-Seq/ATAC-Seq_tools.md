@@ -5,7 +5,7 @@ read_time: 30min
 publish_date: 2022.09.28
 ---
 
-## <span style="font-family: Courier">  Tools involved in ATAC-Seq
+## <span style="font-family: Courier">  ATAC-Seq pipeline
 <span style="font-family: Courier">  In the introduction (which I didn't write at 28 of Sep), we introduced the basic workflow of ATAC-Seq. In this note, I will introduce each step carefully with codes.
 
 ### <span style="font-family: Courier">  Pre-analysis: Quality Control & Alignment
