@@ -78,7 +78,7 @@ samtools sort -@ 12 mapping/$sampleid.dup.bam > mapping/$sampleid.dup.sort.bam
 ### <span style="font-family: Courier">  Post-alginment: Quality Control
 
 #### <span style="font-family: Courier"> get_tlen
-Getting the fragment length.
+<span style="font-family: Courier">  Getting the fragment length.
 ```bash
 python ~/bin/get_tlen.py -i mapping/$sampleid.dup.sort.bam > mapping/$sampleid.dup.sort.bam.tlen.txt
 ```

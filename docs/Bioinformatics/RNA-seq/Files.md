@@ -119,17 +119,6 @@ By matching the ASCII table characters to their Q code under certain protocals, 
 
 <img src="https://learn.gencore.bio.nyu.edu/wp-content/uploads/2018/01/Screen-Shot-2018-01-07-at-5.02.26-PM.png" title="CIGAR example" alt="CIGAR example" width=600>
 
-#### <span style="font-family: Courier">**An Example**
-
-<span style="font-family: Courier">
-The alignment with the reference.
-
-<img src="http://www.biotrainee.com/data/attachment/forum/201808/18/114955jttmanu19aqncdp9.png" width=600 title="Alignment" alt="Alignment">
-
-<span style="font-family: Courier">
-The output SAM file.
-
-<img src="http://www.biotrainee.com/data/attachment/forum/201808/18/115019r2bcz336lfdx53zf.png" width=600 title="The SAM output" alt="The SAM output">
 
 ### <span style="font-family: Courier">**BAM**
 

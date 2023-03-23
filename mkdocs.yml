@@ -86,6 +86,8 @@ nav:
     - Biology!!!: Biology/index.md
     - Experiments:
       - Genome-Why are we different: Biology/Experiments/BIOS201.md
+    - Structural Biology:
+      - Installing Coot on Mac: Biology/Struct/coot_install.md
   - CS:
     - Computer Science: CS/index.md
     - Learning CS:
