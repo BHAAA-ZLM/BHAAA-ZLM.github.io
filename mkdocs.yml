@@ -30,6 +30,7 @@ theme:
     # text: Merienda One
     # text: Bubblegum Sans
     # text: Megrim
+    text: Libre Baskerville
 
   extra_css:
     - stylesheets/extra.css
@@ -99,7 +100,7 @@ nav:
     - Learning: Learning/index.md
     - Chemistry:
       - Chemistry Experiments: Learning/Chemistry/Experiments.md
-    - Quantum Mechanics: Learning/Quantum/quantum.md
+    - Quantum Mechanics: Learning/Quantum/Basics.md
   - About:
     - Welcome to Lumi's Blog!: About/index.md
     - About Me: About/SelfIntro/SelfIntro.md

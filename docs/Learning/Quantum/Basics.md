@@ -1,6 +1,11 @@
-# Learning Quantum Mechanics
+---
+author: Lumi
+author_gh_user: BHAAA-ZLM
+read_time: 30min 
+publish_date: 2022.09.28
+---
 
-## Probability
+## Probability Rules
 
 For a wave function $\Psi(x,t)$, we can solve it with the __Schrodinger Equation__:
 
@@ -69,4 +74,26 @@ $$ = \frac{i \hbar}{2m} \Big( \Psi^* \frac{\partial \Psi}{\partial x} - \frac{\p
 
 Because the wave function must be zero at $-\infty$ and $\infty$. Thus the probability is independent of time. QED
 
+Interestingly, problem 1.17 in the book gave an example of a particle that is not stable, and have a half life. In that case, the probability function $P(t)$ becomes dependent on time. We can describe this by adding an imaginary part to $V$.
+
+$$ V = V_0 - i \frac{\hbar}{2\tau} $$
+
+Where $\tau$ is the half life of the particle. The imaginary part of $V$ is called the __decay term__. 
+
 ---
+
+In the quantum mechanic's world, particles don't follow the normal laws of mechanics, but interestingly there is the __Ehrenfest's theorem__. Which states that the expectation values obey the classical laws.
+
+$$ \langle x \rangle = \int_{-\infty}^{\infty} x | \Psi (x,t) |^2 dx $$
+
+$$ \langle p \rangle = m \frac{d \langle x \rangle}{dt} = \int_{-\infty}^{\infty} \Psi^* \Big( -i \hbar \frac{\partial \Psi}{\partial x} \Big) dx $$
+
+Here we also introduces another new operator, for any quantity related to $x$ and $p$, $Q(x,p)$, the expectation of this quantity is:
+
+$$ \langle Q \rangle = \int_{-\infty}^{\infty} \Psi^* Q(x, -i \hbar \frac{\partial}{\partial x}) \Psi dx $$
+
+For a given particle, it is impossible to know it's position and momentum at the same time. This is called the __Heisenberg Uncertainty Principle__. The uncertainty principle is a direct consequence of the wave nature of matter. The uncertainty principle is:
+
+$$ \sigma_x \sigma_p \geq \frac{\hbar}{2} $$
+
+Where $\sigma_x$ is the standard deviation of $x$, and $\sigma_p$ is the standard deviation of $p$.
