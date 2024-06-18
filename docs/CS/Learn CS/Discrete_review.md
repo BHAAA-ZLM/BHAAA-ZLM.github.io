@@ -1,8 +1,10 @@
-# Discrete Mathematics 2024 Finals Review
-
-Lumi 
-
-12112618
+---
+title: Learning Discrete Mathematics
+author: Lumi
+author_gh_user: BHAAA-ZLM
+read_time: 33min
+publish_date: 2024.6.18
+---
 
 ## Logic and Mathematical Proofs
 
