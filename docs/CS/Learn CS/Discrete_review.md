@@ -407,7 +407,7 @@ The characteristic equation is:
 
 $$ x^k - c_1 x^{k-1} - c_2 x^{k-2} - ... - c_k = 0 $$
 
-Suppose these characteristic roots $\lambda_1, \lambda_2, ..., lambda_r$ have multiplicities $m_1, m_2, ... m_r$.
+Suppose these characteristic roots $\lambda_1, \lambda_2, ..., \lambda_r$ have multiplicities $m_1, m_2, ... m_r$.
 Then the general solution is:
 
 $$ a_n = \sum_{i=1}^r \sum_{j=1}^{m_i} c_{ij} n^{j-1} \lambda_i^n $$
