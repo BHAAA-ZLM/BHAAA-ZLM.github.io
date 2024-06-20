@@ -650,7 +650,7 @@ A partition of a set $A$ is a collection of nonempty subsets of $A$, i.e. $A_1, 
 
 1. $A_i \cap A_j = \emptyset$ for all $i \not = j$.
 
-2. $ \bigcup_{i = 1}^k = A$.
+2. $\bigcup_{i = 1}^k = A$.
 
 Theorem: The equivalence classes of an equivalence relation on a set $A$ form a partition of $A$.
 
