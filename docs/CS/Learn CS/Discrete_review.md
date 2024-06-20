@@ -53,10 +53,15 @@ An argument form with premises $p_1, p_2, ..., p_n$ and conclusion $c$ is valid 
 | \(\begin{array}{ll} & p \\ & q \\ \hline \therefore & p \land q \\ \end{array}\) | \((p \land q) \rightarrow (p \land q)\) | Conjunction |
 
 **Methods of Proving Theorems**:
+
 1. Direct proof: Prove $p \rightarrow q$ directly.
+
 2. Proof by contrapositive: Prove $\neg q \rightarrow \neg p$.
+
 3. Proof by contradiction: Assume $\neg q \land p$ are true, and show that this leads to a contradiction.
+
 4. Proof by cases: Prove $p \rightarrow q$ by dividing $p$ into cases, show it's true for all possible cases.
+
 5. Proof of equivalence: Prove $p \leftrightarrow q$ by proving $p \rightarrow q$ and $q \rightarrow p$.
 
 Examples:
@@ -133,8 +138,11 @@ Set Identity Laws:
 | $\bar{A \cup B} = \bar A \cap \bar B$ $\\$ $\bar{A \cap B} = \bar A \cup \bar B$ | De Morgan's Law |
 
 **Proof of Set Identities**:
+
 1. Using membership tables.
+
 2. (e.g. $A=B$) By showing $A \subseteq B$ and $B \subseteq A$.
+
 3. Use set builder and logical equivalences. 
 
 Example for 3:
@@ -208,18 +216,25 @@ $a$ and $b$ are congruent modulo $m$ if and only if there exists an integer $k$ 
 
 **Theorem**:
 If $a \equiv b \pmod{m}$ and $c \equiv d \pmod{m}$, then:
+
 1. $a + c \equiv b + d \pmod{m}$.
+
 2. $ac \equiv bd \pmod{m}$.
 
 **Corollary**:
 Let $m$ be a positive integer and let $a$ and $b$ be integers. If $a \equiv b \pmod{m}$, then 
+
 1. $(a + b) \pmod{m} = (a \pmod{m} + b \pmod{m}) \pmod{m}$.
+
 2. $(a \cdot b) \pmod{m} = (a \pmod{m} \cdot b \pmod{m}) \pmod{m}$.
 
 Computing $b^n \mod m$: 
 1. Let $n = (a_{k-1} ... a_1 a_0)_2$.
+
 2. Then $b^n = b^{(a_{k-1} ... a_1 a_0)_2} = b^{2^{k-1}a_{k-1}} \cdot ... \cdot b^{2a_1} \cdot b^{a_0}$.
+
 3. Recall that $a \cdot b \pmod{m} = (a \pmod{m} \cdot b \pmod{m}) \pmod{m}$.
+
 4. Successively find $b \mod m$, $b^2 \mod m$, $b^4 \mod m$, ... until $b^{2^{k-1}} \mod m$. Multiply the components of $b^{2^i}$ when $a_i = 1$.
 
 Pseudo code for computing $b^n \mod m$:
@@ -252,7 +267,9 @@ The least common multiple of integers $a$ and $b$, denoted by $\text{lcm}(a,b)$,
 **Euclidean Algorithm**:
 The Euclidean algorithm is an efficient method for computing the greatest common divisor of two integers $a$ and $b$.
 1. If $a = 0$, then $\gcd(a,b) = b$.
+
 2. If $b = 0$, then $\gcd(a,b) = a$.
+
 3. Otherwise, apply the Euclidean algorithm to $b$ and $a \mod b$.
 
 For example $\gcd(287, 91)$:
@@ -329,17 +346,26 @@ If $p$ is a prime number and $a$ is an integer not divisible by $p$, then:
 $$ a^{p-1} \equiv 1 \pmod{p}$$
 
 **RSA Cryptosystem**:
+
 1. Choose two distinct prime numbers $p$ and $q$.
+
 2. Compute $n = pq$ and $\phi(n) = (p-1)(q-1)$.
+
 3. Choose an integer $e$ such that $1 < e < \phi(n)$ and $\gcd(e, \phi(n)) = 1$.
+
 4. Compute the unique integer $d$ such that $1 \leq d < \phi(n)$ and $ed \equiv 1 \pmod{\phi(n)}$.
+
 5. The public key is $(n,e)$ and the private key is $(n,d)$.
+
 6. To encrypt a message $M$, compute $C = M^e \pmod{n}$.
+
 7. To decrypt a ciphertext $C$, compute $M = C^d \pmod{n}$.
 
 **Proof of RSA**: (Very short ver.)
 1. $C^d = M^{ed} = M^{k\phi(n) + 1} = M \cdot (M^{\phi(n)})^k$.
+
 2. By Fermat's Little Theorem, $M^{\phi(n)} \equiv 1 \pmod{n}$.
+
 3. Thus $C^d \equiv M \pmod{n}$.
 
 ## Mathematical Induction
@@ -348,21 +374,29 @@ $$ a^{p-1} \equiv 1 \pmod{p}$$
 Every nonempty set of nonnegative integers has a least element.
 
 **Weak Principle of Mathematical Induction**:
+
 1. Basic Step: Show that $P(0)$ is true.
+
 2. Inductive Step: Show that for all $k \geq 0$, if $P(k)$ is true, then $P(k+1)$ is true.
 
 **Strong Principle of Mathematical Induction**:
+
 1. Basic Step: Show that $P(0)$ is true.
+
 2. Inductive Step: Show that for all $k \geq 0$, if $P(0), P(1), ..., P(k)$ are true, then $P(k+1)$ is true.
 
 ## Recursion
 
 To specify a function on the basis of recurrence:
+
 1. Basis step (initial condition): specify the value of the function at $n = 0$ or other initial conditions.
+
 2. Recursive step: specify a rule of finding the value of the function from its values at smaller arguments.
 
 Finding the closed form of a recurrence relation:
+
 1. Guess the form of the solution. (with Top-down or bottom-up approach)
+
 2. Use mathematical induction to prove the correctness of the guess.
 
 **Solving Linear Homogeneous Recurrence Relations**:
@@ -483,9 +517,13 @@ $$G(x) = a_0 + a_1 x + a_2 x^2 + ... + a_k x^k ... = \sum_{k=0}^\infty a_k x^k $
 We can transfer the problem of a combination problem into a probelm of finding coefficient of $x^r$ of a combination of generating function.
 
 Common summation formula for generating functions:
+
 1. $\frac{1 - x^{n+1}}{1 - x} = 1 + x + x^2 + ... + x^n= \sum_{k=0}^n x^k$
+
 1. $(1-x)^{-1} = 1 + x + x^2 + ... = \sum_{k=0}^\infty x^k$
+
 1. $(1-ax)^{-1} = 1 + ax + a^2x^2 + ... = \sum_{k=0}^\infty a^k x^k$
+
 1. $(1-x)^{-2} = 1 + 2x + 3x^2 + ... = \sum_{k=0}^\infty (k+1)x^k$
 
 Can be used to solve linear recurrence relations.
@@ -609,7 +647,9 @@ $$ [a]_R = \{ x \in A | (a,x) \in R \} $$
 
 **Partition**:
 A partition of a set $A$ is a collection of nonempty subsets of $A$, i.e. $A_1, A_2, ... A_k$, such that:
+
 1. $A_i \cap A_j = \emptyset$ for all $i \not = j$.
+
 2. $ \bigcup_{i = 1}^k = A$.
 
 Theorem: The equivalence classes of an equivalence relation on a set $A$ form a partition of $A$.
@@ -776,6 +816,10 @@ Then consider the induction case with $|V_1| = k + 1$. Two cases could be discus
 **Isomorphic Graphs**:
 Two graphs $G_1 = (V_1, E_1)$ and $G_2 = (V_2, E_2)$ are isomorphic if there exists a bijection $f: V_1 \to V_2$ such that $(u,v) \in E_1$ if and only if $(f(u), f(v)) \in E_2$. Such a function $f$ is called an isomorphism.
 Can be checked with:
+
+
 1. Number of vertices and edges.
+
 2. Degree of vertices.
+
 3. Existence of circuits and paths with certain length etc.
