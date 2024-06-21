@@ -20,8 +20,11 @@ publish_date: 2024.6.21
 ## Formal Language
 
 Formal language for propositional logic $\mathscr{L}^P$ is has three types of symbols:
+
 1. Atomic propositions: $p, q, r, \ldots$
+
 2. Connectives: $\neg, \land, \lor, \rightarrow, \leftrightarrow$
+
 3. Parentheses: $(, )$
 
 **Atom$(\mathscr{L}^P)$**: 
@@ -29,8 +32,11 @@ Set of expressions of $\mathscr{L}^P$ consisting of a proposition symbol only.
 
 **Form$(\mathscr{L}^P)$**:
 An expression $A \in \text{Form}\left(\mathscr{L}^P\right)$ if and only if it satisfies the following conditions:
+
 1. $\text{Atom} (\mathscr{L}^P) \subseteq \text{Form} (\mathscr{L}^P)$
+
 2. If $A \in \text{Form} (\mathscr{L}^P)$, then $\neg A \in \text{Form} (\mathscr{L}^P)$
+
 3. If $A, B \in \text{Form} (\mathscr{L}^P)$, then $\left(A \land B\right), \left(A \lor B\right), \left(A \rightarrow B\right), \left(A \leftrightarrow B\right) \in \text{Form} (\mathscr{L}^P)$
 
 **Sub formula**: A formula $A$ is a sub formula of a formula $B$ if $A$ is a part of $B$. $A$ is a proper sub formula of $B$ if $A$ is a sub formula of $B$ and $A \neq B$.
@@ -42,8 +48,11 @@ Lemma: Every well-formed formula of $\mathscr{L}^P$ has an equal number of left 
 Lemma: Every proper prefix of a well-formed formula of $\mathscr{L}^P$ has more left parentheses than right parentheses. Every proper suffix of a well-formed formula of $\mathscr{L}^P$ has more right parentheses than left parentheses.
 
 **Precedence**:
+
 1. $(, )$ has the highest precedence.
+
 2. Precedence level: $\neg, \land, \lor, \rightarrow, \leftrightarrow$.
+
 3. Connectives are assumed to associate to the right. e.g. $A \land B \land C$ is equivalent to $A \land (B \land C)$.
 
 
