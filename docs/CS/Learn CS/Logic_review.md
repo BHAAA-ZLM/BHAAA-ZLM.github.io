@@ -8,8 +8,8 @@ publish_date: 2024.6.21
 
 <!-- # <span style="font-family: Courier">Learning Mathematical Logic -->
 
-
-## Proposition and Connectives
+## Predicate Logic
+### Proposition and Connectives
 
 **Proposition**: A proposition is a declarative sentence that can be judged as either true or false.
 
@@ -17,7 +17,7 @@ publish_date: 2024.6.21
 
 **Compound Proposition**: A proposition that involves the assembly of multiple propositions is called a compound proposition.
 
-## Formal Language
+### Formal Language
 
 Formal language for propositional logic $\mathscr{L}^P$ is has three types of symbols:
 
@@ -56,7 +56,7 @@ Lemma: Every proper prefix of a well-formed formula of $\mathscr{L}^P$ has more 
 3. Connectives are assumed to associate to the right. e.g. $A \land B \land C$ is equivalent to $A \land (B \land C)$.
 
 
-## Semantics
+### Semantics
 A truth valuation is a function $v : \text{Atom} (\mathscr{L}^P) \rightarrow \{0,1\}$.
 For $p \in \text{Atom} (\mathscr{L}^P)$, $v(p)$ or $p^v$ is the truth value of $p$ under valuation $v$.
 
@@ -77,12 +77,16 @@ Two formulas $A$ and $B$ are said to be logically equivalent if for every valuat
 $A$ and $B$ have same truth values in a truth table.
 $A \leftrightarrow B$ is a tautology.
 
-## Semantic Entailment
+### Semantic Entailment
 
 Let $\Sigma$ by a set of formulas ($\Sigma \subseteq \text{Form}(\mathscr{L}^P)$) and $A$ be a formula ($A \in \text{Form}(\mathscr{L}^P)$). We say:
+
 - $A$ is a logical consequence of $\Sigma$, or
+
 - $\Sigma$ (semantically) entails $A$, or
+
 - $\Sigma \models A$
+
 if and onlyl if for every valuation $v$, if $\Sigma^v = 1$ implies $A^v = 1$.
 
 If $\Sigma \not \models A$, then there exists a truth valuation $v$ such that $\Sigma^v = 1$ and $A^v = 0$.
@@ -103,17 +107,20 @@ A set of connectives is said to be adequate if every well-formed formula can be 
 
 Each of the sets $\{\neg , \land\}, \{\neg, \lor\}, \{\neg, \rightarrow\}$ is an adequate set of connectives.
 
-## Proof Systems
+### Proof Systems
 
 If there is a proof with premises $\Sigma$ and conclusion $A$, then we say that $A$ is a syntactic consequence of $\Sigma$.
 Denoted by: $\Sigma \vdash A$.
 
 3 types of proof systems:
+
 1. Natural deduction: Few axioms and many rules.
+
 2. Hilbert system: Many axioms and only one rule. 
+
 3. Resolution: Used to prove contradictions.
 
-### Natural Deduction
+#### Natural Deduction
 
 **Alphabet of ND**:
 
@@ -124,7 +131,7 @@ $$ \Sigma = \{(, ), \neg, \land, \lor, \to,\leftrightarrow, p, q, r, \dots\}$$
 2. If $A$, $B$ are formulas, then $(\neg A)$, $(A \land B)$, $(A \lor B)$, $(A \to B)$, $(A \leftrightarrow B)$ are formulas.
 3. Only expressions of $\Sigma$ that can be derived from the above rules are formulas.
 
-#### Inference rules:
+**Inference rules**:
 
 **Reflexivity (Premise)**: $ \Sigma \cup \{\alpha \} \vdash \alpha$.
 
@@ -135,17 +142,17 @@ A table of all inference rules:
 | $\land$ - Introduction | if $\Sigma \vdash \alpha$ and $\Sigma \vdash \beta$, then $\Sigma \vdash (\alpha \land \beta)$. | $\begin{array}{c} \alpha \\ \beta \\ \hline (\alpha \land \beta) \end{array}$ |
 | $\land$ - Elimination | if $\Sigma \vdash (\alpha \land \beta)$, then $\Sigma \vdash \alpha$ and $\Sigma \vdash \beta$. | $\begin{array}{c} (\alpha \land \beta) \\ \hline \alpha \end{array}$ and $\begin{array}{c} (\alpha \land \beta) \\ \hline \beta \end{array}$ |
 | $\to$ - Elimination | if $\Sigma \vdash \alpha$ and $\Sigma \vdash (\alpha \to \beta)$, then $\Sigma \vdash \beta$. | $\begin{array}{c} \alpha \\ (\alpha \to \beta) \\ \hline \beta \end{array}$ |
-| $\to$ - Introduction | if $\Sigma \cup \{\alpha\} \vdash \beta$, then $\Sigma \vdash (\alpha \to \beta)$. | $\begin{array}{c} \boxed{\begin{array}{c} \alpha \\ \vdots \\ \beta \end{array}} \\[8mm]  \hline \alpha \to \beta \end{array}$ |
+| $\to$ - Introduction | if $\Sigma \cup \{\alpha\} \vdash \beta$, then $\Sigma \vdash (\alpha \to \beta)$. | $\begin{array}{c} \boxed{\begin{array}{c} \alpha \\ \vdots \\ \beta \end{array}} \\  \hline \alpha \to \beta \end{array}$ |
 | $\lor$ - Introduction | if $\Sigma \vdash \alpha$, then $\Sigma \vdash (\alpha \lor \beta)$ and $\Sigma \vdash (\beta \lor \alpha)$. | $\begin{array}{c} \alpha \\ \hline (\alpha \lor \beta) \end{array}$ and $\begin{array}{c} \alpha \\ \hline (\beta \lor \alpha) \end{array}$ |
-| $\lor$ - Elimination | if $\Sigma \vdash (\alpha \lor \beta)$ and $\Sigma \cup \{\alpha\} \vdash \gamma$ and $\Sigma \cup \{\beta\} \vdash \gamma$, then $\Sigma \vdash \gamma$. | $\begin{array}{c} (\alpha \lor \beta) \\ \boxed{\begin{array}{c} \alpha \\ \vdots \\ \gamma \end{array}} \\[8mm] \boxed{\begin{array}{c} \beta \\ \vdots \\ \gamma \end{array}} \\[8mm] \hline \gamma \end{array}$ |
-| $\neg$ - Introduction | if $\Sigma \cup \{\alpha\} \vdash \perp$, then $\Sigma \vdash \neg \alpha$. | $\begin{array}{c} \boxed{\begin{array}{c} \alpha \\ \vdots \\ \perp \end{array}} \\[8mm] \hline \neg \alpha \end{array}$ |
+| $\lor$ - Elimination | if $\Sigma \vdash (\alpha \lor \beta)$ and $\Sigma \cup \{\alpha\} \vdash \gamma$ and $\Sigma \cup \{\beta\} \vdash \gamma$, then $\Sigma \vdash \gamma$. | $\begin{array}{c} (\alpha \lor \beta) \\ \boxed{\begin{array}{c} \alpha \\ \vdots \\ \gamma \end{array}} \\ \boxed{\begin{array}{c} \beta \\ \vdots \\ \gamma \end{array}} \\ \hline \gamma \end{array}$ |
+| $\neg$ - Introduction | if $\Sigma \cup \{\alpha\} \vdash \perp$, then $\Sigma \vdash \neg \alpha$. | $\begin{array}{c} \boxed{\begin{array}{c} \alpha \\ \vdots \\ \perp \end{array}} \\ \hline \neg \alpha \end{array}$ |
 | $\perp$ - Introduction | if $\Sigma \vdash \neg \alpha$ and $\Sigma \vdash \alpha$, then $\Sigma \vdash \perp$. | $\begin{array}{c} \neg \alpha \\ \alpha \\ \hline \perp \end{array}$ |
 | $\perp$ - Elimination | if $\Sigma \vdash \perp$, then $\Sigma \vdash \alpha$. | $\begin{array}{c} \perp \\ \hline \alpha \end{array}$ |
 | $\neg \neg$ - Elimination | if $\Sigma \vdash \neg \neg \alpha$, then $\Sigma \vdash \alpha$. | $\begin{array}{c} \neg \neg \alpha \\ \hline \alpha \end{array}$ |
 
 And the law of excluded middle: $\vdash (p \lor \neg p)$.
 
-## Soundness and Completeness
+### Soundness and Completeness
 
 $\Sigma \vdash A$ means that $A$ is a logical consequence (in the deduction system) of $\Sigma$.
 
@@ -170,9 +177,9 @@ Every logical consequence can be proved in this proof system.
 > 3. **Lemma 3**: If $\varnothing \vdash (\alpha_0 \to (\alpha_1 \to (\dots \to (\alpha_n \to A)\dots )))$, then $\{\alpha_0, \alpha_1, \dots, \alpha_n\} \vdash A$. Which is equivalent to $\Sigma \vdash A$.
 >> Direct proof (like pealing onions).
 
-# First Order Logic
+## First Order Logic
 
-## Syntax
+### Syntax
 
 **Domain**: 
 A non-empty set of objects.
@@ -227,7 +234,7 @@ $\alpha \in \text{Form}(\mathscr{L})$ if and only if it satisfies the following 
 
 4. If $\alpha \in \text{Form}(\mathscr{L})$ and $x$ is a variable, then $\forall x \alpha, \exists x \alpha \in \text{Form}(\mathscr{L})$.
 
-## Semantics
+### Semantics
 
 **Scope**:
 The scope of a quantifier is the formula that follows it. e.g. In $\forall x P(x) \land Q(x)$, the scope of $\forall x$ is $P(x) \land Q(x)$.
@@ -240,10 +247,12 @@ A formula is a sentence if all its variables are bound.
 
 **Closure**:
 The closure of a formula $\alpha$ is the set of all sentences that can be formed by replacing the free variables in $\alpha$ with constants.
+
 Universal closure of $\alpha$ is $\forall x_1 \forall x_2 \ldots \forall x_n \alpha$.
+
 Existential closure of $\alpha$ is $\exists x_1 \exists x_2 \ldots \exists x_n \alpha$.
 
-### Meanings
+#### Meanings
 To assign meanings to formulas of FOL, we need:
 
 - A domain $D$.
@@ -310,9 +319,10 @@ With a fix interpretation $I$ and environment $E$, the value of a well-formed fo
 
 Assignment:
 For any environment $E$ and domain element $d$, the new environment "$E$ with $x$ re-assigned to $d$" is denoted as $E[x \mapsto d]$., is given by:
+
 $$E[x \mapsto d](y) = \begin{cases} d & \text{if } y = x \\ E(y) & \text{otherwise} \end{cases}$$
 
-## Entailment
+### Entailment
 
 An interpretation $I$ and environment $E$ satisfies a formula $\alpha$ if and only if $\alpha^{(I,E)} = 1$, denoted as $I \models_E \alpha$. If they do not satisfy, then $I \not \models_E \alpha$, if $\alpha^{(I,E)} = 0$.
 If $I \models_E \alpha$ for all environments $E$, then $I \models \alpha$.
@@ -325,7 +335,7 @@ A formula $\alpha$ is:
 
 - unsatisfiable if $I \not \models \alpha$ for all interpretations $I$ and $E$.
 
-## Natural Deduction fo First Order Logic
+### Natural Deduction fo First Order Logic
 
 **Substitutions**:
 For a variable $x$, a term $t$, and a formula $\alpha$, the substitution of $t$ for $x$ in $\alpha$ is denoted as $\alpha[t/x]$ which denotes the resulting formula by replacing each free occurrence of $x$ in $\alpha$ with $t$.
@@ -335,6 +345,6 @@ Natural deduction rules for FOL:
 | Name | $\vdash$ Notation | Inference Notation |
 |---|---|---|
 | $\forall$ - Elimination | if $\Sigma \vdash \forall x \alpha$, then $\Sigma \vdash \alpha[t/x]$ for any term $t$. | $\begin{array}{c} \forall x \alpha \\ \hline \alpha[t/x] \end{array}$ |
-| $\forall$ - Introduction | if $\Sigma \vdash \alpha[t/x]$ with $t$ not free in $\Sigma$ or $\alpha$, then $\Sigma \vdash \forall x \alpha$. | $\begin{array}{c} \boxed{\begin{array}{c} t \text{ fresh}\  \\ \vdots \\ \alpha[t/x] \end{array}} \\[7mm] \hline \forall x \alpha \end{array}$ |
+| $\forall$ - Introduction | if $\Sigma \vdash \alpha[t/x]$ with $t$ not free in $\Sigma$ or $\alpha$, then $\Sigma \vdash \forall x \alpha$. | $\begin{array}{c} \boxed{\begin{array}{c} t \text{ fresh}\  \\ \vdots \\ \alpha[t/x] \end{array}} \\ \hline \forall x \alpha \end{array}$ |
 | $\exists$ - Introduction | if $\Sigma \vdash \alpha[t/x]$, then $\Sigma \vdash \exists x \alpha$. | $\begin{array}{c} \alpha[t/x] \\ \hline \exists x \alpha \end{array}$ |
-| $\exists$ - Elimination | if $\Sigma \cup \{\alpha[t/x]\} \vdash \beta$ with $t$ fresh, then $\Sigma \cup (\exists x \alpha) \vdash \beta$. | $\begin{array}{c} \exists x \alpha \\ \boxed{\begin{array}{c} \alpha[t/x], t \text{ fresh} \\ \vdots \\ \beta \end{array}} \\[7mm] \hline \beta \end{array}$ |
+| $\exists$ - Elimination | if $\Sigma \cup \{\alpha[t/x]\} \vdash \beta$ with $t$ fresh, then $\Sigma \cup (\exists x \alpha) \vdash \beta$. | $\begin{array}{c} \exists x \alpha \\ \boxed{\begin{array}{c} \alpha[t/x], t \text{ fresh} \\ \vdots \\ \beta \end{array}} \\ \hline \beta \end{array}$ |
