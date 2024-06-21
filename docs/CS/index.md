@@ -1,5 +1,4 @@
 ---
-title: Biology!!!
 author: Lumi
 author_gh_user: BHAAA-ZLM
 read_time: 2min

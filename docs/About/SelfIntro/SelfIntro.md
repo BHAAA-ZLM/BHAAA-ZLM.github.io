@@ -24,7 +24,7 @@ publish_date: Constantly Updating
 
 <span style="font-family: Courier"> My other hobbies include
 
-- <span style="font-family: Courier">  🤺 Fencing
+- <span style="font-family: Courier">  🤺 Fencing & 🚣 Rowing
 - <span style="font-family: Courier">  💻 Trying all sorts of things involving Computers
 - <span style="font-family: Courier">  🎮 Playing games
 - <span style="font-family: Courier">  📖 Reading all kinds of books

@@ -6,7 +6,7 @@ site_description: Lumi's Blog
 repo_url: https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io
 repo_name: BHAAA-ZLM.github.io
 
-copyright: Copyright &copy; 2022 Lumi
+copyright: Copyright &copy; 2022-2024 Lumi
 
 extra: 
   social:
@@ -17,6 +17,10 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/BHAAA-ZLM
       name: GitHub | Lumi
+
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/BHAAA2021374718
+      name: X(twitter) | Lumi
 
 theme:
 

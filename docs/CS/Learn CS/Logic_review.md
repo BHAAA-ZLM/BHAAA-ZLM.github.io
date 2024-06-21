@@ -6,6 +6,9 @@ read_time: 13min
 publish_date: 2024.6.21
 ---
 
+<!-- # <span style="font-family: Courier">Learning Mathematical Logic -->
+
+
 ## Proposition and Connectives
 
 **Proposition**: A proposition is a declarative sentence that can be judged as either true or false.
