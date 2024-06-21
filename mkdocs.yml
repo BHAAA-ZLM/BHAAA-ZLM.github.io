@@ -92,6 +92,7 @@ nav:
   - CS:
     - Computer Science: CS/index.md
     - Learning CS:
+      - Learning Mathematical Logic: CS/Learn CS/Logic_review.md
       - Learning Discrete Mathematics: CS/Learn CS/Discrete_review.md
       - Learning Markdown: CS/Learn CS/Markdown.md
       - Learning R: CS/Learn CS/R.md
