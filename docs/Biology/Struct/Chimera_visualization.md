@@ -1,7 +1,7 @@
 ---
 author: Lumi
 author_gh_user: BHAAA-ZLM
-read_time: 2min 
+read_time: 5min 
 publish_date: Continuous update
 ---
 
@@ -10,12 +10,11 @@ In this blog, I will describe some of the useful (and beautiful) visualization m
 A useful [guide](https://rbvi.github.io/chimerax-recipes/) was made by the ChimeraX creators, and I tried to apply them to our protein of interest.
 
 ## Loopy Alpha Helix
-I was listening to a talk by Prof. James H. Hurley in August at SUSTech, and I can't stop noticing how nice his resulting structures are. So I did some research and looked at his structures in this paper about the [lysosomal mTORC1–TFEB–Rag–Ragulator megacomplex](https://www.nature.com/articles/s41586-022-05652-7) published in nature, and mimicked his style. 
+I was listening to a talk by [Prof. James H. Hurley](https://membrane.berkeley.edu) in August at SUSTech, and I can't stop noticing how nice his resulting structures are. So I did some research and looked at his structures in this paper about the [lysosomal mTORC1–TFEB–Rag–Ragulator megacomplex](https://www.nature.com/articles/s41586-022-05652-7) published in nature, and mimicked his style. 
 
 ![Loopy Alpha Helix Original](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41586-022-05652-7/MediaObjects/41586_2022_5652_Fig2_HTML.png?as=webp)
 
 ```python
-# Setting window size can make visualization easier
 windowsize 800 800 
 
 open 7UX2
@@ -23,17 +22,12 @@ hide atoms
 show cartoons
 color bychain
 
-# Adjust lighting of the protein
 lighting soft msMapSize 64
 
-# Adjust the style of the protein to loopy helices
 cartoon style protein modeHelix default arrows false xsection oval width 1 thickness 1
-# Make helices slightly thicker
 cartoon style strand modeHelix default arrows true xsection rectangle width 2 thickness 1
-# Draw strands with rectangle arrows
 cartoon style helix modeHelix default arrows false xsection oval width 1.6 thickness 1.2
 
-# Visualization seems better with silhouette
 graphics silhouettes width 3
 
 save rag_ragulator.jpg pixelSize 0.05 quality 100
@@ -42,3 +36,55 @@ save rag_ragulator.jpg pixelSize 0.05 quality 100
 ![My Output](chimera/rag_ragulator.jpg)
 
 I prefer the thicker silhouette when viewing the whole protein. But I think it would be better if we can change the colour of the different chains. I will try to do that in the future.
+
+## Local Resolution Video
+
+There is a wonderful [ChimeraX recipe](https://rbvi.github.io/chimerax-recipes/planes/planes.html) teaching us how to draw the grayscale planes of local resolution of a cryo-EM map. As [Prof. Liao](https://liao.bio.sustech.edu.cn/index.html?lang=en-us) mentioned in his class, local resolution is very important, and a good way to visualize this is by a density plane. So, here are the original codes in the recipe:
+
+
+```python
+windowsize 500 500
+open 22910 from emdb
+volume #1 style image level -0.4458,0 level 2.326,1 plane z,100
+view orient
+zoom 2
+camera ortho
+2dlabel text "plane number" xpos 0.8 ypos 0.1
+
+movie record size 500,500
+perframe "volume #1 plane z,$1 ; 2dlabel #2.1 text $1" range 100,300
+wait 201
+movie encode ~/Desktop/planes.mp4 quality high
+```
+
+<video width=500 height=500 controls>
+  <source src="../chimera/sars_planes.mp4" type="video/mp4">
+</video>
+
+Now, applying this to our own RBD structure, it's similar. With codes:
+
+```python
+windowsize 800 800
+set bgColor black
+open ***/RBD_active.mrc
+
+volume #1 level 0.35
+surface dust #1 size 7
+
+volume #1 style image level -0.4458,0 level 2.326,1 planes z,100
+view orient
+camera ortho
+zoom 2
+camera ortho
+2dlabel text "plane number" xpos 0.8 ypos 0.1
+
+movie record size 800, 800
+perframe "volume #1 plane z,$1 ; 2dlabel #2.1 text $1" range 110,210
+movie encode ~/Desktop/planes.mp4 quality high
+```
+
+<video width=500 height=500 controls>
+  <source src="../chimera/rbd_planes.mp4" type="video/mp4">
+</video>
+
+A problem with this video is that this is not actually a top-side view of the density, making it hard to interpret. I think it might have something to do with the way the model is built? Or how CryoSPARC generate these electron density maps. I will try to see if we can set the plane to a wanted position in the future, a simple rest of the $x,y,z$ coordinates might do the trick.
