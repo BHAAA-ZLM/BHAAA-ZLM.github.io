@@ -1,0 +1,2647 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lumi's Blog">
+      
+      
+        <meta name="author" content="Lumi">
+      
+      
+        <link rel="canonical" href="https://bhaaa-zlm.github.io/CS/Learn%20CS/Logic_review/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../Discrete_review/">
+      
+      
+      <link rel="icon" href="../../../assets/image/fatLogo.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>Learning Mathematical Logic - Lumi's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Libre Baskerville";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#predicate-logic" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Lumi&#39;s Blog" class="md-header__button md-logo" aria-label="Lumi's Blog" data-md-component="logo">
+      
+  <img src="../../../assets/image/fatLogo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lumi's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Learning Mathematical Logic
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BHAAA-ZLM.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Life/" class="md-tabs__link">
+          
+  
+    
+  
+  Life
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Bioinformatics/" class="md-tabs__link">
+          
+  
+    
+  
+  Bioinformatics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Biology/" class="md-tabs__link">
+          
+  
+    
+  
+  Biology
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  CS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Learning/" class="md-tabs__link">
+          
+  
+    
+  
+  Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../About/" class="md-tabs__link">
+          
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lumi&#39;s Blog" class="md-nav__button md-logo" aria-label="Lumi's Blog" data-md-component="logo">
+      
+  <img src="../../../assets/image/fatLogo.png" alt="logo">
+
+    </a>
+    Lumi's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BHAAA-ZLM.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Life/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Life
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Life
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Books I Read
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Books I Read
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Life/Books/TAOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Art of Statistics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Bioinformatics/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Bioinformatics
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Bioinformatics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RNA-Seq
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            RNA-Seq
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/RNA-seq/RNA-seq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Basic Workflow of RNA-seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/RNA-seq/Files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Files involved in RNA-seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/RNA-seq/Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The Tools of RNA-seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ATAC-Seq
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            ATAC-Seq
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/ATAC-Seq/ATAC-Seq_tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools in ATAC-Seq
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    R the Programming Language
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            R the Programming Language
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/R/DESeq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    R and DESeq2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Biology/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Biology
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Biology
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Experiments
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Experiments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Biology/Experiments/BIOS201/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Genome-Why are we different
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Structural Biology
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Structural Biology
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Biology/Struct/Chimera_visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visualization with ChimeraX
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Biology/Struct/coot_install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing Coot on Mac
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    CS
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Learning CS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Learning CS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Learning Mathematical Logic
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Learning Mathematical Logic
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#predicate-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predicate Logic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Predicate Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proposition-and-connectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proposition and Connectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formal-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formal Language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-entailment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Entailment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proof Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#natural-deduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Deduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soundness-and-completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Soundness and Completeness
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-order-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Order Logic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First Order Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantics_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meanings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meanings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entailment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entailment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#natural-deduction-fo-first-order-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Deduction fo First Order Logic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Discrete_review/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Discrete Mathematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Markdown/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning Markdown
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../R/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Learning R
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/ChessKing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My First Project - ChessKing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Learning/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Learning
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chemistry
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Chemistry
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Learning/Chemistry/Experiments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chemistry Experiments
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Physics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Physics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Learning/Physics/Quantum/Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quantum Mechanics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Learning/Physics/fly_by_night/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fly By Night
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../About/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../About/SelfIntro/SelfIntro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About Me
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#predicate-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predicate Logic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Predicate Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proposition-and-connectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proposition and Connectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formal-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formal Language
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantic-entailment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantic Entailment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof Systems
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proof Systems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#natural-deduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Deduction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soundness-and-completeness" class="md-nav__link">
+    <span class="md-ellipsis">
+      Soundness and Completeness
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-order-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      First Order Logic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First Order Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semantics_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Semantics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Semantics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meanings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Meanings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entailment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entailment
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#natural-deduction-fo-first-order-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Natural Deduction fo First Order Logic
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+        <!-- Edit button -->
+        
+          <a
+            href="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io/edit/master/docs/CS/Learn CS/Logic_review.md"
+            title="edit.link.title"
+            class="md-content__button md-icon"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+          </a>
+        
+
+        <!--
+          Hack: check whether the content contains a h1 headline. If it
+          doesn't, the page title (or respectively site name) is used
+          as the main headline.
+        -->
+        
+          <h1>Learning Mathematical Logic</h1>
+        
+
+        <!-- Markdown content -->
+        
+        <aside class="mdx-author">
+            <p>
+            <img src="https://avatars.githubusercontent.com/BHAAA-ZLM" alt="@BHAAA-ZLM">
+            </p>
+            <p>
+            <span> 
+            <b>Lumi</b> · <a href="https://github.com/BHAAA-ZLM">@BHAAA-ZLM</a>
+            </span>
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                    <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                  </svg> 2024.6.21 ·
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                  </svg> 13min read
+            </span>
+            </p>
+        </aside>
+        
+
+        <!-- # <span style="font-family: Courier">Learning Mathematical Logic -->
+
+<h2 id="predicate-logic">Predicate Logic</h2>
+<h3 id="proposition-and-connectives">Proposition and Connectives</h3>
+<p><strong>Proposition</strong>: A proposition is a declarative sentence that can be judged as either true or false.</p>
+<p><strong>Atomic Proposition</strong>: A proposition that does not contain any smaller part that is still a proposition is called an atomic proposition.</p>
+<p><strong>Compound Proposition</strong>: A proposition that involves the assembly of multiple propositions is called a compound proposition.</p>
+<h3 id="formal-language">Formal Language</h3>
+<p>Formal language for propositional logic <span class="arithmatex">\(\mathscr{L}^P\)</span> is has three types of symbols:</p>
+<ol>
+<li>
+<p>Atomic propositions: <span class="arithmatex">\(p, q, r, \ldots\)</span></p>
+</li>
+<li>
+<p>Connectives: <span class="arithmatex">\(\neg, \land, \lor, \rightarrow, \leftrightarrow\)</span></p>
+</li>
+<li>
+<p>Parentheses: <span class="arithmatex">\((, )\)</span></p>
+</li>
+</ol>
+<p><strong>Atom<span class="arithmatex">\((\mathscr{L}^P)\)</span></strong>: 
+Set of expressions of <span class="arithmatex">\(\mathscr{L}^P\)</span> consisting of a proposition symbol only.</p>
+<p><strong>Form<span class="arithmatex">\((\mathscr{L}^P)\)</span></strong>:
+An expression <span class="arithmatex">\(A \in \text{Form}\left(\mathscr{L}^P\right)\)</span> if and only if it satisfies the following conditions:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\text{Atom} (\mathscr{L}^P) \subseteq \text{Form} (\mathscr{L}^P)\)</span></p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(A \in \text{Form} (\mathscr{L}^P)\)</span>, then <span class="arithmatex">\(\neg A \in \text{Form} (\mathscr{L}^P)\)</span></p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(A, B \in \text{Form} (\mathscr{L}^P)\)</span>, then <span class="arithmatex">\(\left(A \land B\right), \left(A \lor B\right), \left(A \rightarrow B\right), \left(A \leftrightarrow B\right) \in \text{Form} (\mathscr{L}^P)\)</span></p>
+</li>
+</ol>
+<p><strong>Sub formula</strong>: A formula <span class="arithmatex">\(A\)</span> is a sub formula of a formula <span class="arithmatex">\(B\)</span> if <span class="arithmatex">\(A\)</span> is a part of <span class="arithmatex">\(B\)</span>. <span class="arithmatex">\(A\)</span> is a proper sub formula of <span class="arithmatex">\(B\)</span> if <span class="arithmatex">\(A\)</span> is a sub formula of <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(A \neq B\)</span>.</p>
+<p>Lemma: Every well-formed formula of <span class="arithmatex">\(\mathscr{L}^P\)</span> has a unique parse tree.</p>
+<p>Lemma: Every well-formed formula of <span class="arithmatex">\(\mathscr{L}^P\)</span> has an equal number of left and right parentheses.</p>
+<p>Lemma: Every proper prefix of a well-formed formula of <span class="arithmatex">\(\mathscr{L}^P\)</span> has more left parentheses than right parentheses. Every proper suffix of a well-formed formula of <span class="arithmatex">\(\mathscr{L}^P\)</span> has more right parentheses than left parentheses.</p>
+<p><strong>Precedence</strong>:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\((, )\)</span> has the highest precedence.</p>
+</li>
+<li>
+<p>Precedence level: <span class="arithmatex">\(\neg, \land, \lor, \rightarrow, \leftrightarrow\)</span>.</p>
+</li>
+<li>
+<p>Connectives are assumed to associate to the right. e.g. <span class="arithmatex">\(A \land B \land C\)</span> is equivalent to <span class="arithmatex">\(A \land (B \land C)\)</span>.</p>
+</li>
+</ol>
+<h3 id="semantics">Semantics</h3>
+<p>A truth valuation is a function <span class="arithmatex">\(v : \text{Atom} (\mathscr{L}^P) \rightarrow \{0,1\}\)</span>.
+For <span class="arithmatex">\(p \in \text{Atom} (\mathscr{L}^P)\)</span>, <span class="arithmatex">\(v(p)\)</span> or <span class="arithmatex">\(p^v\)</span> is the truth value of <span class="arithmatex">\(p\)</span> under valuation <span class="arithmatex">\(v\)</span>.</p>
+<p>Every form <span class="arithmatex">\(A \in \text{Form} (\mathscr{L}^P)\)</span> has a truth value under a valuation <span class="arithmatex">\(v\)</span>. </p>
+<blockquote>
+<p>Proved by induction on the structure of <span class="arithmatex">\(A\)</span>.</p>
+</blockquote>
+<p>If for every valuation <span class="arithmatex">\(v\)</span>, <span class="arithmatex">\(A^v = 1\)</span>, then <span class="arithmatex">\(A\)</span> is said to be a <strong>tautology</strong>.
+If for every valuation <span class="arithmatex">\(v\)</span>, <span class="arithmatex">\(A^v = 0\)</span>, then <span class="arithmatex">\(A\)</span> is said to be a <strong>contradiction</strong>.
+If for some valuation <span class="arithmatex">\(v\)</span>, <span class="arithmatex">\(A^v = 1\)</span>, then <span class="arithmatex">\(A\)</span> is said to be <strong>satisfiable</strong>.</p>
+<p>Semantics can be proved by:
+1. Truth tables
+2. Inductive proof
+3. Valuation tree</p>
+<p><strong>Logical equivalence</strong>: 
+Two formulas <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are said to be logically equivalent if for every valuation <span class="arithmatex">\(v\)</span>, <span class="arithmatex">\(A^v = B^v\)</span>.<br />
+<span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> have same truth values in a truth table.
+<span class="arithmatex">\(A \leftrightarrow B\)</span> is a tautology.</p>
+<h3 id="semantic-entailment">Semantic Entailment</h3>
+<p>Let <span class="arithmatex">\(\Sigma\)</span> by a set of formulas (<span class="arithmatex">\(\Sigma \subseteq \text{Form}(\mathscr{L}^P)\)</span>) and <span class="arithmatex">\(A\)</span> be a formula (<span class="arithmatex">\(A \in \text{Form}(\mathscr{L}^P)\)</span>). We say:</p>
+<ul>
+<li>
+<p><span class="arithmatex">\(A\)</span> is a logical consequence of <span class="arithmatex">\(\Sigma\)</span>, or</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Sigma\)</span> (semantically) entails <span class="arithmatex">\(A\)</span>, or</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\Sigma \models A\)</span></p>
+</li>
+</ul>
+<p>if and onlyl if for every valuation <span class="arithmatex">\(v\)</span>, if <span class="arithmatex">\(\Sigma^v = 1\)</span> implies <span class="arithmatex">\(A^v = 1\)</span>.</p>
+<p>If <span class="arithmatex">\(\Sigma \not \models A\)</span>, then there exists a truth valuation <span class="arithmatex">\(v\)</span> such that <span class="arithmatex">\(\Sigma^v = 1\)</span> and <span class="arithmatex">\(A^v = 0\)</span>.</p>
+<p>Proved using direct proofs or truth tables, or by contradiction.</p>
+<p><span class="arithmatex">\(A \models B\)</span> if and only if <span class="arithmatex">\(A \to B\)</span> is a tautology.
+<span class="arithmatex">\(A \equiv B\)</span> if and only if <span class="arithmatex">\(A \models B\)</span> and <span class="arithmatex">\(B \models A\)</span>.
+<span class="arithmatex">\(\varnothing \models A\)</span>  if and only if <span class="arithmatex">\(A\)</span> is a tautology.</p>
+<p><span class="arithmatex">\(A_1, A_2, \ldots, A_n \models B\)</span> if and only if <span class="arithmatex">\(\varnothing \models (A_1 \land A_2 \land \ldots \land A_n) \to B\)</span>.</p>
+<p>For any <span class="arithmatex">\(n \geq 1\)</span>, there are <span class="arithmatex">\(2^{2^n}\)</span> distinct truth functions of <span class="arithmatex">\(n\)</span> variables.</p>
+<blockquote>
+<p><span class="arithmatex">\(2^n\)</span> different truth values, output of each can be either 0 or 1.</p>
+</blockquote>
+<p><strong>Adequate Set</strong>:
+A set of connectives is said to be adequate if every well-formed formula can be expressed using only those connectives.</p>
+<p>Each of the sets <span class="arithmatex">\(\{\neg , \land\}, \{\neg, \lor\}, \{\neg, \rightarrow\}\)</span> is an adequate set of connectives.</p>
+<h3 id="proof-systems">Proof Systems</h3>
+<p>If there is a proof with premises <span class="arithmatex">\(\Sigma\)</span> and conclusion <span class="arithmatex">\(A\)</span>, then we say that <span class="arithmatex">\(A\)</span> is a syntactic consequence of <span class="arithmatex">\(\Sigma\)</span>.
+Denoted by: <span class="arithmatex">\(\Sigma \vdash A\)</span>.</p>
+<p>3 types of proof systems:</p>
+<ol>
+<li>
+<p>Natural deduction: Few axioms and many rules.</p>
+</li>
+<li>
+<p>Hilbert system: Many axioms and only one rule. </p>
+</li>
+<li>
+<p>Resolution: Used to prove contradictions.</p>
+</li>
+</ol>
+<h4 id="natural-deduction">Natural Deduction</h4>
+<p><strong>Alphabet of ND</strong>:</p>
+<div class="arithmatex">\[ \Sigma = \{(, ), \neg, \land, \lor, \to,\leftrightarrow, p, q, r, \dots\}\]</div>
+<p><strong>Formulas of ND</strong>:
+1. Atomic formulas are formulas.
+2. If <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> are formulas, then <span class="arithmatex">\((\neg A)\)</span>, <span class="arithmatex">\((A \land B)\)</span>, <span class="arithmatex">\((A \lor B)\)</span>, <span class="arithmatex">\((A \to B)\)</span>, <span class="arithmatex">\((A \leftrightarrow B)\)</span> are formulas.
+3. Only expressions of <span class="arithmatex">\(\Sigma\)</span> that can be derived from the above rules are formulas.</p>
+<p><strong>Inference rules</strong>:</p>
+<p><strong>Reflexivity (Premise)</strong>: $ \Sigma \cup {\alpha } \vdash \alpha$.</p>
+<p>A table of all inference rules:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th><span class="arithmatex">\(\vdash\)</span> Notation</th>
+<th>Inference Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\land\)</span> - Introduction</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash \alpha\)</span> and <span class="arithmatex">\(\Sigma \vdash \beta\)</span>, then <span class="arithmatex">\(\Sigma \vdash (\alpha \land \beta)\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \alpha \\ \beta \\ \hline (\alpha \land \beta) \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\land\)</span> - Elimination</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash (\alpha \land \beta)\)</span>, then <span class="arithmatex">\(\Sigma \vdash \alpha\)</span> and <span class="arithmatex">\(\Sigma \vdash \beta\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} (\alpha \land \beta) \\ \hline \alpha \end{array}\)</span> and <span class="arithmatex">\(\begin{array}{c} (\alpha \land \beta) \\ \hline \beta \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\to\)</span> - Elimination</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash \alpha\)</span> and <span class="arithmatex">\(\Sigma \vdash (\alpha \to \beta)\)</span>, then <span class="arithmatex">\(\Sigma \vdash \beta\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \alpha \\ (\alpha \to \beta) \\ \hline \beta \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\to\)</span> - Introduction</td>
+<td>if <span class="arithmatex">\(\Sigma \cup \{\alpha\} \vdash \beta\)</span>, then <span class="arithmatex">\(\Sigma \vdash (\alpha \to \beta)\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \boxed{\begin{array}{c} \alpha \\ \vdots \\ \beta \end{array}} \\  \hline \alpha \to \beta \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lor\)</span> - Introduction</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash \alpha\)</span>, then <span class="arithmatex">\(\Sigma \vdash (\alpha \lor \beta)\)</span> and <span class="arithmatex">\(\Sigma \vdash (\beta \lor \alpha)\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \alpha \\ \hline (\alpha \lor \beta) \end{array}\)</span> and <span class="arithmatex">\(\begin{array}{c} \alpha \\ \hline (\beta \lor \alpha) \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lor\)</span> - Elimination</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash (\alpha \lor \beta)\)</span> and <span class="arithmatex">\(\Sigma \cup \{\alpha\} \vdash \gamma\)</span> and <span class="arithmatex">\(\Sigma \cup \{\beta\} \vdash \gamma\)</span>, then <span class="arithmatex">\(\Sigma \vdash \gamma\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} (\alpha \lor \beta) \\ \boxed{\begin{array}{c} \alpha \\ \vdots \\ \gamma \end{array}} \\ \boxed{\begin{array}{c} \beta \\ \vdots \\ \gamma \end{array}} \\ \hline \gamma \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\neg\)</span> - Introduction</td>
+<td>if <span class="arithmatex">\(\Sigma \cup \{\alpha\} \vdash \perp\)</span>, then <span class="arithmatex">\(\Sigma \vdash \neg \alpha\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \boxed{\begin{array}{c} \alpha \\ \vdots \\ \perp \end{array}} \\ \hline \neg \alpha \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\perp\)</span> - Introduction</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash \neg \alpha\)</span> and <span class="arithmatex">\(\Sigma \vdash \alpha\)</span>, then <span class="arithmatex">\(\Sigma \vdash \perp\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \neg \alpha \\ \alpha \\ \hline \perp \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\perp\)</span> - Elimination</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash \perp\)</span>, then <span class="arithmatex">\(\Sigma \vdash \alpha\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \perp \\ \hline \alpha \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\neg \neg\)</span> - Elimination</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash \neg \neg \alpha\)</span>, then <span class="arithmatex">\(\Sigma \vdash \alpha\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \neg \neg \alpha \\ \hline \alpha \end{array}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>And the law of excluded middle: <span class="arithmatex">\(\vdash (p \lor \neg p)\)</span>.</p>
+<h3 id="soundness-and-completeness">Soundness and Completeness</h3>
+<p><span class="arithmatex">\(\Sigma \vdash A\)</span> means that <span class="arithmatex">\(A\)</span> is a logical consequence (in the deduction system) of <span class="arithmatex">\(\Sigma\)</span>.</p>
+<p><span class="arithmatex">\(\Sigma \models A\)</span> if and only if for every valuation <span class="arithmatex">\(v\)</span>, if <span class="arithmatex">\(\Sigma^v = 1\)</span>, then <span class="arithmatex">\(A^v = 1\)</span>.</p>
+<p><strong>Soundness</strong>: If <span class="arithmatex">\(\Sigma \vdash A\)</span>, then <span class="arithmatex">\(\Sigma \models A\)</span>.
+The conclusion of a proof is always a logical consequence of the premises.</p>
+<blockquote>
+<p>Proved by induction on the length of the proof.</p>
+</blockquote>
+<p><strong>Completeness</strong>: If <span class="arithmatex">\(\Sigma \models A\)</span>, then <span class="arithmatex">\(\Sigma \vdash A\)</span>.
+Every logical consequence can be proved in this proof system.</p>
+<blockquote>
+<p>Quite difficult to prove.
+We want to prove: If <span class="arithmatex">\(\Sigma \models A\)</span> holds, then <span class="arithmatex">\(\Sigma \vdash A\)</span> is valid.
+We need to use three lemmas: </p>
+<ol>
+<li>
+<p><strong>Lemma 1</strong>: If <span class="arithmatex">\(\Sigma \models A\)</span>, then <span class="arithmatex">\(\varnothing \models (\alpha_0 \to (\alpha_1 \to (\dots \to (\alpha_n \to A)\dots )))\)</span>.</p>
+<blockquote>
+<p>Proved by contradiction. Assuming <span class="arithmatex">\(\varnothing \not \models (\alpha_0 \to (\alpha_1 \to (\dots \to (\alpha_n \to A)\dots )))\)</span> and showing that <span class="arithmatex">\(\Sigma \not \models A\)</span>.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Lemma 2</strong>: If <span class="arithmatex">\(\varnothing \models A\)</span>, then $ \varnothing \vdash A$.</p>
+<blockquote>
+<p>Proved by induction on the structure of <span class="arithmatex">\(A\)</span>. Introduction of a new symbol <span class="arithmatex">\(\hat p\)</span> which is <span class="arithmatex">\(\neg p\)</span> when <span class="arithmatex">\(p^v = 0\)</span> and <span class="arithmatex">\(p\)</span> when <span class="arithmatex">\(p^v = 1\)</span>.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Lemma 3</strong>: If <span class="arithmatex">\(\varnothing \vdash (\alpha_0 \to (\alpha_1 \to (\dots \to (\alpha_n \to A)\dots )))\)</span>, then <span class="arithmatex">\(\{\alpha_0, \alpha_1, \dots, \alpha_n\} \vdash A\)</span>. Which is equivalent to <span class="arithmatex">\(\Sigma \vdash A\)</span>.</p>
+<blockquote>
+<p>Direct proof (like pealing onions).</p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<h2 id="first-order-logic">First Order Logic</h2>
+<h3 id="syntax">Syntax</h3>
+<p><strong>Domain</strong>: 
+A non-empty set of objects.</p>
+<p><strong>Constant symbols</strong>: 
+Constants are used to denote objects in the domain.</p>
+<p><strong>Variables</strong>: 
+"Place holders" for concrete values.</p>
+<p><strong>Predicate</strong>: 
+A predicate is a function that returns a truth value.
+Representing the property of an individual object in the domain, or the relationship between multiple objects.</p>
+<p><strong>Quantifiers</strong>:</p>
+<ol>
+<li>
+<p>Universal quantifier: <span class="arithmatex">\(\forall x\)</span>, statement is true for all <span class="arithmatex">\(x\)</span> in the domain.</p>
+</li>
+<li>
+<p>Existential quantifier: <span class="arithmatex">\(\exists x\)</span>, statement is true for at least one <span class="arithmatex">\(x\)</span> in the domain.</p>
+</li>
+</ol>
+<p><strong>Function symbols</strong>:
+Functions that take objects in the domain as input and return an object in the domain as output, denoted as <span class="arithmatex">\(f^{(n)}(x)\)</span>.</p>
+<p><strong>Terms</strong>:
+Is defined inductively as:</p>
+<ol>
+<li>
+<p>Constant symbols and variables are terms.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(f^{(n)}\)</span> is a function symbol of arity <span class="arithmatex">\(n\)</span>, and <span class="arithmatex">\(t_1, t_2, \ldots, t_n\)</span> are terms, then <span class="arithmatex">\(f^{(n)}(t_1, t_2, \ldots, t_n)\)</span> is a term.</p>
+</li>
+<li>
+<p>Nothing else is a term.</p>
+</li>
+</ol>
+<p>Intuitive understanding: Terms are expressions that denote objects in the domain.</p>
+<p><strong>Atomic formula</strong>:
+An expression <span class="arithmatex">\(\mathscr{L}\)</span> is an element of <span class="arithmatex">\(\text{Atom}(\mathscr{L})\)</span> if and only if it has one of the following two forms:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(P(t_1, \dots, t_n)\)</span>, where <span class="arithmatex">\(P\)</span> is an <span class="arithmatex">\(n\)</span>-ary predicate symbol and <span class="arithmatex">\(t_1, \dots, t_n \in \text{Term}(\mathscr{L})\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(t_1 = t_2\)</span>, where <span class="arithmatex">\(t_1, t_2 \in \text{Term}(\mathscr{L})\)</span>.</p>
+</li>
+</ol>
+<p>Intuitive understanding: Atomic formulas are expressions that denote a truth value, indicating the properties or relations of objects.</p>
+<p><strong>Formulas</strong>:
+<span class="arithmatex">\(\alpha \in \text{Form}(\mathscr{L})\)</span> if and only if it satisfies the following conditions:</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\text{Atom}(\mathscr{L}) \subseteq \text{Form}(\mathscr{L})\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha \in \text{Form}(\mathscr{L})\)</span>, then <span class="arithmatex">\(\neg \alpha \in \text{Form}(\mathscr{L})\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha, \beta \in \text{Form}(\mathscr{L})\)</span>, then <span class="arithmatex">\(\left(\alpha \land \beta\right), \left(\alpha \lor \beta\right), \left(\alpha \rightarrow \beta\right), \left(\alpha \leftrightarrow \beta\right) \in \text{Form}(\mathscr{L})\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha \in \text{Form}(\mathscr{L})\)</span> and <span class="arithmatex">\(x\)</span> is a variable, then <span class="arithmatex">\(\forall x \alpha, \exists x \alpha \in \text{Form}(\mathscr{L})\)</span>.</p>
+</li>
+</ol>
+<h3 id="semantics_1">Semantics</h3>
+<p><strong>Scope</strong>:
+The scope of a quantifier is the formula that follows it. e.g. In <span class="arithmatex">\(\forall x P(x) \land Q(x)\)</span>, the scope of <span class="arithmatex">\(\forall x\)</span> is <span class="arithmatex">\(P(x) \land Q(x)\)</span>.</p>
+<p><strong>Free and bound variables</strong>:
+A variable <span class="arithmatex">\(x\)</span> is free in a formula <span class="arithmatex">\(\alpha\)</span> if it is not in the scope of any quantifier for <span class="arithmatex">\(x\)</span>. Otherwise, it is bound.</p>
+<p><strong>Sentence</strong>:
+A formula is a sentence if all its variables are bound.</p>
+<p><strong>Closure</strong>:
+The closure of a formula <span class="arithmatex">\(\alpha\)</span> is the set of all sentences that can be formed by replacing the free variables in <span class="arithmatex">\(\alpha\)</span> with constants.</p>
+<p>Universal closure of <span class="arithmatex">\(\alpha\)</span> is <span class="arithmatex">\(\forall x_1 \forall x_2 \ldots \forall x_n \alpha\)</span>.</p>
+<p>Existential closure of <span class="arithmatex">\(\alpha\)</span> is <span class="arithmatex">\(\exists x_1 \exists x_2 \ldots \exists x_n \alpha\)</span>.</p>
+<h4 id="meanings">Meanings</h4>
+<p>To assign meanings to formulas of FOL, we need:</p>
+<ul>
+<li>
+<p>A domain <span class="arithmatex">\(D\)</span>.</p>
+</li>
+<li>
+<p>An interpretation <span class="arithmatex">\(I\)</span> of non-logical symbols that assigns:</p>
+<ul>
+<li>
+<p>To each constant symbol <span class="arithmatex">\(c\)</span>, an object <span class="arithmatex">\(c^I \in D\)</span>.</p>
+</li>
+<li>
+<p>To each function symbol <span class="arithmatex">\(f^{(n)}\)</span>, a function <span class="arithmatex">\(f^I : D^n \to D\)</span>.</p>
+</li>
+<li>
+<p>To each predicate symbol <span class="arithmatex">\(P^{(n)}\)</span>, a relation <span class="arithmatex">\(P^I \subseteq D^n\)</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>An interpretation of logical symbols:</p>
+<ul>
+<li>
+<p>Logical connectives, punctuations</p>
+</li>
+<li>
+<p>Quantifiers, variable symbols...</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>After interpretation, terms in FOL represent individuals in the domain, while formulas represent propositions with fixed truth values.</p>
+<p><strong>Interpretation</strong>:
+An interpretation <span class="arithmatex">\(I\)</span> consists of:</p>
+<ul>
+<li>
+<p>A non-empty domain <span class="arithmatex">\(D\)</span>.</p>
+</li>
+<li>
+<p>For each constant symbol <span class="arithmatex">\(c\)</span>, an object <span class="arithmatex">\(c^I \in D\)</span>.</p>
+</li>
+<li>
+<p>For each function symbol <span class="arithmatex">\(f^{(n)}\)</span>, a function <span class="arithmatex">\(f^I : D^n \to D\)</span>.</p>
+</li>
+<li>
+<p>For each predicate symbol <span class="arithmatex">\(P^{(n)}\)</span>, a relation <span class="arithmatex">\(P^I \subseteq D^n\)</span>.</p>
+</li>
+</ul>
+<p><strong>Environment</strong>:
+An environment <span class="arithmatex">\(E\)</span> is a function that assigns a value in the domain to every variable symbol in the language.</p>
+<p><strong>Value of terms</strong>:
+With a fix interpretation <span class="arithmatex">\(I\)</span> and environment <span class="arithmatex">\(E\)</span>, the value of a term <span class="arithmatex">\(t\)</span> is denoted as <span class="arithmatex">\(t^{(I,E)}\)</span>, and is defined as:</p>
+<ul>
+<li>
+<p>If <span class="arithmatex">\(t\)</span> is a constant symbol <span class="arithmatex">\(c\)</span>, then <span class="arithmatex">\(t^{(I,E)} = c^I\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(t\)</span> is a variable symbol <span class="arithmatex">\(x\)</span>, then <span class="arithmatex">\(t^{(I,E)} = E(x)\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(t = f(t_1, t_2, \ldots, t_n)\)</span>, then <span class="arithmatex">\(t^{(I,E)} = f^I(t_1^{(I,E)}, t_2^{(I,E)}, \ldots, t_n^{(I,E)})\)</span>.</p>
+</li>
+</ul>
+<p><strong>Value of atomic formulas</strong>:<br />
+With a fix interpretation <span class="arithmatex">\(I\)</span> and environment <span class="arithmatex">\(E\)</span>, the value of an atomic formula <span class="arithmatex">\(P(t_1, t_2, \ldots, t_n)\)</span> is denoted as <span class="arithmatex">\(P(t_1, t_2, \ldots, t_n)^{(I,E)}\)</span>, and has the truth value of <span class="arithmatex">\(P^I(t_1^{(I,E)}, t_2^{(I,E)}, \ldots, t_n^{(I,E)})\)</span>.</p>
+<p><strong>Value of Well-Formed Formulas</strong>:
+With a fix interpretation <span class="arithmatex">\(I\)</span> and environment <span class="arithmatex">\(E\)</span>, the value of a well-formed formula <span class="arithmatex">\(\alpha\)</span> is denoted as <span class="arithmatex">\(\alpha^{(I,E)}\)</span>, and is defined as:</p>
+<ul>
+<li>
+<p>If <span class="arithmatex">\(\alpha\)</span> is an atomic formula, then <span class="arithmatex">\(\alpha^{(I,E)} = P(t_1, t_2, \ldots, t_n)^{(I,E)}\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha = \neg \beta\)</span>, then <span class="arithmatex">\(\alpha^{(I,E)} = 1 - \beta^{(I,E)}\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha = \beta \land \gamma\)</span>, then <span class="arithmatex">\(\alpha^{(I,E)} = \beta^{(I,E)} \land \gamma^{(I,E)}\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha = \beta \lor \gamma\)</span>, then <span class="arithmatex">\(\alpha^{(I,E)} = \beta^{(I,E)} \lor \gamma^{(I,E)}\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha = \beta \to \gamma\)</span>, then <span class="arithmatex">\(\alpha^{(I,E)} = 1 - \beta^{(I,E)} \lor \gamma^{(I,E)}\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha = \beta \leftrightarrow \gamma\)</span>, then <span class="arithmatex">\(\alpha^{(I,E)} = \beta^{(I,E)} \leftrightarrow \gamma^{(I,E)}\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha = \forall x \beta\)</span>, then <span class="arithmatex">\(\alpha^{(I,E)} = 1\)</span> if for all <span class="arithmatex">\(d \in D\)</span>, <span class="arithmatex">\(\beta^{(I, E[x \mapsto d])} = 1\)</span>.</p>
+</li>
+<li>
+<p>If <span class="arithmatex">\(\alpha = \exists x \beta\)</span>, then <span class="arithmatex">\(\alpha^{(I,E)} = 1\)</span> if there exists <span class="arithmatex">\(d \in D\)</span> such that <span class="arithmatex">\(\beta^{(I, E[x \mapsto d])} = 1\)</span>.</p>
+</li>
+</ul>
+<p>Assignment:
+For any environment <span class="arithmatex">\(E\)</span> and domain element <span class="arithmatex">\(d\)</span>, the new environment "<span class="arithmatex">\(E\)</span> with <span class="arithmatex">\(x\)</span> re-assigned to <span class="arithmatex">\(d\)</span>" is denoted as <span class="arithmatex">\(E[x \mapsto d]\)</span>., is given by:</p>
+<div class="arithmatex">\[E[x \mapsto d](y) = \begin{cases} d &amp; \text{if } y = x \\ E(y) &amp; \text{otherwise} \end{cases}\]</div>
+<h3 id="entailment">Entailment</h3>
+<p>An interpretation <span class="arithmatex">\(I\)</span> and environment <span class="arithmatex">\(E\)</span> satisfies a formula <span class="arithmatex">\(\alpha\)</span> if and only if <span class="arithmatex">\(\alpha^{(I,E)} = 1\)</span>, denoted as <span class="arithmatex">\(I \models_E \alpha\)</span>. If they do not satisfy, then <span class="arithmatex">\(I \not \models_E \alpha\)</span>, if <span class="arithmatex">\(\alpha^{(I,E)} = 0\)</span>.
+If <span class="arithmatex">\(I \models_E \alpha\)</span> for all environments <span class="arithmatex">\(E\)</span>, then <span class="arithmatex">\(I \models \alpha\)</span>.</p>
+<p>A formula <span class="arithmatex">\(\alpha\)</span> is:</p>
+<ul>
+<li>
+<p>valid if <span class="arithmatex">\(I \models \alpha\)</span> for all interpretations <span class="arithmatex">\(I\)</span> and <span class="arithmatex">\(E\)</span>.</p>
+</li>
+<li>
+<p>satisfiable if <span class="arithmatex">\(I \models \alpha\)</span> for some interpretation <span class="arithmatex">\(I\)</span> and <span class="arithmatex">\(E\)</span>.</p>
+</li>
+<li>
+<p>unsatisfiable if <span class="arithmatex">\(I \not \models \alpha\)</span> for all interpretations <span class="arithmatex">\(I\)</span> and <span class="arithmatex">\(E\)</span>.</p>
+</li>
+</ul>
+<h3 id="natural-deduction-fo-first-order-logic">Natural Deduction fo First Order Logic</h3>
+<p><strong>Substitutions</strong>:
+For a variable <span class="arithmatex">\(x\)</span>, a term <span class="arithmatex">\(t\)</span>, and a formula <span class="arithmatex">\(\alpha\)</span>, the substitution of <span class="arithmatex">\(t\)</span> for <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(\alpha\)</span> is denoted as <span class="arithmatex">\(\alpha[t/x]\)</span> which denotes the resulting formula by replacing each free occurrence of <span class="arithmatex">\(x\)</span> in <span class="arithmatex">\(\alpha\)</span> with <span class="arithmatex">\(t\)</span>.</p>
+<p>Natural deduction rules for FOL:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th><span class="arithmatex">\(\vdash\)</span> Notation</th>
+<th>Inference Notation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\forall\)</span> - Elimination</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash \forall x \alpha\)</span>, then <span class="arithmatex">\(\Sigma \vdash \alpha[t/x]\)</span> for any term <span class="arithmatex">\(t\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \forall x \alpha \\ \hline \alpha[t/x] \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\forall\)</span> - Introduction</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash \alpha[t/x]\)</span> with <span class="arithmatex">\(t\)</span> not free in <span class="arithmatex">\(\Sigma\)</span> or <span class="arithmatex">\(\alpha\)</span>, then <span class="arithmatex">\(\Sigma \vdash \forall x \alpha\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \boxed{\begin{array}{c} t \text{ fresh}\  \\ \vdots \\ \alpha[t/x] \end{array}} \\ \hline \forall x \alpha \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\exists\)</span> - Introduction</td>
+<td>if <span class="arithmatex">\(\Sigma \vdash \alpha[t/x]\)</span>, then <span class="arithmatex">\(\Sigma \vdash \exists x \alpha\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \alpha[t/x] \\ \hline \exists x \alpha \end{array}\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\exists\)</span> - Elimination</td>
+<td>if <span class="arithmatex">\(\Sigma \cup \{\alpha[t/x]\} \vdash \beta\)</span> with <span class="arithmatex">\(t\)</span> fresh, then <span class="arithmatex">\(\Sigma \cup (\exists x \alpha) \vdash \beta\)</span>.</td>
+<td><span class="arithmatex">\(\begin{array}{c} \exists x \alpha \\ \boxed{\begin{array}{c} \alpha[t/x], t \text{ fresh} \\ \vdots \\ \beta \end{array}} \\ \hline \beta \end{array}\)</span></td>
+</tr>
+</tbody>
+</table>
+
+        <!-- Last update of source file -->
+        
+          
+        
+      
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022-2024 Lumi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://space.bilibili.com/85744189" target="_blank" rel="noopener" title="Bilibili | MrBHAAA" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0s16.1 2.868 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0c8.8 0 16.1 2.868 21.9 8.603 5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1zm-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8 6.3-6.5 9.7-14.3 10.1-23.5V173.8zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5-9.6 0-17.5-3.2-23.6-9.5-6.1-6.3-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2 6.3-6.3 13.2-9.6 23.3-10 9.2.4 17 3.7 23.3 10zm191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.1 6.3-14 9.5-23.6 9.5-9.6 0-17.4-3.2-23.6-9.5-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2 6.3-6.3 14.1-9.6 23.3-10 9.2.4 17 3.7 23.3 10z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/BHAAA-ZLM" target="_blank" rel="noopener" title="GitHub | Lumi" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://x.com/BHAAA2021374718" target="_blank" rel="noopener" title="X(twitter) | Lumi" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "navigation.expand", "navigation.indexes", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

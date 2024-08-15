@@ -92,6 +92,7 @@ nav:
     - Experiments:
       - Genome-Why are we different: Biology/Experiments/BIOS201.md
     - Structural Biology:
+      - Visualization with ChimeraX: Biology/Struct/Chimera_visualization.md
       - Installing Coot on Mac: Biology/Struct/coot_install.md
   - CS:
     - Computer Science: CS/index.md
@@ -106,7 +107,9 @@ nav:
     - Learning: Learning/index.md
     - Chemistry:
       - Chemistry Experiments: Learning/Chemistry/Experiments.md
-    - Quantum Mechanics: Learning/Quantum/Basics.md
+    - Physics: 
+      - Quantum Mechanics: Learning/Physics/Quantum/Basics.md
+      - Fly By Night: Learning/Physics/fly_by_night.md
   - About:
     - Welcome to Lumi's Blog!: About/index.md
     - About Me: About/SelfIntro/SelfIntro.md
