@@ -29,6 +29,7 @@ cartoon style strand modeHelix default arrows true xsection rectangle width 2 th
 cartoon style helix modeHelix default arrows false xsection oval width 1.6 thickness 1.2
 
 graphics silhouettes width 3
+graphics silhouettes true
 
 save rag_ragulator.jpg pixelSize 0.05 quality 100
 ```
@@ -36,6 +37,17 @@ save rag_ragulator.jpg pixelSize 0.05 quality 100
 ![My Output](chimera/rag_ragulator.jpg)
 
 I prefer the thicker silhouette when viewing the whole protein. But I think it would be better if we can change the colour of the different chains. I will try to do that in the future.
+
+**Update:**
+
+A useful way to make the picture seem is simply to adjust the saturation of the picture with the `color modify` command. With this simple command:
+```python
+color modify saturation +70
+```
+We can make the picture more vivid and colourful.
+![Adjusted Saturatioin](chimera/rag_ragulator_high_sat.jpg)
+
+However, I think some people might actually prefer the low-saturation one, but it's still good to learn that we can adjust this.
 
 ## Local Resolution Video
 
