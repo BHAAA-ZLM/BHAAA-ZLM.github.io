@@ -100,3 +100,16 @@ movie encode ~/Desktop/planes.mp4 quality high
 </video>
 
 A problem with this video is that this is not actually a top-side view of the density, making it hard to interpret. I think it might have something to do with the way the model is built? Or how CryoSPARC generate these electron density maps. I will try to see if we can set the plane to a wanted position in the future, a simple rest of the $x,y,z$ coordinates might do the trick.
+
+## Very Good Lighting
+
+ChimeraX's simple presets for lighting are sometimes not very satisfying. The preset `soft` introduces very weird shadows, and `gentle` sometimes seems not so lively. After some reading of the manuscript and fooling around, I made a new alias `lighting_lumi` for my lighting.
+```
+alias lighting_lumi lighting intensity 0.1 ambientIntensity 1.6 depthCue true multiShadow 64 msMapSize 128
+```
+In this code, the ambientIntensity is increased from 1.5 to 1.6 compared with `gentle`, and made the colour a bit more lively. `multiShadow` was set to 64, which removes the weird shadow problem with `soft` lighting, `msMapSize` was also changed for that.
+
+Here is a comparison between the three lighting presets:
+![Lighting Comparison](chimera/lighting_compare.jpg)
+
+As we can see, the `lighting_lumi` command made the protein look more vivid, with higher exposure. Which I think looks better with silhouettes. It's a bit hard to say which one is better when we are not using silhouettes. Also, lighting conditions still might need to be adjusted according to specific characters due to their structure or the colour used.
