@@ -18,7 +18,7 @@ extra:
       link: https://github.com/BHAAA-ZLM
       name: GitHub | Lumi
 
-    - icon: fontawesome/brands/x-twitter
+    - icon: fontawesome/brands/twitter
       link: https://x.com/BHAAA2021374718
       name: X(twitter) | Lumi
 
@@ -92,6 +92,7 @@ nav:
     - Experiments:
       - Genome-Why are we different: Biology/Experiments/BIOS201.md
     - Structural Biology:
+      - Protein Expression with Sf9 Cells: Biology/Struct/protein_purification.md
       - Visualization with ChimeraX: Biology/Struct/Chimera_visualization.md
       - Installing Coot on Mac: Biology/Struct/coot_install.md
   - CS:
