@@ -150,14 +150,26 @@ Based on the protein with His tag.
 1. Centrifuge the beads at 1000g for 5 minutes at 4°C. Collect the supernatant into the beaker, and resuspend the beads and add the beads into the column.
 1. Wash the beads with washing buffer for multiple times until the Bradford assay shows no protein in the wash.
 1. (If want to remove Hsp70) Add 10mM ATP with Mg2+, incubate for 30 minutes at 4°C, wash with washing buffer.
-1. Complex was concentrated with a 100kDa cut-off Amicon filter and further purified by size-exclusion chromatography.
+1. Complex was concentrated with a 100kDa cut-off Amicon filter and further purified by size-exclusion chromatography. 
+    Keep the protein at 4°C during the process!
+    For protein concentration:
+    - Wash the filter with ddH2O, centrifuge at 4000 rpm for 1 minute. Repeat 2 times.
+    - Wash the filter with protein buffer, centrifuge at 4000 rpm for 1 minute. Repeat 2 times.
+    - Add the protein to the filter and centrifuge at 4000 rpm for 2 minutes. Repeat multiple times till the final volume is 500$\mu$L to 1mL. Invert the tube every time before centrifugation.
+    - During the previous centrifugation, prepare the 1.5mL filter tube. Wash the filter with ddH2O, centrifuge at 14000 xg for 1 minute. Repeat 2 times.
+    - Wash the filter with protein buffer, centrifuge at 14000 xg for 1 minute. Repeat 2 times.
+    - Add the protein to the filter and centrifuge at 14000 xg for 2 minutes. Repeat multiple times till the final volume is below 100$\mu$L or the concentration is above 15mg/mL. Invert the tube every time before centrifugation.
+    - Invert the tube and place into a new centrifugal tube, centrifuge at 1000 xg for 2 minutes and collect the protein, measure the concentration.
+    - Centrifuge at the largest velocity for 10 minutes to remove the bubbles, prepare the chromatography column.
+
     For the size-exclusion chromatography:
-    - Wash the probe with ddH2O, and put the probe inside the washing buffer.
+    - Wash the pump with ddH2O, and put the probe inside the washing buffer.
     - Turn the lamp on from manual control in the program.
     - Wash the pump. Stop after washing.
     - Perform the Equilibration method, and open the UV and autozero after equilibration.
     - Wash the needle with buffer. Discard the first 2 buffer and push the next 2 buffer into the column.
     - Load the sample and start the program. Keep column pressure under 1.7.
     - Put in the 96-well plate and collect the fractions.
+    - After the run, put the pump into ddH2O. Run the washing method and turn off the lamp.
 1. Peak fractions were pooled and examined with SDS-PAGE. The protein can be stored at -80°C.
 1. Protein is concentrated to a good concentration for cryo-EM analysis.
