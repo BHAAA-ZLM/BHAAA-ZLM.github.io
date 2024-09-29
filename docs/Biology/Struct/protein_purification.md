@@ -153,6 +153,7 @@ Based on the protein with His tag.
 1. Complex was concentrated with a 100kDa cut-off Amicon filter and further purified by size-exclusion chromatography. 
     Keep the protein at 4°C during the process!
     For protein concentration:
+
     - Wash the filter with ddH2O, centrifuge at 4000 rpm for 1 minute. Repeat 2 times.
     - Wash the filter with protein buffer, centrifuge at 4000 rpm for 1 minute. Repeat 2 times.
     - Add the protein to the filter and centrifuge at 4000 rpm for 2 minutes. Repeat multiple times till the final volume is 500$\mu$L to 1mL. Invert the tube every time before centrifugation.
@@ -163,6 +164,7 @@ Based on the protein with His tag.
     - Centrifuge at the largest velocity for 10 minutes to remove the bubbles, prepare the chromatography column.
 
     For the size-exclusion chromatography:
+
     - Wash the pump with ddH2O, and put the probe inside the washing buffer.
     - Turn the lamp on from manual control in the program.
     - Wash the pump. Stop after washing.
@@ -171,5 +173,6 @@ Based on the protein with His tag.
     - Load the sample and start the program. Keep column pressure under 1.7.
     - Put in the 96-well plate and collect the fractions.
     - After the run, put the pump into ddH2O. Run the washing method and turn off the lamp.
+    
 1. Peak fractions were pooled and examined with SDS-PAGE. The protein can be stored at -80°C.
 1. Protein is concentrated to a good concentration for cryo-EM analysis.
