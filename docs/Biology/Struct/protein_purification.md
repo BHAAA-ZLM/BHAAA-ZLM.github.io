@@ -92,6 +92,9 @@ For Luria Agar plates:
         - 1L of ddH2O
     Add some NaOH to adjust the pH to 7.0, 0.5ml 10x NaOH in 1L LB medium.
     Autoclave and cool to 55°C, add the antibiotics and pour into the plates.
+    
+    When using the LB, remember to add the appropriate antibiotics. (e.g. 1mL 1000x ampicillin to 1L LB medium)
+
 1. Thaw the DH10Bac cells on ice for approximately 6 minutes.
 1. Add 250ng of the recombinant donor plasmid to the DH10Bac cells, mix gently, and incubate on ice for 30 minutes(Open the 42°C water bath).
 1. Heat shock the cells at 42°C for 1 minute.
@@ -179,4 +182,5 @@ Based on the protein with His tag.
     - During SDS-PAGE, the other side should be sealed with either a new gel, or an old one stuck reversely into the slot. So that the buffer will stay inside slot at all times.
     - The gel could be run at 180V for 45 minutes.
     - Stain with the gel staining machine.
+    
 1. Protein is concentrated to a good concentration for cryo-EM analysis.
