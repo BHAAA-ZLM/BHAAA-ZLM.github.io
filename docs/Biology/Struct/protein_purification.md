@@ -175,4 +175,8 @@ Based on the protein with His tag.
     - After the run, put the pump into ddH2O. Run the washing method and turn off the lamp.
     
 1. Peak fractions were pooled and examined with SDS-PAGE. The protein can be stored at -80°C.
+
+    - During SDS-PAGE, the other side should be sealed with either a new gel, or an old one stuck reversely into the slot. So that the buffer will stay inside slot at all times.
+    - The gel could be run at 180V for 45 minutes.
+    - Stain with the gel staining machine.
 1. Protein is concentrated to a good concentration for cryo-EM analysis.
