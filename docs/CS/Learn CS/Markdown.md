@@ -458,7 +458,7 @@ HTML
 ```
 
 <span style="font-family: Courier">
-You can create a link to your heading by creating a [standard link](#1) with the number sign (#) followed by the custom heading ID. But sadly, the markdown notation still doesn't work, I wonder...
+You can create a link to your heading by creating a [standard link](#2) with the number sign (#) followed by the custom heading ID. But sadly, the markdown notation still doesn't work, I wonder...
 
 ```
 Markdown
