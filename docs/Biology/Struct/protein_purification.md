@@ -43,6 +43,7 @@ Cell cultures are better kept at $1.2 \times 10^6$ cells/mL, they grow best at t
     | Enzyme (P525, 2x) | 25 |
 
 1. Run the PCR reaction with the following conditions:
+
     - 95°C for 3 minutes
     - 95°C for 30 seconds
     - 55°C for 30 seconds
@@ -53,6 +54,7 @@ Cell cultures are better kept at $1.2 \times 10^6$ cells/mL, they grow best at t
 
     (In the mean time) 
     Gel preparation: 60mL of 1x TAE buffer, 0.6g of agarose, 1.5$\mu$L of GelRed. Heat in Microwave for 1min, and pour into the gel tray. Insert the comb and wait for ~40 minutes.
+
 1. Run the PCR product on a 1% agarose gel to check the size of the product.
 1. Purify the PCR product with a gel extraction kit.
 1. Measure the concentration of the purified PCR product with a Nanodrop. A DNA concentration of ~100ng/$\mu$L is good.
@@ -68,12 +70,15 @@ Cell cultures are better kept at $1.2 \times 10^6$ cells/mL, they grow best at t
     | Ligase Enzyme (C115, 2x) | 5 $\mu$L |
     
     Add $x$ to the reaction to make the total volume 10$\mu$L.
+
 1. Incubate the ligation reaction at 50°C for 20min (use the PCR instrument).
 1. Transform the ligation reaction into DH5$\alpha$ cells.
+
     - Flaw DH5$\alpha$ cells on the ice for 6 minutes.
     - Add 5$\mu$L of the ligation reaction to the cells gently mix by shaking and incubate on ice for 30 minutes (open the 42&#176;C water bath).
     - Heat shock the cells at 42°C for 1 minute.
     - Rest on ice for 2 minutes, seed to LA culture (with Ampicillin 100$\mu$g/mL) and incubate at 37°C overnight.
+
 1. Pick a single colony and culture in LA with Ampicillin. At the same time, send the cells for sequencing in 1mL of Amp+ LB medium.
 1. Extract the plasmid from the colonies with the correct sequence with a plasmid extraction kit.
 
@@ -104,9 +109,11 @@ For Luria Agar plates:
 #### Isolation of Recombinant Bacmid DNA
 Because the Bacmid DNA is a large plasmid (> 100 kb), we need different plasmid extraction method than the DH5$\alpha$ cells. The solutions are obtained from the Pure Plasmid Mini Kit (CWBio).
 
-Solution I: Solution P1.
-Solution II: Solution P2.
-Potassium acetate: Solution N3.
+- Solution I: Solution P1.
+- Solution II: Solution P2.
+- Potassium acetate: Solution N3.
+
+These are the required buffer for the reaction.
 
 0. Put the isopropanol on ice or in freezer.
 1. Select white colonies from the plate. Streak to fresh plates to verify the phenotype. Incubate overnight at 37°C.
