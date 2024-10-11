@@ -78,6 +78,7 @@ nav:
     - Books I Read: 
       - The Art of Statistics: Life/Books/TAOS.md
   - Bioinformatics:
+    - I love Bioinformatics: Bioinformatics/index.md
     - scRNA-Seq:
       - RNA-velocity Analysis for Bioinfo Project: Bioinformatics/scRNA-seq/RNA-velocity_note_bioinfo_project.md
     - Bioinformatics is not quantum mechanics: Bioinformatics/index.md
