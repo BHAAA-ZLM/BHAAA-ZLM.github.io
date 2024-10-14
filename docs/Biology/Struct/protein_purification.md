@@ -59,6 +59,12 @@ Cell cultures are better kept at $1.2 \times 10^6$ cells/mL, they grow best at t
 1. Purify the PCR product with a gel extraction kit.
 1. Measure the concentration of the purified PCR product with a Nanodrop. A DNA concentration of ~100ng/$\mu$L is good.
 
+Enzymes used in Lab:
+
+- [P520](https://bio.vazyme.com/product/408.html): 2x Phanta Flash Master Mix, Vazyme.
+- [P525](https://bio.vazyme.com/product/275.html): 2x Phanta Max Master Mix, Vazyme.
+
+
 #### Cloning into pFastBac Donor Plasmid
 1. Prepare a ligation reaction with the purified PCR product and the pFastBac donor plasmid.
 
@@ -81,6 +87,10 @@ Cell cultures are better kept at $1.2 \times 10^6$ cells/mL, they grow best at t
 
 1. Pick a single colony and culture in LA with Ampicillin. At the same time, send the cells for sequencing in 1mL of Amp+ LB medium.
 1. Extract the plasmid from the colonies with the correct sequence with a plasmid extraction kit.
+
+Enzymes used in Lab:
+
+- [C115](https://bio.vazyme.com/product/83.html): 2x ClonExpress Mix, Vazyme.
 
 #### Transposition of the Recombinant Donor Plasmid
 1. Prepare Luria Agar plates containing:
@@ -191,3 +201,7 @@ Based on the protein with His tag.
     - Stain with the gel staining machine.
     
 1. Protein is concentrated to a good concentration for cryo-EM analysis.
+
+Enzymes used in Lab:
+
+- [Cocktail](https://www.medchemexpress.cn/inhibitor-kit/protease-inhibitor-cocktail.html): Protease Inhibitor Cocktail (EDTA-free, 100x in DMSO), MedChemExpress.
