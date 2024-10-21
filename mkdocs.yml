@@ -106,6 +106,7 @@ nav:
       - Learning Markdown: CS/Learn CS/Markdown.md
       - Learning R: CS/Learn CS/R.md
       - Learning Marp: CS/Learn CS/Marp.md
+      - Setting Up Zotero Sync: CS/Learn CS/zotero_WebDAV.md
     - Projects:
       - My First Project - ChessKing: CS/Projects/ChessKing.md
   - Learning:
