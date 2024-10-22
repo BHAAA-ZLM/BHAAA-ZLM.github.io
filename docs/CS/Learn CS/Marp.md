@@ -1,7 +1,7 @@
 ---
 author: Lumi
 author_gh_user: BHAAA-ZLM
-read_time: 10min
+read_time: 3min
 publish_date: 2024.10.09
 ---
 
