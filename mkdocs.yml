@@ -98,6 +98,7 @@ nav:
       - Protein Expression with Sf9 Cells: Biology/Struct/protein_purification.md
       - Visualization with ChimeraX: Biology/Struct/Chimera_visualization.md
       - Installing Coot on Mac: Biology/Struct/coot_install.md
+      - The Contrast Transfer Function: Biology/Struct/ctf.md
   - CS:
     - Computer Science: CS/index.md
     - Learning CS:
