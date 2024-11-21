@@ -80,7 +80,7 @@ $$ I = \psi \psi^* = 1 + 2\sigma V_t(\mathbf{r}) \otimes \sin(\chi(\mathbf{r})) 
 
 The final image is influenced by two terms. The specimen influencing on wave transfer $\sigma V_t(\mathbf{r})$ and the phase shift caused by the abberation in the instrument $\sin(\chi(\mathbf{r}))$.
 
-### The Contrast Transfer Function
+## The Contrast Transfer Function
 
 Thus we obtained the contrast transfer function $\sin(\chi(\mathbf{r}))$. Where $\chi(\mathbf{r})$ can be described in polar coordinates with: 
 
