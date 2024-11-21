@@ -92,3 +92,44 @@ With HTML syntax, we can locate the pictures at a wanted position inside the sli
 <div style="border: 1.5px solid black; width: 550px;"></div>
 ```
 I didn't came up with a very good way to write a table, so I just use a very brutal way to just draw 2 thick lines and 1 thin one between the texts.
+
+## Ways of Formating Text
+
+I was writing the monthly report for my thesis and suddenly felt it would be very cool to have a small separate style box for the plans in the report. So I had a little chat with ChatGPT and came up with this style:
+
+```css
+
+<style>
+  .plan-box {
+    padding: 15px;
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  .plan-box .content{
+    background-color: #80808030;
+    background-size: 10%;
+    background-position: center;
+    border-radius: 10px;
+    padding: 30px 0px 3px 0px;
+    margin: -40px 0 0 0;
+  }
+  .plan-box heading {
+    margin: -15px -15px -15px -15px;
+    padding: 10px;
+    color: white;
+    background-color: #000000;
+    border-radius: 5px 5px 5px 5px;
+    position: relative;
+    top: -15px;
+    left: -15px;
+    font-weight: 1000;
+    font-size: 30px
+  }
+</style>
+```
+
+Which can make something like this:
+
+<img src="../Marp/plan_style.png">
+
+Which is quite satisfying! Keep tweeking with the margin and padding values so that the two different-coloured background texts are beautifully stacked onto each other!
