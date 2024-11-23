@@ -91,3 +91,129 @@ $$ \chi(r, \theta) = - \frac{1}{2}\lambda (\Delta z + \frac{z_a}{2} \sin2(\phi -
 Where $\Delta z$ is the defocus, $z_a$ is the astigmatis, $C_s$ is the spherical abberation. The function basically discribes a image formed due to the abberation in the instrument.
 
 The final image will be a combination of the contrast transfer function and the specimen transfer function. As we can see from the function, with higher spacial frequency, the contrast transfer function will oscillate more frequently, together with the (not discussed here) envelope function, this makes it hard to obtain infromation at high resolution.
+
+## Properties of the Contrast Transfer Function
+
+Just looking at the Maths isn't very intuitive. So I wrote some Python codes to demonstrate the properties of the Contrast Transfer Function. Codes for this small video can be found on another [GitHub Repository](https://github.com/BHAAA-ZLM/Learning_All_Sorts/blob/master/transmission_EM/fft_image.py) of mine.
+
+<video width=500 height=500 controls>
+  <source src="../ctf/ctf.mov" type="video/quicktime">
+</video>
+
+As we can see from the video, by changing the defocuse value $z$, the image have different details. This feels like passing the Fourier Transform of the image through a high-pass and low-pass filter at the same time. Some details are unfortunately lost forever after.
+
+### Coding the Snippet
+
+The code for this animation is not actually very hard. Instead of using matplotlib, I could have used better plotting tools like [MANIM](https://github.com/3b1b/manim). I'll probably try later if I have time.
+
+The code is made up of three parts, the contrast transfer function definition, the Fourier Transform of the image and filtering, and plotting the image with a slider.
+
+#### Contrast Transfer Function Code
+```Python
+def ctf_function(z, x):
+    """
+    Computes the CTF for a given defocus value z and spatial frequency x.
+
+    Args:
+        z (float): Defocus value (angstrom).
+        x (float): Spatial frequency (angstrom^-1).
+
+    Returns:
+        float: The CTF value for the given defocus and spatial frequency.
+    """
+    return np.sin(-np.pi * z * x**2 + (np.pi / 2) * x**4)
+```
+
+Which is basically the _Standard Characteristics_ with generalized variables for defocus, spatial frequency and (not used here) source size. Which are:
+
+$$
+\Delta \hat{z} = \frac{\Delta z}{[C_s \lambda]^\frac{1}{2}} ,\text{ } \hat{k} = [C_s \lambda]^\frac{1}{4}k, \text{  } \hat{q_0} = [C_s \lambda^3]^\frac{1}{4} q_0
+$$ 
+
+And the contrast transfer function is generalized for all transmission electron microscopes:
+
+$$ CTF(\hat{k}, \Delta \hat{z}) = \sin[- \pi \Delta \hat{z} \hat{k}^2 + \frac{\pi}{2} \hat{k}^4]$$
+
+#### Fourier Transform and Filtering
+
+```Python
+import numpy as np
+
+def ctf_transform(image, z = 1):
+    # Fourier Transform
+    f_transform = np.fft.fft2(image)
+    f_transform_shifted = np.fft.fftshift(f_transform)
+
+    # Generate the CTF filtered image
+    rows, cols = image.shape
+    x = np.linspace(-2, 2, cols)
+    y = np.linspace(-2, 2, rows)
+    X, Y = np.meshgrid(x, y)
+    r = np.sqrt(X**2 + Y**2)
+    ctf = ctf_function(z, r)
+    filtered_transform = f_transform_shifted * ctf 
+
+    # Inverse Fourier Transform
+    filtered_transform_shifted = np.fft.ifftshift(filtered_transform)
+    filtered_image = np.fft.ifft2(filtered_transform_shifted)
+    filtered_image = np.abs(filtered_image)
+    return ctf, filtered_transform, filtered_image
+```
+
+Then we filter the image (after Fourier Transform and shifting) with the contrast transfer function. 
+
+#### Plotting
+
+```Python
+# Create the plot
+fig, ax = plt.subplots(1, 4, figsize=(12, 6))
+plt.subplots_adjust(left=0.1, bottom=0.25)  # Adjust for sliders
+
+# Original image
+ax[0].imshow(image, cmap='gray')
+ax[0].set_title("Original Image")
+ax[0].axis('off')
+
+# 2D CTF plot
+ctf_im = ax[1].imshow(output[0], cmap='gray')
+ax[1].set_title("Contrast Transfer Function (2D)")
+ax[1].set_xlabel("Spatial Frequency (1/angstrom)")
+ax[1].axis('off')
+
+# Filtered image
+filtered_im = ax[2].imshow(np.log(np.abs(output[1]) + 1), cmap='gray')
+ax[2].set_title("Image After CTF Filtering")
+ax[2].axis('off')
+
+# Output image
+out_im = ax[3].imshow(1 + output[2], cmap='gray', vmin=0, vmax=output[2].max() + 1)
+ax[3].set_title("Filtered Image")
+ax[3].axis('off')
+
+# Add sliders
+ax_z = plt.axes([0.1, 0.1, 0.65, 0.03])
+slider_z = Slider(ax_z, 'z', -2, 2, valinit=1)
+
+# Update function for sliders
+def update(val):
+    z = slider_z.val
+    output = ctf_transform(image, z)
+    ctf_im.set_data(output[0])
+    filtered_im.set_data(np.log(np.abs(output[1]) + 1))
+    out_im.set_data(1 + output[2])
+    fig.canvas.draw_idle()
+
+slider_z.on_changed(update)
+plt.show()
+```
+
+Finally we plot all the values. With the final image, I added a `1 + ` to mimic the effect of the transmission electrons on the final image. Remember to set the minimum and maximum value for the colour bar, otherwise matplotlib will set the smallest value to black and largest to white and you won't be able to get an image with grey background.
+
+Just for fun, I added a slider (with the help of AI) to show the change in the final output as the defocus value changes.
+
+## References
+[1] Frank, J. (2006). Three-Dimensional Electron Microscopy of Macromolecular Assemblies: Visualization of Biological Molecules in Their Native State. _Oxford University Press._
+
+[2] Williams, D. B., & Carter, C. B. (2008). Transmission electron microscopy: A textbook for materials science (2nd ed). _Springer_.
+
+[3] Caltech. Part 3: The Contrast Transfer Function - G. Jensen. [_Youtube_](https://www.youtube.com/watch?v=mPynoF2j6zc).
