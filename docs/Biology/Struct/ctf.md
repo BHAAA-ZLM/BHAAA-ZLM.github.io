@@ -97,7 +97,7 @@ The final image will be a combination of the contrast transfer function and the 
 Just looking at the Maths isn't very intuitive. So I wrote some Python codes to demonstrate the properties of the Contrast Transfer Function. Codes for this small video can be found on another [GitHub Repository](https://github.com/BHAAA-ZLM/Learning_All_Sorts/blob/master/transmission_EM/fft_image.py) of mine.
 
 <video width=500 height=500 controls>
-  <source src="../ctf/ctf.mov" type="video/quicktime">
+  <source src="../ctf/ctf.mp4" type="video/mp4">
 </video>
 
 As we can see from the video, by changing the defocuse value $z$, the image have different details. This feels like passing the Fourier Transform of the image through a high-pass and low-pass filter at the same time. Some details are unfortunately lost forever after.
