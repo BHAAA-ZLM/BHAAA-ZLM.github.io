@@ -45,6 +45,7 @@ A useful way to make the picture seem is simply to adjust the saturation of the 
 color modify saturation +70
 ```
 We can make the picture more vivid and colourful.
+
 ![Adjusted Saturatioin](chimera/rag_ragulator_high_sat.jpg)
 
 However, I think some people might actually prefer the low-saturation one, but it's still good to learn that we can adjust this.
@@ -113,3 +114,20 @@ Here is a comparison between the three lighting presets:
 ![Lighting Comparison](chimera/lighting_compare.jpg)
 
 As we can see, the `lighting_lumi` command made the protein look more vivid, with higher exposure. Which I think looks better with silhouettes. It's a bit hard to say which one is better when we are not using silhouettes. Also, lighting conditions still might need to be adjusted according to specific characters due to their structure or the colour used.
+
+## Using Color Palettes
+
+ChimeraX supports colouring chains with palettes. In a [2022 paper about nucleosome retention](https://www.science.org/doi/10.1126/science.abo3851), the authors cleverly used this to indicate the position of the DNA chain.
+
+![Nucleosome Retention](https://www.science.org/cms/10.1126/science.abo3851/asset/091cd25c-4ded-4879-ace4-a932a5b470dd/assets/images/large/science.abo3851-f1.jpg)
+
+This can be achieved with the following ChimeraX commands:
+
+```python
+rainbow Template target c palette ^PuBu-5
+rainbow Non-template target c palette PuBu-5
+```
+
+The `^` in front of `PuBu-5` indicates using the palette in reverse order. The `Template` and `Non-template` are the names of the chains. Full codes can be found [here](./chimera/script-7unc.py), resulting in the following graph.
+
+![Nucleosome Retention Reproduction](./chimera/rewrap_2025-04-29_16-15.png)
