@@ -77,6 +77,7 @@ nav:
     - Life: Life/index.md
     - Books I Read: 
       - The Art of Statistics: Life/Books/TAOS.md
+    - Colours from Publications: Life/colours_pub.md
   - Bioinformatics:
     - I love Bioinformatics: Bioinformatics/index.md
     - scRNA-Seq:
