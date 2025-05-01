@@ -70,4 +70,4 @@ run (session, 'transparency protein 50 target c')
 # Saving figures
 now = datetime.now()
 dt_string = now.strftime("%Y-%m-%d_%H-%M")
-run	(session, 'save {n}_{d}.png width 2000 height 2000 supersample 4 transparentBackground false'.format(n = baseName, d = dt_string))
+# run	(session, 'save {n}_{d}.png width 2000 height 2000 supersample 4 transparentBackground false'.format(n = baseName, d = dt_string))
