@@ -93,6 +93,15 @@ In-cell architecture of the mitochondrial respiratory chain:
 <div style="display: inline-block; width: 32px; height: 15px; background-color: #6FAF8F; border: 1px solid black;"></div>
 <div style="display: inline-block; width: 32px; height: 15px; background-color: #7CB0E1; border: 1px solid black;"></div>
 
+In situ architecture of the ciliary base reveals the stepwise assembly of intraflagellar transport trains:
+<div style="display: inline-block; width: 32px; height: 15px; background-color: #DF1B7D; border: 1px solid black;"></div>
+<div style="display: inline-block; width: 32px; height: 15px; background-color: #F49C30; border: 1px solid black;"></div>
+<div style="display: inline-block; width: 32px; height: 15px; background-color: #F4ED61; border: 1px solid black;"></div>
+<div style="display: inline-block; width: 32px; height: 15px; background-color: #73C9C2; border: 1px solid black;"></div>
+<div style="display: inline-block; width: 32px; height: 15px; background-color: #B6D8F4; border: 1px solid black;"></div>
+<div style="display: inline-block; width: 32px; height: 15px; background-color: #52A3DA; border: 1px solid black;"></div>
+<div style="display: inline-block; width: 32px; height: 15px; background-color: #A28BC1; border: 1px solid black;"></div>
+
 ## Werner Kühlbrandt Lab
 Rotary substates of mitochondrial ATP synthase reveal the basis of flexible F1-F0 coupling:
 <div style="display: inline-block; width: 32px; height: 15px; background-color: #EB242F; border: 1px solid black;"></div>
