@@ -110,6 +110,7 @@ nav:
       - Learning R: CS/Learn CS/R.md
       - Learning Marp: CS/Learn CS/Marp.md
       - Setting Up Zotero Sync: CS/Learn CS/zotero_WebDAV.md
+      - Drawing Mandelbrot Set with Python: CS/Learn CS/mandelbrot.md
     - Projects:
       - My First Project - ChessKing: CS/Projects/ChessKing.md
   - Learning:
