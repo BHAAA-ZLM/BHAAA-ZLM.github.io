@@ -17,7 +17,7 @@ Some complex numbers are contained in this set, and some might diverge. By colou
 
 The code for plotting this graph is listed as follows. This uses a programming language called [Processing](processing.org).
 
-```python
+``` py linenums="1"
 # Change to regions of interest
 x_MIN, x_MAX = -0.78, -0.73
 y_MIN, y_MAX = -0.08, -0.03
