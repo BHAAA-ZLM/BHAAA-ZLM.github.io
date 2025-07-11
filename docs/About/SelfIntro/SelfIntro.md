@@ -16,8 +16,11 @@ publish_date: Constantly Updating
 <img src="../Me.jpg" width="300" alt="yep, that's me">
 
 ## <span style="font-family: Courier">Studying Experiences
+<span style="font-family: Courier"> I am currently an fully-stipend PhD fast-track International Max-Planck Research School student for [Molecular Biology](https://uni-goettingen.de/en/663690.html) in the Max-Planck Institute for Multidisciplinary Sciences in Gottingen, Germany.
 
-<span style="font-family: Courier">I am a undegraduate majoring in bioinformatics in [SUSTech](https://sustech.edu.cn), I am also very proud to be a member of Shuren College. My school is very beautiful and the teachers here are very nice. I enjoy learning in such a wonderful school! 
+<img src="../me_2025.JPG" width="300" alt="me in 2025">
+
+<span style="font-family: Courier">I used to be an undegraduate majoring in bioinformatics in [SUSTech](https://sustech.edu.cn), I am also very proud to be a member of Shuren College. My school is very beautiful and the teachers here are very nice. I enjoy learning in such a wonderful school! 
 
 ## <span style="font-family: Courier">Hobbies
 <span style="font-family: Courier">I consider myself as a very funny person and my hobbies change very quickly. But learning is something I always like and I'm always eager to learn more. That's why you will find a lot of learning related posts in my blog.
