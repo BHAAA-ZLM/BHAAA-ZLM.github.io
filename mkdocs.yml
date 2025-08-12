@@ -6,7 +6,7 @@ site_description: Lumi's Blog
 repo_url: https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io
 repo_name: BHAAA-ZLM.github.io
 
-copyright: Copyright &copy; 2022-2024 Lumi
+copyright: Copyright &copy; 2022-2026 Lumi
 
 extra: 
   social:
@@ -104,6 +104,7 @@ nav:
   - CS:
     - Computer Science: CS/index.md
     - Learning CS:
+      - Learning Artificial Intelligence: CS/Learn CS/Artificial_Intelligence_B_notes.md
       - Learning Mathematical Logic: CS/Learn CS/Logic_review.md
       - Learning Discrete Mathematics: CS/Learn CS/Discrete_review.md
       - Learning Markdown: CS/Learn CS/Markdown.md
@@ -145,8 +146,13 @@ markdown_extensions:
       
 extra_css:
   - stylesheets/custom.css  
-  
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
 extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
