@@ -98,5 +98,5 @@ How to determine the thresholds for separation is a common problem in computer v
 
 Intuitively if we think about it, when separating the pixels into two classes, we want the classes to be as different as possible, within one class, the pixels should be as similar as possible.
 
-In mathematical terms, we want to maximize the **between-class variance** while minimizing the **within-class variance**.  Which surprisingly, are the same thing.
+In mathematical terms, we want to maximize the **between-class variance** while minimizing the **within-class variance**.  Which surprisingly, are the same thing. Because mathematically, the total variance is the sum of these two variances.
 
