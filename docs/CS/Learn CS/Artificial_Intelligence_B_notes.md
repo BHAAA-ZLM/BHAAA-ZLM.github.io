@@ -303,6 +303,125 @@ Two types of noise can be added to an image: Gaussian noise and Salt-and-Pepper 
 
 The Gaussian filter can be used to reduce Gaussian noise.
 
-### Scaling Space and Edge
+### Scaling Space
+In an image, informations are contained in different scales. These informations contained in a specific scale is known as the **scale space**.
 
- 
+A linear scale space is a continuous function of scale, $s$, which is defined as:
+
+$$\mathbf{I}(x, y, s) = \mathbf{I}(x, y) * \mathbf{G}(x, y, s)$$
+
+Where $G(x, y, s)$ is a Gaussian function with scale $s$. In this method, different gaussian filters with different variances are applied to the image.
+
+With Gaussian pyramids, we can create a multi-scale representation of the image. The Gaussian pyramid is a series of images, each with a different scale, created by applying Gaussian filters with different variances to the original image.
+
+Since the size of the detector is often fixed, the size of the image is changed by **resampling**.
+
+### Edges
+
+Edges are abrupt changes in the intensity of the image. These changes can be caused by surface normal discontinuity, depth discontinuity, surface colour discontinuity.
+
+The gradiant of an image can be calculated as:
+
+$$\nabla \mathbf{I}(x, y) = \left( \frac{\partial \mathbf{I}}{\partial x}, \frac{\partial \mathbf{I}}{\partial y} \right)$$
+
+Where $\nabla$ is the nabla operator, which is a vector operator that represents the gradient of a function.
+
+The direction of the gradient is:
+
+$$\theta = \tan^{-1} \left( \frac{\partial \mathbf{I}}{\partial y} , \frac{\partial \mathbf{I}}{\partial x} \right)$$
+
+In a discrete image, the gradient can be approximated by using finite differences:
+
+$$\nabla \mathbf{I}(i, j) = \left( \mathbf{I}(i + 1, j) - \mathbf{I}(i - 1, j), \mathbf{I}(i, j + 1) - \mathbf{I}(i, j - 1) \right)$$
+
+Or even more simply:
+
+$$\nabla \mathbf{I}(i, j) = \left( \mathbf{I}(i + 1, j) - \mathbf{I}(i, j), \mathbf{I}(i, j + 1) - \mathbf{I}(i, j) \right)$$
+
+
+If we calculate the magnitude of gradiant right away, the intensity of gradient will be influenced severely by noise. Instead, we can first smooth the image with a Gaussian filter, and then calculate the gradient.
+
+Since convolution is associative, the derivative of a convolution can be calculated as:
+$$\nabla (\mathbf{I} * \mathbf{G})(i, j) = \mathbf{I} * \nabla \mathbf{G}(i, j)$$
+
+So, precomputing the gradient of the Gaussian filter, $\nabla \mathbf{G}(i, j)$, and convolving it with the image will give us the gradient of the image and save computation time.
+
+#### Canny Edge Detection
+
+Canny edge detection is a popular algorithm with the following steps:
+
+1. **Smoothing**: Apply a Gaussian filter to the image to reduce noise.
+2. **Gradient Calculation**: Calculate the gradient of the image. $Theta$ are approximated to [0, 45, 90, 135] degrees.
+
+$$\mathbf{G}_{x,y} = \sqrt{G_x^2 + G_y^2}$$
+
+$$\theta = \tan^{-1} \left( \frac{G_y}{G_x} \right)$$ 
+
+3. **Non-Maximum Suppression & Double Thresholding**: Thin the edges by suppressing non-maximum pixels in the gradient direction. So that we can obtain a very thin edge.
+4. **Edge Tracking by Hysteresis**: Connect weak edges to strong edges if they are connected, and discard weak edges that are not connected to strong edges (according to the double thresholding).
+
+#### Optical Flow
+
+Motions are important for the detection of differences.
+
+To immitate the motion in 3D real space, suppose an object is at $\mathbf{X} = (x, y, z)$ and it forms an image at $\mathbf{X}'(x', y')$ on the image plain.
+
+The velocity is defined as the change of position over time:
+
+$$\mathbf{V} = \frac{d\mathbf{X}}{dt} = \left( \frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt} \right)$$
+
+For the 2D image, the velocity is defined as:
+
+$$\mathbf{V}' = \left( \frac{dx'}{dt}, \frac{dy'}{dt} \right)$$
+
+For the optics, their exists an equilatteral triangle between the 3D point, the camera, and the image plane. 
+
+$$\frac{f}{z}=\frac{x'}{x} = \frac{y'}{y}$$
+
+Where $f$ is the focal length of the camera.
+
+So $x'=fx/z$ and $y'=fy/z$.
+
+The velocity of the image point can be calculated as:
+
+$$\mathbf{V}' = \left( \frac{dx'}{dt}, \frac{dy'}{dt} \right) = \left( \frac{f}{z} \frac{dx}{dt} - \frac{fx}{z^2} \frac{dz}{dt}, \frac{f}{z} \frac{dy}{dt} - \frac{fy}{z^2} \frac{dz}{dt} \right)$$
+
+This can be simplified to:
+
+$$\mathbf{V}' = \frac{f}{z} \left( v_x, v_y \right) - \frac{v_z}{z}\left( x' , y' \right)$$
+
+The equation describes the relationship between the velocity of the image point and the velocity of the 3D point.
+
+<figure>
+    <img src="../AI_B/moving_pictures.png" alt="Optical Flow Example" width="600" caption="Optical flow example.">
+    <figcaption>The moves you can observe from the picture.</figcaption>
+</figure>
+
+There are four types of motions in a video:
+- translation at constant depth
+- translation in depth
+- rotation at constant depth
+- rotation in depth
+
+Optical flow is the apparent motion of brightness patterns in the image. With some key assumptions:
+- The brightness is consistent over time.
+- The motion is small.
+- The motion is smooth. Meaning that points move like their neighbours.
+
+During motion, the two points are $\mathbf{I}(x, y, t)$ and $\mathbf{I}(x + dx, y + dy, t + dt)$.
+
+With Taylor expansion, the point at $t+1$ can be approximated as:
+$$\mathbf{I}(x + dx, y + dy, t + dt) \approx \mathbf{I}(x, y, t) + \frac{\partial \mathbf{I}}{\partial x} dx + \frac{\partial \mathbf{I}}{\partial y} dy + \frac{\partial \mathbf{I}}{\partial t} dt$$
+
+Assuming a tiny change, we can then rearrange the equation to get:
+
+$$\frac{\partial \mathbf{I}}{\partial x} dx + \frac{\partial \mathbf{I}}{\partial y} dy + \frac{\partial \mathbf{I}}{\partial t} dt = 0$$
+
+$$\nabla \mathbf{I}^\top \cdot \mathbf{V} + \frac{\partial \mathbf{I}}{\partial t} = 0$$
+
+Where $\nabla \mathbf{I}$ is the gradient of the image, and $\mathbf{V}$ is the velocity of the image point.
+
+This equation is known as the **Optical Flow Constraint Equation**. It describes the relationship between the gradient of the image and the velocity of the image point.
+
+In this equation, if $\mathbf{V} \perp \nabla \mathbf{I}$, then the image point is moving in the direction of the edge. Optical flow cannot detect this kind of motion. This phenomenon is known as the **aperture problem**, or the barber illusion.
+
