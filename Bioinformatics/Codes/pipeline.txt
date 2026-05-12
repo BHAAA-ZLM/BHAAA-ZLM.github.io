@@ -1,0 +1,83 @@
+#PBS -N natac_$sampleid
+#PBS -l nodes=1:ppn=12
+#PBS -j oe
+#PBS -l walltime=20:00:00
+#PBS -V
+#PBS -q ser
+
+cd $PBS_O_WORKDIR
+
+
+#fastp -a CTGTCTCTTATA --detect_adapter_for_pe -w 12 --length_required 20 -q 30 -i $fq1 -I $fq2 -o trim/${sampleid}_1.fq.gz -O trim/${sampleid}_2.fq.gz -h trim/${sampleid}_fastp.html
+#
+#bowtie2 -x ~/reference/bowtie2/xenTro10 -1 trim/${sampleid}_1.fq.gz -2 trim/${sampleid}_2.fq.gz -p 12 -X 2000 | samtools view -bS - -@ 12 > mapping/${sampleid}.bam
+#
+
+#/home/bio-ligp/miniconda3/envs/py2/bin/python ~/bin/filter_bam.py -i mapping/${sampleid}.bam -o mapping/${sampleid}.filt.bam
+#
+sambamba-0.7.0 sort --sort-picard -m 8G --tmpdir=tmp -t 12 mapping/${sampleid}.filt.bam -o mapping/${sampleid}.sort.bam
+sambamba-0.7.0 markdup -r -t 12 --tmpdir=tmp mapping/${sampleid}.sort.bam mapping/${sampleid}.dup.bam
+#
+samtools sort -@ 12 mapping/$sampleid.dup.bam > mapping/$sampleid.dup.sort.bam
+#
+/home/bio-ligp/miniconda3/envs/py2/bin/python ~/bin/get_tlen.py -i mapping/$sampleid.dup.sort.bam > mapping/$sampleid.dup.sort.bam.tlen.txt
+#
+macs2 callpeak -t mapping/$sampleid.dup.sort.bam -g 1.435e9 --keep-dup all --outdir peaks -n $sampleid -q 0.05 --slocal 10000 --nomodel --nolambda -B --SPMR
+#
+#
+samtools index -@ 12 mapping/$sampleid.dup.sort.bam
+bamCoverage -b mapping/$sampleid.dup.sort.bam -p 12 --normalizeUsing CPM --binSize 5 -o bigwig/$sampleid.ATAC.bw
+
+
+
+for ((i = 1; i <= 2; i++)); do 
+    fastp -i /data/bio-tianc/xenopus/fastq/merge_XT-st9-ATAC-${i}_R1.fq.gz \
+        -I /data/bio-tianc/xenopus/fastq/merge_XT-st9-ATAC-${i}_R2.fq.gz \
+        -o /data/bio-zhanglm/xenopus/01_QC/st9-ATAC-${i}-trim_R1.fastq.gz \
+        -O /data/bio-zhanglm/xenopus/01_QC/st9-ATAC-${i}-trim_R2.fastq.gz \
+        --detect_adapter_for_pe -w 20 -l 20 -q 30 \
+        -h /data/bio-zhanglm/st9-ATAC-${i}_fastp.html;
+done
+
+for ((i = 1; i<=2; i++)); do
+    bowtie2 -x /data/bio-tianc/xenopus/reference/Xentr10.repeatMasked.fasta \
+        -1 /data/bio-zhanglm/xenopus/01_QC/st9-ATAC-${i}-trim_R1.fastq.gz \
+        -2 /data/bio-zhanglm/xenopus/01_QC/st9-ATAC-${i}-trim_R2.fastq.gz \
+        -p 20 -X 2000 | samtools view -bS - -@ 12 > /data/bio-zhanglm/xenopus/02_Align/st9-ATAC-${i}-aligned.bam;
+done
+
+
+
+for ((i=1;i<=2;i++)); do
+    python /data/bio-tianc/xenopus/tools/filter_bam.py \
+    -i st9-ATAC-${i}-aligned.bam \
+    -o st9-ATAC-${i}-aligned.filt.bam;
+done
+
+
+for ((i=1;i<=2;i++)); do
+    sambamba sort --sort-picard -m 8G --tmpdir=tmp -t 20 \
+    /data/bio-zhanglm/xenopus/03_Filter/st9-ATAC-${i}-aligned.filt.bam \
+     -o /data/bio-zhanglm/xenopus/04_Sort/st9-ATAC-${i}.sort.bam
+    sambamba markdup -r -t 20 --tmpdir=tmp \
+    /data/bio-zhanglm/xenopus/04_Sort/st9-ATAC-${i}.sort.bam \
+    /data/bio-zhanglm/xenopus/05_Remove_Dup/st9-ATAC-${i}.dup.bam
+    samtools sort -@ 40 /data/bio-zhanglm/xenopus/05_Remove_Dup/st9-ATAC-${i}.dup.bam > /data/bio-zhanglm/xenopus/06_Sort/st9-ATAC-${i}.dup.sort.bam;
+done
+
+for ((i=1;i<=2;i++)); do
+    python /data/bio-tianc/xenopus/tools/get_tlen.py \
+    -i /data/bio-zhanglm/xenopus/06_Sort/st9-ATAC-${i}.dup.sort.bam > /data/bio-zhanglm/xenopus/07_Frag_length/st9-ATAC-${i}.dup.sort.bam.tlen.txt;
+done
+
+for ((i=1;i<=2;i++)); do
+    macs2 callpeak -t /data/bio-zhanglm/xenopus/06_Sort/st9-ATAC-${i}.dup.sort.bam \
+    -g 1.435e9 --keep-dup all --outdir /data/bio-zhanglm/xenopus/08_Peak \
+    -n st9-${i} -q 0.05 --slocal 10000 --nomodel --nolambda -B -SPMR;
+done
+
+for ((i=1;i<=2;i++)); do
+    samtools index -@ 80 /data/bio-zhanglm/xenopus/06_Sort/st9-ATAC-${i}.dup.sort.bam
+    bamCoverage -b /data/bio-zhanglm/xenopus/06_Sort/st9-ATAC-${i}.dup.sort.bam \
+    -p max --normalizeUsing CPM --binSize 5 -o /data/bio-zhanglm/xenopus/09_Bigwig/st9-ATAC-${i}.bw；
+done

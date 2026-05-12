@@ -1,0 +1,3347 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Lumi's Blog">
+      
+      
+        <meta name="author" content="Lumi">
+      
+      
+        <link rel="canonical" href="https://bhaaa-zlm.github.io/CS/Learn%20CS/Artificial_Intelligence_B_notes/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../Logic_review/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/image/fatLogo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Notes from Artificial Intelligence B - Lumi's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Libre Baskerville";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#computer-vision" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Lumi&#39;s Blog" class="md-header__button md-logo" aria-label="Lumi's Blog" data-md-component="logo">
+      
+  <img src="../../../assets/image/fatLogo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lumi's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Notes from Artificial Intelligence B
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="pink"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BHAAA-ZLM.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Life/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Life
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Bioinformatics/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Bioinformatics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Biology/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Biology
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  CS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Learning/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../About/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Lumi&#39;s Blog" class="md-nav__button md-logo" aria-label="Lumi's Blog" data-md-component="logo">
+      
+  <img src="../../../assets/image/fatLogo.png" alt="logo">
+
+    </a>
+    Lumi's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BHAAA-ZLM.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Life/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Life
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Life
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Books I Read
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Books I Read
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Life/Books/TAOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Art of Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Life/colours_pub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colours from Publications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Life/writing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writing in Hourglass Style
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Bioinformatics/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bioinformatics
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bioinformatics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    scRNA-Seq
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    scRNA-Seq
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/scRNA-seq/RNA-velocity_note_bioinfo_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RNA-velocity Analysis for Bioinfo Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RNA-Seq
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RNA-Seq
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/RNA-seq/RNA-seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Basic Workflow of RNA-seq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/RNA-seq/Files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Files involved in RNA-seq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/RNA-seq/Tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Tools of RNA-seq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ATAC-Seq
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ATAC-Seq
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/ATAC-Seq/ATAC-Seq_tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools in ATAC-Seq
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R the Programming Language
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    R the Programming Language
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Bioinformatics/R/DESeq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    R and DESeq2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Biology/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Biology
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Biology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experiments
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Experiments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Biology/Experiments/BIOS201/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Genome-Why are we different
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structural Biology
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Structural Biology
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Biology/Struct/protein_purification/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protein Expression with Sf9 Cells
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Biology/Struct/Chimera_visualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visualization with ChimeraX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Biology/Struct/coot_install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installing Coot on Mac
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Biology/Struct/ctf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Contrast Transfer Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning CS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning CS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Artificial Intelligence
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Artificial Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computer Vision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computer Vision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Describing Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pixels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intensity-histograms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intensity Histograms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thresholding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thresholding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thresholding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#otsus-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Otsu's Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-means-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K-means Clustering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-detection-and-background-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Detection and Background Extraction.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Change Detection and Background Extraction.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detection-of-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection of Change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Colours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rgb-colour-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RGB Colour Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-coloured-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing Coloured Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-and-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampling and Fourier Transform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convolution-and-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convolution and Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edges
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canny-edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canny Edge Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optical-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optical Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Logic_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Mathematical Logic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Discrete_review/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Discrete Mathematics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Markdown/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Markdown
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning R
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Marp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning Marp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zotero_WebDAV/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting Up Zotero Sync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mandelbrot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drawing Mandelbrot Set with Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Projects/ChessKing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My First Project - ChessKing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Learning/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chemistry
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Chemistry
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Learning/Chemistry/Experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chemistry Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Learning/Physics/Quantum/Basics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Learning/Physics/fly_by_night/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fly By Night
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../About/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../About/SelfIntro/SelfIntro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About Me
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#computer-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computer Vision
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Computer Vision">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#describing-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Describing Images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Describing Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pixels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pixels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intensity-histograms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intensity Histograms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#thresholding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thresholding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Thresholding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#otsus-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Otsu's Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-means-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K-means Clustering
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-detection-and-background-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change Detection and Background Extraction.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Change Detection and Background Extraction.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#detection-of-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detection of Change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#background-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colours
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Colours">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rgb-colour-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RGB Colour Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparing-coloured-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparing Coloured Images
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sampling-and-fourier-transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sampling and Fourier Transform
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convolution-and-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Convolution and Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scaling-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaling Space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edges
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edges">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canny-edge-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canny Edge Detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optical-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optical Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+
+        <!-- Edit button -->
+        
+          <a
+            href="https://github.com/BHAAA-ZLM/BHAAA-ZLM.github.io/edit/master/docs/CS/Learn CS/Artificial_Intelligence_B_notes.md"
+            title="edit.link.title"
+            class="md-content__button md-icon"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
+          </a>
+        
+
+        <!--
+          Hack: check whether the content contains a h1 headline. If it
+          doesn't, the page title (or respectively site name) is used
+          as the main headline.
+        -->
+        
+          <h1>Learning Artificial Intelligence</h1>
+        
+
+        <!-- Markdown content -->
+        
+        <aside class="mdx-author">
+            <p>
+            <img src="https://avatars.githubusercontent.com/BHAAA-ZLM" alt="@BHAAA-ZLM">
+            </p>
+            <p>
+            <span> 
+            <b>Lumi</b> · <a href="https://github.com/BHAAA-ZLM">@BHAAA-ZLM</a>
+            </span>
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                    <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                  </svg> 13.08.2025 ·
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                  </svg> None read
+            </span>
+            </p>
+        </aside>
+        
+
+        <p>The following notes are from SUSTech course "Artificial Intelligence B" taught in Fall 2023 by <a href="https://faculty.sustech.edu.cn/?tagid=zhangjg&amp;iscss=1&amp;snapid=1&amp;orderby=date&amp;go=2&amp;lang=en">Prof. Jianguo Zhang</a>.</p>
+<h2 id="computer-vision">Computer Vision</h2>
+<p>In the first half of the semester, we focused on computer vision.</p>
+<h3 id="describing-images">Describing Images</h3>
+<h4 id="pixels">Pixels</h4>
+<p>Digital images are just samples version of a scene. Mathematically, it is described as a matrix of pixels, <span class="arithmatex">\(\mathbf{I}\)</span>, in which the numerical value of each pixel represents the intensity of light signals.</p>
+<p>For typical grey-scale images: 1 pixel = 1 byte = 8 bits, which can represent 256 different values (0-255). Where 0 is black and 255 is white.</p>
+<figure>
+    <img src="../AI_B/grayscale_row.png" alt="Grayscale Image Row" width="600" caption="A row of pixels sampled from a grayscale image.">
+    <figcaption>A row of pixels sampled from a grayscale image.</figcaption>
+</figure>
+
+<p>A pixel can thus be described as <span class="arithmatex">\(\mathbf{I}_{i j} = x\)</span>, where <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span> are the coordinates of the pixel and <span class="arithmatex">\(x\)</span> is the intensity.</p>
+<p>To invert an image, simply take:</p>
+<div class="arithmatex">\[\mathbf{I}' = 255 - \mathbf{I}\]</div>
+<p>With <strong>Contrast Scaling</strong>, we can adjust the range <span class="arithmatex">\(\mathbf{I}_{ij} \in [L, H]\)</span> of current pixel values to a new range.</p>
+<div class="arithmatex">\[
+\mathbf{C}_{ij} =  \begin{cases}
+   L' &amp;\text{if } \mathbf{I}_{ij} \leq L \\
+   H' &amp;\text{if } \mathbf{I}_{ij} \geq H \\
+    \frac{H' - L'}{H - L}(\mathbf{I}_{ij} - L) + L' &amp;\text{otherwise}
+\end{cases}
+\]</div>
+<p>The output image <span class="arithmatex">\(\mathbf{C}\)</span> will have pixel values in the range <span class="arithmatex">\([L', H']\)</span>.</p>
+<h4 id="intensity-histograms">Intensity Histograms</h4>
+<p>We can show the value of the image as a histogram. Where the x-axis corresponds to the intensity of the pixel and the y-axis corresponds to the count.</p>
+<figure>
+    <img src="../AI_B/histogram.png" alt="Histogram of Pixel Intensities" width="600" caption="Histogram of pixel intensities in a grayscale image.">
+    <figcaption>Histogram of pixel intensities for a randomly generated image and Lenna.</figcaption>
+</figure>
+
+<p>Quantization is important when we are comparing </p>
+<p>With the <strong>normalized</strong> histogram <span class="arithmatex">\(h(x)\)</span>, we can calculate a lot of qualities of the image. For example, the mean <span class="arithmatex">\(\mu\)</span>, variance <span class="arithmatex">\(\sigma^2\)</span>, and entropy <span class="arithmatex">\(H(h)\)</span> of the histogram can be calculated as follows:</p>
+<div class="arithmatex">\[
+\mu = \sum_{x=L}^{H} x \cdot h(x)
+\]</div>
+<div class="arithmatex">\[
+\sigma^2 = \sum_{x=L}^{H} (x - \mu)^2 \cdot h(x)
+\]</div>
+<div class="arithmatex">\[
+H(h) = -\sum_{x=L}^{H} h(x) \log_2 h(x)
+\]</div>
+<p>Higher entropy means more information is contained in the image. The distribution with highest entropy is the uniform distribution.</p>
+<p>If we have two images, we can then calculate the cross-entropy between the two histograms <span class="arithmatex">\(h_1(x)\)</span> and <span class="arithmatex">\(h_2(x)\)</span> of the images as follows:</p>
+<div class="arithmatex">\[CE = -\sum_{x=L}^{H} h_1(x) \log_2 h_2(x)\]</div>
+<h4 id="thresholding">Thresholding</h4>
+<p>Thresholds can be used to distinguish pixels within the image. The image after thresholding with value <span class="arithmatex">\(t\)</span>, <span class="arithmatex">\(\mathbf{T}\)</span> can be calculated as follows:</p>
+<div class="arithmatex">\[\mathbf{T}_{ij} = \begin{cases} 
+    L &amp; \text{if } \mathbf{I}_{ij} &lt; t \\
+    H &amp; \text{if } \mathbf{I}_{ij} \geq t
+\end{cases}\]</div>
+<p>This essentially is separating the pixels into two groups. For example, if we cutoff at 128 for the Lenna image, we get:</p>
+<figure>
+    <img src="../AI_B/thresholding.png" alt="Thresholding Example" width="600" caption="Thresholding the Lenna image at 128.">
+    <figcaption>Thresholding the Lenna image at 128.</figcaption>
+</figure>
+
+<p>It might be obvious that the histogram will be a lot of help when we are trying to find an optimal threshold to separate two objects.</p>
+<h5 id="otsus-method">Otsu's Method</h5>
+<p>How to determine the thresholds for separation is a common problem in computer vision. Otsu's method is a popular algorithm to find the optimal threshold for separating two classes in an image.</p>
+<p>Intuitively if we think about it, when separating the pixels into two classes, we want the classes to be as different as possible, within one class, the pixels should be as similar as possible.</p>
+<p>In mathematical terms, we want to maximize the <strong>between-class variance</strong> while minimizing the <strong>within-class variance</strong>.  Which surprisingly, are the same thing. Because mathematically, the total variance is the sum of these two variances.</p>
+<p>If <span class="arithmatex">\(\sigma_t\)</span> is the total variation, <span class="arithmatex">\(\sigma_b\)</span> and <span class="arithmatex">\(\sigma_w\)</span> are the variances between groups and within groups, then:</p>
+<div class="arithmatex">\[\sigma_t^2 = \sigma_b^2 + \sigma_w^2\]</div>
+<div class="arithmatex">\[\sigma_b^2 = w_0(\mu_0 - \mu)^2+w_1(\mu_1 - \mu)^2 = w_0 w_1 (\mu_1 - \mu_0)^2\]</div>
+<p>Where <span class="arithmatex">\(w_0, w_1\)</span> are separate weights of these classes.</p>
+<div class="arithmatex">\[w_i = \sum^{k_i}p_i(x)\]</div>
+<p>We then find the threshold <span class="arithmatex">\(t\)</span> which maximizes <span class="arithmatex">\(\sigma_b\)</span>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">otsu_intraclass_variance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    Otsu&#39;s intra-class variance.</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">    If all pixels are above or below the threshold, this will throw a warning that can safely be ignored.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nansum</span><span class="p">(</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="p">[</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="bp">cls</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>            <span class="c1">#   weight   ·  intra-class variance</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>            <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="p">[</span><span class="n">image</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">,</span> <span class="n">image</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">]</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="p">]</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="c1"># NaNs only arise if the class is empty, in which case the contribution should be zero, which `nansum` accomplishes.</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1"># Random image for demonstration:</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">253</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="n">otsu_threshold</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="nb">range</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">image</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">image</span><span class="p">)),</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">th</span><span class="p">:</span> <span class="n">otsu_intraclass_variance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">th</span><span class="p">),</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">)</span>
+</span></code></pre></div>
+<h5 id="k-means-clustering">K-means Clustering</h5>
+<p>We can first separte the pixels according to the mean of all pixels, <span class="arithmatex">\(\mu\)</span>. Then, we set the threshold to the middle point of the mean of the two clusters.</p>
+<div class="arithmatex">\[t = \frac{\mu_1 + \mu_2}{2}\]</div>
+<p>Repeat this process multiple times until <span class="arithmatex">\(t\)</span> converges to a certain value.</p>
+<h3 id="change-detection-and-background-extraction">Change Detection and Background Extraction.</h3>
+<p>Videos can be seen as a sequence of images <span class="arithmatex">\(\mathbf{I}(i,j,t)\)</span>.</p>
+<p>For the human eye, a frame rate of 25Hz is considered smooth.</p>
+<h4 id="detection-of-change">Detection of Change</h4>
+<p>We can define the <strong>temporal difference</strong> of the images, <span class="arithmatex">\(\mathbf{D}(i,j,t)\)</span> as:</p>
+<div class="arithmatex">\[\mathbf{D}(i,j,t) = |\mathbf{I}(i,j,t) - \mathbf{I}(i,j,t-1)|\]</div>
+<p>A difference is considered interesting if the difference surpasses a certain threshold. The resulting difference of interest, <span class="arithmatex">\(\mathbf{D}'\)</span> is:</p>
+<div class="arithmatex">\[\mathbf{D}'(i,j,t) = \begin{cases}
+    1 &amp; \text{if } \mathbf{D}(i,j,t) &gt; \tau \\
+    0 &amp; \text{if } \mathbf{D}(i,j,t) \leq \tau
+\end{cases}\]</div>
+<h4 id="background-extraction">Background Extraction</h4>
+<p>The adaptive background <span class="arithmatex">\(\mathbf{B}(i,j,t)\)</span> is a kind of mean that can ignore the moving things and preserve the inanimate backgrounds.</p>
+<div class="arithmatex">\[\mathbf{B}(t) = \frac{1}{N}\sum^t_{i=t-N}\mathbf{I}(i, j, t)\]</div>
+<p>Another way of definition can also be:</p>
+<div class="arithmatex">\[\mathbf{B}(i, j, t + 1) = \alpha \mathbf{I}(i, j, t) + (1 - \alpha)\mathbf{B}(i, j, t)\]</div>
+<figure>
+    <img src="../AI_B/video_background.png" alt="Background Extraction Example" width="600" caption="Background extraction example.">
+    <figcaption>Background extraction example. (top) Original image. (middle) Calculated background. (bottom) Original - Background & mapped.</figcaption>
+</figure>
+
+<p>As we can see from the example. A very long truck came into the parking lot in image 5. After parking in image 6, the truck is no longer moving, and gradually blends into the background.</p>
+<p>This moving avarage is not only useful in background extraction, but also useful in other momentum-related methods such as <a href="https://arxiv.org/abs/1412.6980">ADAM</a>.</p>
+<p>Other background extraction methods fits Normal distributions to the pixel intensities. Which can fit the mean and variation as time progresses. Allowing some variations in the pixel intensities.</p>
+<h3 id="colours">Colours</h3>
+<p>In nature, colour comes from interactions between the electromagnetic waves and our cones in the retinal. Our eyes can only see the electromagnetic waves with wavelengths between 400-700nm.</p>
+<h4 id="rgb-colour-space">RGB Colour Space</h4>
+<p>One of the ways to measure colour (in order to match our perception methods with the eye), is the RGB colour space. Where each colour is represented as a mixture of certain amounts of red, green and blue.</p>
+<figure>
+    <img src="../AI_B/lenna_rgb.png">
+    <figcaption>Lenna image with the three different channels.</figcaption>
+</figure>
+
+<p>You can covert the RGB colour space to grey-scale by taking the average of the three channels, or with a specific formula:</p>
+<div class="arithmatex">\[\mathbf{I}_{grey} = 0.299 \cdot \mathbf{I}_{red} + 0.587 \cdot \mathbf{I}_{green} + 0.114 \cdot \mathbf{I}_{blue}\]</div>
+<p>Which produces (in my opinion) similar results.</p>
+<p>Apart from the RGB colour space, there are other colour spaces such as HSV (Hue, Saturation, Value). </p>
+<h4 id="comparing-coloured-images">Comparing Coloured Images</h4>
+<p>To compare two coloured images, instead of drawing separate histograms for each channel, we can index the pixels with a single value, <span class="arithmatex">\(v\)</span>, which is a combination of the three channels:
+$<span class="arithmatex">\(v = \mathbf{I}_{red} + 256 \cdot \mathbf{I}_{green} + 256^2 \cdot \mathbf{I}_{blue}\)</span>$</p>
+<p>Then, we can use the value histogram to calculate the distances between two images.</p>
+<h3 id="sampling-and-fourier-transform">Sampling and Fourier Transform</h3>
+<p>The sin wave can be described as a function of time:</p>
+<div class="arithmatex">\[y(t) = A \sin(2 \pi f t + \phi)\]</div>
+<p>Where <span class="arithmatex">\(A\)</span> is the amplitude, <span class="arithmatex">\(f\)</span> is the frequency, and <span class="arithmatex">\(\phi\)</span> is the phase.</p>
+<p>In the real life, you can only measure (or sample) some fraction of the real data. The sampling rate is the number of samples per second, <span class="arithmatex">\(f_s\)</span>. </p>
+<p>The Nyquist-Shannon sampling theorem states that to reconstruct a signal without aliasing, the sampling rate must be at least twice the highest frequency in the signal. Otherwise the high frequency components of the signal will be lost.</p>
+<p>The Fourier Transform is a mathematical operation that transforms a signal from the time domain to the frequency domain. It decomposes a function into its constituent frequencies in a linear manner.</p>
+<p>The continuouse Fourier Transform in 2D space is defined as:</p>
+<div class="arithmatex">\[\mathcal{F}(u, v) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \mathbf{I}(x,y) e^{-2\pi i (u x + v y)} dx dy\]</div>
+<p>Recall the Euler's formula <span class="arithmatex">\(e^{ix} = \cos(x) + i \sin(x)\)</span>. Where the <span class="arithmatex">\(u, v\)</span> are the corresponding frequencies in the <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> directions.</p>
+<p>The process can be inversed by the Inverse Fourier Transform:</p>
+<div class="arithmatex">\[\mathcal{F}^{-1}(u, v) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \mathcal{F}(u, v) e^{2\pi i (u x + v y)} du dv\]</div>
+<p>For a "sampled" image, the Discrete Fourier Transform (DFT) is defined as:</p>
+<div class="arithmatex">\[\mathcal{F}(u, v) = \sum_{i=0}^{M-1} \sum_{j=0}^{N-1} \mathbf{I}(i,j) e^{-2\pi i (u i / M + v j / N)}\]</div>
+<p>Where <span class="arithmatex">\(M\)</span> and <span class="arithmatex">\(N\)</span> are the dimensions of the image. It also, of course, can be inversed by the Inverse Discrete Fourier Transform (IDFT):</p>
+<div class="arithmatex">\[\mathcal{F}^{-1}(i, j) = \frac{1}{MN} \sum_{u=0}^{M-1} \sum_{v=0}^{N-1} \mathcal{F}(u, v) e^{2\pi i (u i / M + v j / N)}\]</div>
+<p>After Fourier Transform, the resulting <span class="arithmatex">\(\mathcal{F}(u,v)\)</span> is a complex number. The magnitude and phase can be calculated as follows:</p>
+<div class="arithmatex">\[\text{magnitude} = \sqrt{\text{real}^2 + \text{imaginary}^2}\]</div>
+<div class="arithmatex">\[\text{phase} = \tan^{-1}(\frac{\text{imaginary}}{\text{real}})\]</div>
+<p>Also, we shift the zero-frequency component to the center of the spectrum for better visualization.</p>
+<h3 id="convolution-and-filtering">Convolution and Filtering</h3>
+<p>Convolution is a mathematical operation that combines two functions to produce a third function. It can be imagined as a sliding window operation, where one function is flipped and slid over the other function, and the overlapping values are multiplied and summed to produce the output.</p>
+<p>In a continuous 1D space, the convolution of two functions <span class="arithmatex">\(f(t)\)</span> and <span class="arithmatex">\(g(t)\)</span> is defined as:</p>
+<div class="arithmatex">\[ (f * g)(t) = \int_{-\infty}^{\infty} f(\tau) g(t - \tau) d\tau \]</div>
+<p>In a discrete 2D space, the convolution of an image <span class="arithmatex">\(\mathbf{I}(i,j)\)</span> with a kernel <span class="arithmatex">\(\mathbf{K}(m,n)\)</span> is defined as:</p>
+<div class="arithmatex">\[ (\mathbf{I} * \mathbf{K})(i, j) = \sum_{m=-k}^{k} \sum_{n=-k}^{k} \mathbf{I}(i - m, j - n) \mathbf{K}(m, n) \]</div>
+<p>Where <span class="arithmatex">\(k\)</span> is the radius of the kernel.</p>
+<p>An interesting property of convolution is that when combined with the Fourier Transform, it becomes a multiplication operation in the frequency domain:</p>
+<div class="arithmatex">\[\mathcal{F}(f * g) = \mathcal{F}(f) \cdot \mathcal{F}(g)\]</div>
+<p>This can be proved mathematically:</p>
+<div class="arithmatex">\[\mathcal{F}(f * g)(u) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(\tau) g(t - \tau) d\tau e^{-i2\pi(ft)} dt\]</div>
+<p>Suppose: <span class="arithmatex">\(w = t - \tau\)</span>, then <span class="arithmatex">\(dt = dw\)</span> and the limits of integration change accordingly.</p>
+<div class="arithmatex">\[\mathcal{F}(f * g)(u) = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(\tau) g(w) d\tau e^{-i2\pi(f(w + \tau))} dw\]</div>
+<div class="arithmatex">\[\mathcal{F}(f * g)(u) = \int_{-\infty}^{\infty} f(\tau) e^{-i2\pi(f\tau)} d\tau \int_{-\infty}^{\infty}  g(w)e^{-i2\pi(fw)} dw\]</div>
+<p>Which is the multiplication of the Fourier Transforms of <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span>.</p>
+<p>Convolution is usually used for filtering images. For example, a Gaussian filter can be used to blur an image and reduce noise.</p>
+<figure>
+    <img src="../AI_B/lenna_blurred.png" alt="Gaussian Blur Example" width="600" caption="Gaussian blur example.">
+    <figcaption>Gaussian blur example. (left) Original image. (right) Blurred image with kernel.</figcaption>
+</figure>
+
+<p>We could of course infer from the Fourier Transform property, that the Gaussian filter in the frequency domain is a Gaussian function, which is a low-pass filter. It removes high-frequency components from the image, resulting in a smoother image.</p>
+<p>It can also be used for pattern detection. A kernel with 1 in the middle row and -1 in the surrounding can be used to detect edges in an image. In fourier space, consider only keeping the information at a specific frequency.</p>
+<figure>
+    <img src="../AI_B/lenna_convolution_hline.png" alt="Edge Detection Example" width="600" caption="Edge detection example.">
+    <figcaption>Edge detection example. (left) Original image. (right) Edges detected with kernel.</figcaption>
+</figure>
+
+<p>Two types of noise can be added to an image: Gaussian noise and Salt-and-Pepper noise. Gaussian noise is a random noise that follows a Gaussian distribution, while Salt-and-Pepper noise is a random noise that adds white and black pixels to the image.</p>
+<p>The Gaussian filter can be used to reduce Gaussian noise.</p>
+<h3 id="scaling-space">Scaling Space</h3>
+<p>In an image, informations are contained in different scales. These informations contained in a specific scale is known as the <strong>scale space</strong>.</p>
+<p>A linear scale space is a continuous function of scale, <span class="arithmatex">\(s\)</span>, which is defined as:</p>
+<div class="arithmatex">\[\mathbf{I}(x, y, s) = \mathbf{I}(x, y) * \mathbf{G}(x, y, s)\]</div>
+<p>Where <span class="arithmatex">\(G(x, y, s)\)</span> is a Gaussian function with scale <span class="arithmatex">\(s\)</span>. In this method, different gaussian filters with different variances are applied to the image.</p>
+<p>With Gaussian pyramids, we can create a multi-scale representation of the image. The Gaussian pyramid is a series of images, each with a different scale, created by applying Gaussian filters with different variances to the original image.</p>
+<p>Since the size of the detector is often fixed, the size of the image is changed by <strong>resampling</strong>.</p>
+<h3 id="edges">Edges</h3>
+<p>Edges are abrupt changes in the intensity of the image. These changes can be caused by surface normal discontinuity, depth discontinuity, surface colour discontinuity.</p>
+<p>The gradiant of an image can be calculated as:</p>
+<div class="arithmatex">\[\nabla \mathbf{I}(x, y) = \left( \frac{\partial \mathbf{I}}{\partial x}, \frac{\partial \mathbf{I}}{\partial y} \right)\]</div>
+<p>Where <span class="arithmatex">\(\nabla\)</span> is the nabla operator, which is a vector operator that represents the gradient of a function.</p>
+<p>The direction of the gradient is:</p>
+<div class="arithmatex">\[\theta = \tan^{-1} \left( \frac{\partial \mathbf{I}}{\partial y} , \frac{\partial \mathbf{I}}{\partial x} \right)\]</div>
+<p>In a discrete image, the gradient can be approximated by using finite differences:</p>
+<div class="arithmatex">\[\nabla \mathbf{I}(i, j) = \left( \mathbf{I}(i + 1, j) - \mathbf{I}(i - 1, j), \mathbf{I}(i, j + 1) - \mathbf{I}(i, j - 1) \right)\]</div>
+<p>Or even more simply:</p>
+<div class="arithmatex">\[\nabla \mathbf{I}(i, j) = \left( \mathbf{I}(i + 1, j) - \mathbf{I}(i, j), \mathbf{I}(i, j + 1) - \mathbf{I}(i, j) \right)\]</div>
+<p>If we calculate the magnitude of gradiant right away, the intensity of gradient will be influenced severely by noise. Instead, we can first smooth the image with a Gaussian filter, and then calculate the gradient.</p>
+<p>Since convolution is associative, the derivative of a convolution can be calculated as:
+$<span class="arithmatex">\(\nabla (\mathbf{I} * \mathbf{G})(i, j) = \mathbf{I} * \nabla \mathbf{G}(i, j)\)</span>$</p>
+<p>So, precomputing the gradient of the Gaussian filter, <span class="arithmatex">\(\nabla \mathbf{G}(i, j)\)</span>, and convolving it with the image will give us the gradient of the image and save computation time.</p>
+<h4 id="canny-edge-detection">Canny Edge Detection</h4>
+<p>Canny edge detection is a popular algorithm with the following steps:</p>
+<ol>
+<li><strong>Smoothing</strong>: Apply a Gaussian filter to the image to reduce noise.</li>
+<li><strong>Gradient Calculation</strong>: Calculate the gradient of the image. <span class="arithmatex">\(Theta\)</span> are approximated to [0, 45, 90, 135] degrees.</li>
+</ol>
+<div class="arithmatex">\[\mathbf{G}_{x,y} = \sqrt{G_x^2 + G_y^2}\]</div>
+<div class="arithmatex">\[\theta = \tan^{-1} \left( \frac{G_y}{G_x} \right)\]</div>
+<ol>
+<li><strong>Non-Maximum Suppression &amp; Double Thresholding</strong>: Thin the edges by suppressing non-maximum pixels in the gradient direction. So that we can obtain a very thin edge.</li>
+<li><strong>Edge Tracking by Hysteresis</strong>: Connect weak edges to strong edges if they are connected, and discard weak edges that are not connected to strong edges (according to the double thresholding).</li>
+</ol>
+<h4 id="optical-flow">Optical Flow</h4>
+<p>Motions are important for the detection of differences.</p>
+<p>To immitate the motion in 3D real space, suppose an object is at <span class="arithmatex">\(\mathbf{X} = (x, y, z)\)</span> and it forms an image at <span class="arithmatex">\(\mathbf{X}'(x', y')\)</span> on the image plain.</p>
+<p>The velocity is defined as the change of position over time:</p>
+<div class="arithmatex">\[\mathbf{V} = \frac{d\mathbf{X}}{dt} = \left( \frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt} \right)\]</div>
+<p>For the 2D image, the velocity is defined as:</p>
+<div class="arithmatex">\[\mathbf{V}' = \left( \frac{dx'}{dt}, \frac{dy'}{dt} \right)\]</div>
+<p>For the optics, their exists an equilatteral triangle between the 3D point, the camera, and the image plane. </p>
+<div class="arithmatex">\[\frac{f}{z}=\frac{x'}{x} = \frac{y'}{y}\]</div>
+<p>Where <span class="arithmatex">\(f\)</span> is the focal length of the camera.</p>
+<p>So <span class="arithmatex">\(x'=fx/z\)</span> and <span class="arithmatex">\(y'=fy/z\)</span>.</p>
+<p>The velocity of the image point can be calculated as:</p>
+<div class="arithmatex">\[\mathbf{V}' = \left( \frac{dx'}{dt}, \frac{dy'}{dt} \right) = \left( \frac{f}{z} \frac{dx}{dt} - \frac{fx}{z^2} \frac{dz}{dt}, \frac{f}{z} \frac{dy}{dt} - \frac{fy}{z^2} \frac{dz}{dt} \right)\]</div>
+<p>This can be simplified to:</p>
+<div class="arithmatex">\[\mathbf{V}' = \frac{f}{z} \left( v_x, v_y \right) - \frac{v_z}{z}\left( x' , y' \right)\]</div>
+<p>The equation describes the relationship between the velocity of the image point and the velocity of the 3D point.</p>
+<figure>
+    <img src="../AI_B/moving_pictures.png" alt="Optical Flow Example" width="600" caption="Optical flow example.">
+    <figcaption>The moves you can observe from the picture.</figcaption>
+</figure>
+
+<p>There are four types of motions in a video:
+- translation at constant depth
+- translation in depth
+- rotation at constant depth
+- rotation in depth</p>
+<p>Optical flow is the apparent motion of brightness patterns in the image. With some key assumptions:
+- The brightness is consistent over time.
+- The motion is small.
+- The motion is smooth. Meaning that points move like their neighbours.</p>
+<p>During motion, the two points are <span class="arithmatex">\(\mathbf{I}(x, y, t)\)</span> and <span class="arithmatex">\(\mathbf{I}(x + dx, y + dy, t + dt)\)</span>.</p>
+<p>With Taylor expansion, the point at <span class="arithmatex">\(t+1\)</span> can be approximated as:
+$<span class="arithmatex">\(\mathbf{I}(x + dx, y + dy, t + dt) \approx \mathbf{I}(x, y, t) + \frac{\partial \mathbf{I}}{\partial x} dx + \frac{\partial \mathbf{I}}{\partial y} dy + \frac{\partial \mathbf{I}}{\partial t} dt\)</span>$</p>
+<p>Assuming a tiny change, we can then rearrange the equation to get:</p>
+<div class="arithmatex">\[\frac{\partial \mathbf{I}}{\partial x} dx + \frac{\partial \mathbf{I}}{\partial y} dy + \frac{\partial \mathbf{I}}{\partial t} dt = 0\]</div>
+<div class="arithmatex">\[\nabla \mathbf{I}^\top \cdot \mathbf{V} + \frac{\partial \mathbf{I}}{\partial t} = 0\]</div>
+<p>Where <span class="arithmatex">\(\nabla \mathbf{I}\)</span> is the gradient of the image, and <span class="arithmatex">\(\mathbf{V}\)</span> is the velocity of the image point.</p>
+<p>This equation is known as the <strong>Optical Flow Constraint Equation</strong>. It describes the relationship between the gradient of the image and the velocity of the image point.</p>
+<p>In this equation, if <span class="arithmatex">\(\mathbf{V} \perp \nabla \mathbf{I}\)</span>, then the image point is moving in the direction of the edge. Optical flow cannot detect this kind of motion. This phenomenon is known as the <strong>aperture problem</strong>, or the barber illusion.</p>
+
+        <!-- Last update of source file -->
+        
+          
+        
+      
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022-2026 Lumi
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://space.bilibili.com/85744189" target="_blank" rel="noopener" title="Bilibili | MrBHAAA" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92c-26.4-.8-48.2-9.8-65.3-27.2S.7 396.5 0 368.2V169.8c.8-26 9.7-47.6 26.7-65.7C43.8 87.8 65.5 78.8 92 78h29.4L96 52.2c-5.7-5.7-8.6-13-8.6-21.8S90.3 14.3 96 8.6 109 0 117.9 0s16.1 2.9 21.9 8.6L213.1 78h88l74.5-69.4C381.7 2.9 389.2 0 398 0s16.1 2.9 21.9 8.6c5.7 5.7 8.6 13 8.6 21.8s-2.9 16.1-8.6 21.8L394.6 78h29.3c26.4.8 48 9.8 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96c-9.6.4-17.4 3.7-23.6 9.8-6.1 6.1-9.4 13.9-9.8 23.5v194.4c0 9.2 3.3 17 9.8 23.5s14.4 9.8 23.6 9.8h320.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/BHAAA-ZLM" target="_blank" rel="noopener" title="GitHub | Lumi" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://x.com/BHAAA2021374718" target="_blank" rel="noopener" title="X(twitter) | Lumi" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M459.4 151.7c.3 4.5.3 9.1.3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53C87.4 130.8 165 172.4 252.1 176.9c-1.6-7.8-2.6-15.9-2.6-24C249.5 95.1 296.3 48 354.4 48c30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.expand", "navigation.top", "navigation.expand", "navigation.indexes", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
