@@ -66,8 +66,10 @@ for chain, colour in colours.items():
 run (session, 'rainbow Template target c palette ^PuBu-5')
 run (session, 'rainbow Non-template target c palette PuBu-5')
 run (session, 'transparency protein 50 target c')
+run (session, 'select Template|Non-template|RNA')
+run (session, 'graphics select color black width 5')
 
 # Saving figures
 now = datetime.now()
 dt_string = now.strftime("%Y-%m-%d_%H-%M")
-# run	(session, 'save {n}_{d}.png width 2000 height 2000 supersample 4 transparentBackground false'.format(n = baseName, d = dt_string))
+run	(session, 'save {n}_{d}.png width 2000 height 2000 supersample 4 transparentBackground false'.format(n = baseName, d = dt_string))

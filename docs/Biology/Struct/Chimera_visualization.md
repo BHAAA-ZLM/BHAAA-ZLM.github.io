@@ -131,3 +131,17 @@ rainbow Non-template target c palette PuBu-5
 The `^` in front of `PuBu-5` indicates using the palette in reverse order. The `Template` and `Non-template` are the names of the chains. Full codes can be found [here](./chimera/script-7unc.py), resulting in the following graph.
 
 ![Nucleosome Retention Reproduction](./chimera/rewrap_2025-04-29_16-15.png)
+
+One what to visualzie the DNA chain with a thicker outline might be to just mimic the silhouette with the selection outline. This is a bit stupid but it can achieve similar effect.
+```python
+graphics silhouettes color black width 5
+```
+
+![Thicker Silhouette](./chimera/rewrap_2026-05-12_23-12.png)
+
+## Viewing the Information of the Model
+
+```
+log chains #1
+```
+This command will print the information of each chain in the model.
